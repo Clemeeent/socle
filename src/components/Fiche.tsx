@@ -24,7 +24,7 @@ export function FicheMeta({ miseAJour, verifie }: { miseAJour: string; verifie?:
 
 export function Sources({ items }: { items: { label: string; href: string }[] }) {
   return (
-    <section className="mt-8 border-t border-line pt-4">
+    <section id="sources" className="mt-8 scroll-mt-4 border-t border-line pt-4">
       <h2 className="text-sm font-semibold text-ink-2">Sources</h2>
       <ul className="mt-2 space-y-1 text-sm">
         {items.map((s) => (
@@ -47,20 +47,13 @@ export function EtatVide({ children }: { children: React.ReactNode }) {
   );
 }
 
+// Compact citation after a sentence: a single scrutin is linked directly, several point to the list.
 export function SourceInline({ items }: { items: { label: string; href: string }[] }) {
-  return (
-    <span className="text-xs text-ink-3">
-      {" "}
-      [
-      {items.map((s, i) => (
-        <span key={s.href}>
-          {i > 0 && ", "}
-          <a href={s.href} target="_blank" rel="noreferrer">
-            {s.label.replace("Scrutin ", "")}
-          </a>
-        </span>
-      ))}
-      ]
-    </span>
-  );
+  const lien =
+    items.length === 1 ? (
+      <a href={items[0].href} target="_blank" rel="noreferrer">{items[0].label}</a>
+    ) : (
+      <a href="#sources">{items.length} scrutins</a>
+    );
+  return <span className="whitespace-nowrap text-xs text-ink-3"> [source : {lien}]</span>;
 }

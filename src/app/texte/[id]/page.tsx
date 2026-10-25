@@ -7,6 +7,7 @@ import { EtatVide, FicheMeta, Sources } from "@/components/Fiche";
 import { Hemicycle } from "@/components/Hemicycle";
 import { RecapGroupes } from "@/components/RecapGroupes";
 
+export const dynamicParams = false;
 export const generateStaticParams = () => grille.textes.map((t) => ({ id: t.id }));
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
