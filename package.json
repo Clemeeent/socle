@@ -7,23 +7,28 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "import": "tsx scripts/import-an.ts"
+    "import": "tsx scripts/import-an.ts",
+    "test": "vitest run",
+    "programmes:extraire": "tsx scripts/programmes.ts extraire",
+    "programmes:verifier": "tsx scripts/programmes.ts verifier"
   },
   "dependencies": {
     "fflate": "^0.8.3",
     "next": "16.4.3",
+    "pdfjs-dist": "^6.4.299",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
-    "@types/node": "^20",
+    "@types/node": "^22.20.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^5.0.5"
   }
 }

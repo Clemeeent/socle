@@ -42,3 +42,6 @@ next-env.d.ts
 
 # open data download cache
 /.cache/
+
+# texte extrait des PDF (régénéré)
+_texte/
