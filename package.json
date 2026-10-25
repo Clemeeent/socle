@@ -10,7 +10,8 @@
     "import": "tsx scripts/import-an.ts",
     "test": "vitest run",
     "programmes:extraire": "tsx scripts/programmes.ts extraire",
-    "programmes:verifier": "tsx scripts/programmes.ts verifier"
+    "programmes:verifier": "tsx scripts/programmes.ts verifier",
+    "programmes:telecharger": "tsx scripts/programmes.ts telecharger"
   },
   "dependencies": {
     "fflate": "^0.8.3",

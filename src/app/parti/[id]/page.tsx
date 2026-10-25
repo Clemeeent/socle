@@ -38,15 +38,23 @@ export default async function PartiPage({ params }: { params: Promise<{ id: stri
       {p.remarque && <p className="mt-1 text-xs text-ink-3">{p.remarque}</p>}
 
       <section className="mt-5 rounded bg-bg-alt p-3">
-        <h2 className="text-sm font-semibold">Programme utilisé</h2>
+        <h2 className="text-sm font-semibold">Source du programme</h2>
         {docs.length ? (
           <ul className="mt-2 space-y-1 text-sm">
             {docs.map((d) => (
-              <li key={d.id} className="flex flex-wrap items-center gap-2">
-                <SourceBadge doc={d} />
-                <a href={d.url} target="_blank" rel="noreferrer">
-                  {d.titre} ↗
-                </a>
+              <li key={d.id}>
+                <span className="flex flex-wrap items-center gap-2">
+                  <SourceBadge doc={d} />
+                  <a href={d.url} target="_blank" rel="noreferrer">
+                    {d.titre} ↗
+                  </a>
+                </span>
+                <span className="mt-0.5 block text-xs text-ink-3">
+                  {d.criteresAnalyses.length
+                    ? `Analysé pour ${d.criteresAnalyses.length} critère${d.criteresAnalyses.length > 1 ? "s" : ""} sur ${grille.criteres.length}.`
+                    : "Document identifié, pas encore analysé."}
+                  {d.remarque && ` ${d.remarque}`}
+                </span>
               </li>
             ))}
           </ul>
@@ -76,7 +84,7 @@ export default async function PartiPage({ params }: { params: Promise<{ id: stri
 
       <Sources
         items={[
-          ...docs.map((d) => ({ label: `${d.titre} (${d.annee})`, href: d.url })),
+          ...docs.map((d) => ({ label: `${d.titre}${d.annee ? ` (${d.annee})` : ""}`, href: d.url })),
           ...grille.textes.map((t) => ({ label: `Scrutin n° ${scrutinDe(t).numero} — ${t.titreCourt}`, href: scrutinDe(t).url })),
         ]}
       />

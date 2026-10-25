@@ -2,6 +2,12 @@ import Link from "next/link";
 import { documentsDuParti, getGroupe, grille, partis, questions, textesDuCritere } from "@/lib/data";
 import { QuestionBox } from "@/components/QuestionBox";
 
+function etatProgramme(partiId: string) {
+  const docs = documentsDuParti(partiId);
+  if (docs.some((d) => d.criteresAnalyses.length)) return "Programme analysé";
+  return docs.length ? "Programme identifié, à analyser" : "Programme à venir";
+}
+
 // Only "Libertés publiques" has content in the demo; the others are announced, not filled.
 const THEMES_A_VENIR = ["Institutions et démocratie", "Économie et fiscalité", "Travail et retraites", "Santé", "Écologie et énergie", "Immigration"];
 
@@ -49,7 +55,7 @@ export default function Home() {
                 <span>
                   <span className="block font-medium leading-snug text-ink">{p.nom}</span>
                   <span className="block text-xs text-ink-3">
-                    {documentsDuParti(p.id).length ? "Programme analysé" : "Programme à venir"}
+                    {etatProgramme(p.id)}
                   </span>
                 </span>
               </Link>

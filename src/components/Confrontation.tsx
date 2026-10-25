@@ -19,7 +19,8 @@ const TYPE_LABEL: Record<DocumentProgramme["type"], string> = {
 };
 
 export function SourceBadge({ doc }: { doc: DocumentProgramme }) {
-  const label = doc.type === "texte-officiel" ? `${TYPE_LABEL[doc.type]} · ${doc.annee}` : TYPE_LABEL[doc.type];
+  const label =
+    doc.type === "texte-officiel" ? `${TYPE_LABEL[doc.type]} · ${doc.annee ?? "année à confirmer"}` : TYPE_LABEL[doc.type];
   return (
     <span title={doc.titre} className="inline-block rounded bg-bg-alt px-1.5 py-0.5 text-[11px] font-medium text-ink-2 ring-1 ring-line">
       {label}

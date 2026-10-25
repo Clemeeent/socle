@@ -69,7 +69,8 @@ export default function MethodePage() {
         </li>
       </ul>
       <p className="mt-2 text-sm text-ink-3">
-        Documents analysés à ce jour : {documents.length === 0 ? "aucun." : documents.length + "."}
+        Documents identifiés : {documents.length}. Documents analysés :{" "}
+        {documents.filter((d) => d.criteresAnalyses.length).length}.
       </p>
 
       <H2 id="partis">Partis et groupes parlementaires</H2>

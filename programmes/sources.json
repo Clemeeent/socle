@@ -1,4 +1,41 @@
 {
  "regle": "Un document par parti, par ordre de priorité : programme 2027 publié, sinon programme présidentiel 2022, sinon texte officiel du parti (projet, motion de congrès). Uniquement des PDF officiels téléchargés depuis le site du parti.",
- "documents": []
+ "documents": [
+  {
+   "id": "lfi-2022",
+   "parti": "lfi",
+   "type": "programme-presidentiel-2022",
+   "titre": "L'Avenir en commun — version abrégée (2022)",
+   "annee": 2022,
+   "url": "https://melenchon.fr/wp-content/uploads/2022/04/programme-avenir-en-commun-abrege.pdf",
+   "fichier": "lfi-2022-avenir-en-commun-abrege.pdf",
+   "consulteLe": null,
+   "remarque": "Version abrégée : une absence de proposition y pèse moins que dans le programme complet.",
+   "criteresAnalyses": []
+  },
+  {
+   "id": "renaissance-regalien",
+   "parti": "renaissance",
+   "type": "texte-officiel",
+   "titre": "Restitution Régalien — Une République ferme, une France apaisée",
+   "annee": null,
+   "url": "https://doc.parti.re/conventions/Restitution-Regalien-Une-Republique-ferme-une-France-apaisee.pdf",
+   "fichier": "renaissance-restitution-regalien.pdf",
+   "consulteLe": null,
+   "remarque": "Restitution de convention thématique. Année à relever dans le document.",
+   "criteresAnalyses": []
+  },
+  {
+   "id": "rn-2024",
+   "parti": "rn",
+   "type": "texte-officiel",
+   "titre": "Programme du Rassemblement national (juin 2024)",
+   "annee": 2024,
+   "url": "https://rassemblementnational.fr/documents/202406-programme.pdf",
+   "fichier": "rn-2024-programme.pdf",
+   "consulteLe": null,
+   "remarque": "Programme des législatives de juin 2024 (d'après le nom du fichier, à confirmer).",
+   "criteresAnalyses": []
+  }
+ ]
 }

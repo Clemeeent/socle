@@ -1,8 +1,10 @@
 /**
  * Programmes des partis.
+ *   npm run programmes:telecharger → télécharge les PDF déclarés dans sources.json
  *   npm run programmes:extraire  → texte page par page + passages candidats par critère
  *   npm run programmes:verifier  → contrôle data/positions.json contre les PDF
  */
+import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
@@ -20,6 +22,8 @@ const STATUTS = ["à valider", "vérifié"];
 
 export type Document = DocumentProgramme;
 export type { Position };
+
+const strFromBytes = (b: Uint8Array) => String.fromCharCode(...b);
 
 const lireJson = <T>(p: string): T => JSON.parse(readFileSync(p, "utf8"));
 
@@ -64,7 +68,9 @@ export async function verifier(opts: {
     if (!(TYPES_DOCUMENT as readonly string[]).includes(d.type)) erreurs.push(`${d.id} : type inconnu « ${d.type} »`);
     if (!/^https:\/\//.test(d.url)) erreurs.push(`${d.id} : l'URL officielle doit commencer par https://`);
     for (const c of d.criteresAnalyses) if (!opts.criteres.includes(c)) erreurs.push(`${d.id} : critère inconnu « ${c} »`);
-    if (!existsSync(join(racine, d.fichier))) erreurs.push(`${d.id} : fichier ${d.fichier} absent de ${racine}/`);
+    // A declared document may wait for its download; once analysed, its PDF must be there.
+    if (d.criteresAnalyses.length > 0 && !existsSync(join(racine, d.fichier)))
+      erreurs.push(`${d.id} : fichier ${d.fichier} absent de ${racine}/ (lancer npm run programmes:telecharger)`);
   }
   const ids = new Set<string>();
   for (const p of opts.positions) {
@@ -105,17 +111,44 @@ export async function verifier(opts: {
 
 async function main() {
   const commande = process.argv[2];
-  const sources = lireJson<{ documents: Document[] }>(join(DIR, "sources.json"));
+  const sources = lireJson<{ regle: string; documents: Document[] }>(join(DIR, "sources.json"));
   const grille = lireJson<{ criteres: { id: string; motsCles: string[] }[] }>("data/grille.json");
   const partis = lireJson<{ partis: { id: string }[] }>("data/partis.json").partis.map((p) => p.id);
 
+  if (commande === "telecharger") {
+    for (const d of sources.documents) {
+      const fichier = join(DIR, d.fichier);
+      if (existsSync(fichier)) continue;
+      let octets: Uint8Array;
+      try {
+        const res = await fetch(d.url);
+        octets = new Uint8Array(await res.arrayBuffer());
+        if (!res.ok || strFromBytes(octets.slice(0, 5)) !== "%PDF-") {
+          console.error(`${d.id} : échec (HTTP ${res.status}), le lien ne renvoie pas un PDF : ${d.url}`);
+          continue;
+        }
+      } catch (e) {
+        console.error(`${d.id} : téléchargement impossible (${(e as Error).message}) : ${d.url}`);
+        continue;
+      }
+      writeFileSync(fichier, octets);
+      d.consulteLe = new Date().toISOString().slice(0, 10);
+      d.sha256 = createHash("sha256").update(octets).digest("hex");
+      console.log(`${d.id} : ${Math.round(octets.length / 1024)} Ko → ${fichier}`);
+    }
+    writeFileSync(join(DIR, "sources.json"), JSON.stringify(sources, null, 1) + "\n");
+    return;
+  }
+
+  const presents = sources.documents.filter((d) => existsSync(join(DIR, d.fichier)));
+
   if (commande === "extraire") {
-    if (sources.documents.length === 0) {
-      console.log("Aucun document déclaré dans programmes/sources.json : rien à extraire.");
+    if (presents.length === 0) {
+      console.log("Aucun PDF présent dans programmes/ : lancer npm run programmes:telecharger.");
       return;
     }
     mkdirSync(join(DIR, "candidats"), { recursive: true });
-    for (const d of sources.documents) {
+    for (const d of presents) {
       const pages = await pagesDe(d, DIR);
       const candidats = trouverCandidats(pages, grille.criteres);
       writeFileSync(join(DIR, "candidats", `${d.id}.json`), JSON.stringify(candidats, null, 1) + "\n");
@@ -140,7 +173,7 @@ async function main() {
     return;
   }
 
-  console.log("Usage : tsx scripts/programmes.ts extraire|verifier");
+  console.log("Usage : tsx scripts/programmes.ts telecharger|extraire|verifier");
 }
 
 if (process.argv[1]?.endsWith("programmes.ts")) {

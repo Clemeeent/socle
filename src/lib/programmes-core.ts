@@ -5,10 +5,12 @@ export type DocumentProgramme = {
   parti: string;
   type: "programme-2027" | "programme-presidentiel-2022" | "texte-officiel";
   titre: string;
-  annee: number;
+  annee: number | null; // null until read in the document itself
   url: string;
   fichier: string;
-  consulteLe: string;
+  consulteLe: string | null;
+  sha256?: string;
+  remarque?: string;
   criteresAnalyses: string[];
 };
 
