@@ -1,4 +1,9 @@
 {
+  "theme": {
+    "id": "libertes-publiques",
+    "label": "Libertés publiques",
+    "intro": "« Liberticide » est un jugement, pas un fait. Socle le traduit en critères vérifiables, appliqués de la même façon à tous les partis : un texte est retenu s'il répond à au moins un critère."
+  },
   "statut": "à valider",
   "miseAJour": "2026-10-25",
   "avertissement": "Sélection provisoire, non validée par un juriste.",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { formatDate, getCritere, meta, questions, scrutinDe, textesDesCriteres, textesDuCritere } from "@/lib/data";
+import { formatDate, getCritere, meta, questions, scrutinDe, textesDesCriteres, textesDuCritere, lienCritere } from "@/lib/data";
 import { questionParSlug } from "@/lib/question";
 import { parGroupe, synthese } from "@/lib/stats";
 import { FicheMeta, SourceInline, Sources } from "@/components/Fiche";
@@ -47,7 +47,7 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
             const n = textesDuCritere(id).length;
             return (
               <li key={id}>
-                <Link href={`/grille/${id}`} className="block h-full rounded border border-line p-3 no-underline hover:border-accent">
+                <Link href={lienCritere(id)} className="block h-full rounded border border-line p-3 no-underline hover:border-accent">
                   <span className="font-semibold text-ink">{c.label}</span>
                   <span className="mt-1 block text-sm text-ink-2">{c.definition}</span>
                   <span className="mt-2 block text-xs text-accent">

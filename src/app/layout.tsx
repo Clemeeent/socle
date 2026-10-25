@@ -19,8 +19,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               Socle<span className="text-accent">.</span>
             </Link>
             <nav className="flex gap-4 text-sm">
-              <Link href="/grille/manifester" className="text-ink-2 no-underline hover:underline">
-                La grille
+              <Link href="/#themes" className="text-ink-2 no-underline hover:underline">
+                Thèmes
               </Link>
               <Link href="/#partis" className="text-ink-2 no-underline hover:underline">
                 Partis

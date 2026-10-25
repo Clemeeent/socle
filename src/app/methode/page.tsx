@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { dossiers, documents, formatDate, getCritere, getGroupe, grille, groupes, meta, partis, partisMeta, scrutinDe } from "@/lib/data";
+import { dossiers, documents, formatDate, getCritere, getGroupe, grille, groupes, meta, partis, partisMeta, scrutinDe, lienCritere } from "@/lib/data";
 import { StatutBadge } from "@/components/Fiche";
 import { GroupeTag } from "@/components/GroupeTag";
 
@@ -25,15 +25,15 @@ export default function MethodePage() {
         Socle sépare toujours trois choses : le <strong>fait</strong> (un vote, daté et sourcé), ses{" "}
         <strong>lectures possibles</strong> (ce que le texte change, à analyser par un juriste) et les{" "}
         <strong>valeurs</strong> (est-ce bien ou mal ?), qui appartiennent au lecteur. Un mot comme
-        « liberticide » est un jugement : nous le traduisons en critères vérifiables.
+        « liberticide » est un jugement : pour chaque thème, nous le traduisons en critères vérifiables.
       </p>
 
-      <H2>La grille</H2>
+      <H2>Les critères</H2>
       <dl className="mt-3 space-y-3">
         {grille.criteres.map((c) => (
           <div key={c.id} className="rounded border border-line p-3">
             <dt className="font-semibold">
-              <Link href={`/grille/${c.id}`}>{c.label}</Link>
+              <Link href={lienCritere(c.id)}>{c.label}</Link>
             </dt>
             <dd className="mt-1 text-sm text-ink-2">{c.definition}</dd>
           </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { documentsDuParti, getGroupe, grille, meta, partis, getParti, positions, scrutinDe } from "@/lib/data";
+import { documentsDuParti, getGroupe, grille, meta, partis, getParti, positions, scrutinDe, lienCritere } from "@/lib/data";
 import { EtatVide, FicheMeta, Sources } from "@/components/Fiche";
 import { GroupeTag } from "@/components/GroupeTag";
 import { Confrontation, SourceBadge } from "@/components/Confrontation";
@@ -74,7 +74,7 @@ export default async function PartiPage({ params }: { params: Promise<{ id: stri
       {grille.criteres.map((c) => (
         <section key={c.id} className="mt-4 rounded border border-line p-3">
           <h2 className="mb-3 font-semibold">
-            <Link href={`/grille/${c.id}`} className="text-ink no-underline hover:underline">
+            <Link href={lienCritere(c.id)} className="text-ink no-underline hover:underline">
               {c.label}
             </Link>
           </h2>

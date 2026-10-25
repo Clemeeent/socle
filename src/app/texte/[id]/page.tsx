@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { dossiers, formatDate, getCritere, grille, meta, scrutinDe, getTexte } from "@/lib/data";
+import { dossiers, formatDate, getCritere, grille, meta, scrutinDe, getTexte, lienCritere } from "@/lib/data";
 import { parGroupe } from "@/lib/stats";
 import { EtatVide, FicheMeta, Sources } from "@/components/Fiche";
 import { Hemicycle } from "@/components/Hemicycle";
@@ -77,11 +77,11 @@ export default async function TextePage({ params }: { params: Promise<{ id: stri
       </section>
 
       <section className="mt-8 rounded bg-bg-alt p-4">
-        <h2 className="text-base font-semibold">Pourquoi ce texte est dans la grille</h2>
+        <h2 className="text-base font-semibold">Pourquoi ce texte a été retenu</h2>
         <ul className="mt-2 flex flex-wrap gap-2">
           {texte.criteres.map((c) => (
             <li key={c}>
-              <Link href={`/grille/${c}`} className="rounded-full bg-white px-2.5 py-0.5 text-xs no-underline border border-line">
+              <Link href={lienCritere(c)} className="rounded-full bg-white px-2.5 py-0.5 text-xs no-underline border border-line">
                 {getCritere(c)?.label}
               </Link>
             </li>

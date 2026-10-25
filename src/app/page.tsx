@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { documentsDuParti, getGroupe, grille, partis, questions, textesDuCritere } from "@/lib/data";
+import { documentsDuParti, getGroupe, grille, partis, questions, textesDuCritere, lienCritere, lienTheme, theme } from "@/lib/data";
 import { QuestionBox } from "@/components/QuestionBox";
 
 function etatProgramme(partiId: string) {
@@ -64,17 +64,19 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="mt-12">
+      <section id="themes" className="mt-12 scroll-mt-4">
         <h2 className="text-lg font-semibold">Thèmes</h2>
         <ol className="mt-3 divide-y divide-line border-y border-line">
           <li className="py-3">
-            <p className="font-semibold">1. Libertés publiques</p>
+            <Link href={lienTheme()} className="font-semibold text-ink no-underline hover:underline">
+              1. {theme.label} →
+            </Link>
             <ol className="mt-2 space-y-1.5 pl-4 text-sm">
               {grille.criteres.map((c, i) => {
                 const n = textesDuCritere(c.id).length;
                 return (
                   <li key={c.id} className="flex justify-between gap-2">
-                    <Link href={`/grille/${c.id}`}>
+                    <Link href={lienCritere(c.id)}>
                       1.{i + 1} {c.label}
                     </Link>
                     <span className="shrink-0 text-ink-3">

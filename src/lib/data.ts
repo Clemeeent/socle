@@ -76,6 +76,7 @@ export type Question = {
 };
 
 export const grille = grilleJson as {
+  theme: { id: string; label: string; intro: string };
   statut: string;
   miseAJour: string;
   avertissement: string;
@@ -90,6 +91,10 @@ export const meta = metaJson as { importeLe: string; sources: string[] };
 export const questions = questionsJson as Question[];
 
 export const getCritere = (id: string) => grille.criteres.find((c) => c.id === id);
+// Demo has a single theme; its criteria live under /theme/<theme>/<critere>.
+export const theme = grille.theme;
+export const lienTheme = () => `/theme/${theme.id}`;
+export const lienCritere = (id: string) => `${lienTheme()}/${id}`;
 export const getTexte = (id: string) => grille.textes.find((t) => t.id === id);
 export const getGroupe = (ref: string) => groupes.find((g) => g.organeRef === ref);
 export const getQuestion = (slug: string) => questions.find((q) => q.slug === slug);

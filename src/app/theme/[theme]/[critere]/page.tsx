@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCritere, getGroupe, grille, groupesSansParti, meta, partis, scrutinDe, textesDuCritere } from "@/lib/data";
+import {
+  getCritere,
+  getGroupe,
+  grille,
+  groupesSansParti,
+  lienCritere,
+  lienTheme,
+  meta,
+  partis,
+  scrutinDe,
+  textesDuCritere,
+  theme,
+} from "@/lib/data";
 import { repartition, part, pct } from "@/lib/stats";
 import { FicheMeta, Sources } from "@/components/Fiche";
 import { GroupeTag } from "@/components/GroupeTag";
@@ -9,29 +21,32 @@ import { VoteBar, VoteLegende } from "@/components/VoteBar";
 import { Confrontation } from "@/components/Confrontation";
 
 export const dynamicParams = false;
-export const generateStaticParams = () => grille.criteres.map((c) => ({ critere: c.id }));
+export const generateStaticParams = () => grille.criteres.map((c) => ({ theme: theme.id, critere: c.id }));
 
-export async function generateMetadata({ params }: { params: Promise<{ critere: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ theme: string; critere: string }> }): Promise<Metadata> {
   const { critere } = await params;
   return { title: getCritere(critere)?.label };
 }
 
-export default async function GrillePage({ params }: { params: Promise<{ critere: string }> }) {
-  const { critere } = await params;
+export default async function GrillePage({ params }: { params: Promise<{ theme: string; critere: string }> }) {
+  const { theme: themeId, critere } = await params;
   const c = getCritere(critere);
-  if (!c) notFound();
+  if (!c || themeId !== theme.id) notFound();
   const textes = textesDuCritere(c.id).map((t) => ({ t, s: scrutinDe(t) }));
   const autres = groupesSansParti().filter((g) => textes.some(({ s }) => s.groupes.some((v) => v.organeRef === g.organeRef)));
 
   return (
     <article>
-      <p className="text-xs uppercase tracking-wide text-ink-3">La grille · un critère à la fois</p>
+      <nav aria-label="Fil d'Ariane" className="text-xs text-ink-3">
+        <Link href="/#themes" className="text-ink-3">Thèmes</Link> ›{" "}
+        <Link href={lienTheme()} className="text-ink-3">{theme.label}</Link>
+      </nav>
       <nav aria-label="Critères" className="-mx-4 mt-2 overflow-x-auto px-4">
         <ul className="flex gap-2 whitespace-nowrap">
           {grille.criteres.map((x) => (
             <li key={x.id}>
               <Link
-                href={`/grille/${x.id}`}
+                href={lienCritere(x.id)}
                 aria-current={x.id === c.id ? "page" : undefined}
                 className={`block rounded-full border px-3 py-1.5 text-sm no-underline ${
                   x.id === c.id ? "border-accent bg-accent text-white" : "border-line text-ink-2 hover:border-accent"
