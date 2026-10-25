@@ -50,9 +50,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a {
-  color: var(--accent);
-  text-underline-offset: 3px;
+@layer base {
+  a {
+    color: var(--accent);
+    text-underline-offset: 3px;
+  }
 }
 
 :focus-visible {
