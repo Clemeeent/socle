@@ -6,6 +6,7 @@ import { questionParSlug } from "@/lib/question";
 import { parGroupe, synthese } from "@/lib/stats";
 import { FicheMeta, SourceInline, Sources } from "@/components/Fiche";
 import { RecapGroupes } from "@/components/RecapGroupes";
+import { MatricePartis } from "@/components/MatricePartis";
 
 export const dynamicParams = false;
 export const generateStaticParams = () => questions.map((q) => ({ slug: q.slug }));
@@ -67,6 +68,14 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
         </p>
         <div className="mt-4">
           <RecapGroupes lignes={parGroupe(textes)} totalTextes={textes.length} />
+        </div>
+      </section>
+
+      <section className="mt-8">
+        <h2 className="text-lg font-semibold">Ce qu&apos;ils proposent, ce qu&apos;ils ont voté</h2>
+        <p className="mt-1 text-sm text-ink-3">Parti par parti, critère par critère. Touchez un parti pour le détail.</p>
+        <div className="mt-3">
+          <MatricePartis criteres={q.criteres} />
         </div>
       </section>
 

@@ -6,6 +6,10 @@ import dossiersJson from "../../data/dossiers.json";
 import deputesJson from "../../data/deputes.json";
 import metaJson from "../../data/meta.json";
 import questionsJson from "../../data/questions.json";
+import partisJson from "../../data/partis.json";
+import positionsJson from "../../data/positions.json";
+import sourcesJson from "../../programmes/sources.json";
+import { TYPES_DOCUMENT, type DocumentProgramme, type Position } from "./programmes-core";
 
 export type Critere = { id: string; label: string; definition: string };
 
@@ -111,3 +115,40 @@ export function formatDate(iso: string) {
     year: "numeric",
   });
 }
+
+// ── Parties and their programmes ──────────────────────────────────────────────
+
+export type { DocumentProgramme, Position };
+export type Parti = { id: string; nom: string; sigle: string; groupes: string[]; remarque?: string };
+
+const ordreParti = (p: Parti) => Math.min(...p.groupes.map((g) => getGroupe(g)?.ordre ?? 99));
+export const partisMeta = partisJson as { statut: string; note: string; partis: Parti[] };
+export const partis = partisMeta.partis.toSorted((a, b) => ordreParti(a) - ordreParti(b));
+export const documents = (sourcesJson as { documents: DocumentProgramme[] }).documents;
+export const positions = positionsJson as Position[];
+
+export const getParti = (id: string) => partis.find((p) => p.id === id);
+export const getDocument = (id: string) => documents.find((d) => d.id === id);
+export const partiDuGroupe = (organeRef: string) => partis.find((p) => p.groupes.includes(organeRef));
+export const groupesSansParti = () => groupes.filter((g) => !partiDuGroupe(g.organeRef));
+
+export const documentsDuParti = (id: string) =>
+  documents
+    .filter((d) => d.parti === id)
+    .toSorted((a, b) => TYPES_DOCUMENT.indexOf(a.type) - TYPES_DOCUMENT.indexOf(b.type));
+
+export type EtatPropositions =
+  | { etat: "positions"; positions: Position[] }
+  | { etat: "aucune" } // document read for this criterion, nothing found
+  | { etat: "non-analyse" };
+
+export function propositions(partiId: string, critereId: string): EtatPropositions {
+  const trouvees = positions.filter((p) => p.parti === partiId && p.critere === critereId);
+  if (trouvees.length) return { etat: "positions", positions: trouvees };
+  if (documentsDuParti(partiId).some((d) => d.criteresAnalyses.includes(critereId))) return { etat: "aucune" };
+  return { etat: "non-analyse" };
+}
+
+// The vote of the party's group on a given scrutin (a party may map to successive groups).
+export const voteDuParti = (parti: Parti, scrutin: Scrutin) =>
+  scrutin.groupes.find((v) => parti.groupes.includes(v.organeRef));

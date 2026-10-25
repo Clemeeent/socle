@@ -1,5 +1,33 @@
 // Pure text functions shared by the programme scripts and their tests (no file or PDF access here).
 
+export type DocumentProgramme = {
+  id: string;
+  parti: string;
+  type: "programme-2027" | "programme-presidentiel-2022" | "texte-officiel";
+  titre: string;
+  annee: number;
+  url: string;
+  fichier: string;
+  consulteLe: string;
+  criteresAnalyses: string[];
+};
+
+export type Position = {
+  id: string;
+  parti: string;
+  critere: string;
+  document: string;
+  resume: string;
+  citation: string;
+  page: number;
+  lien: string;
+  date: string;
+  statut: string;
+};
+
+// Priority order of sources: 2027 programme, else 2022 presidential programme, else official party text.
+export const TYPES_DOCUMENT = ["programme-2027", "programme-presidentiel-2022", "texte-officiel"] as const;
+
 // Makes a PDF's extracted text comparable with a citation typed by hand:
 // ligatures, curly quotes, non-breaking spaces, soft hyphens and line-break hyphenation.
 // Words, their order, punctuation and case are kept: the citation must still be verbatim.

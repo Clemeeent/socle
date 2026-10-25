@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { dossiers, formatDate, getCritere, grille, groupes, meta, scrutinDe } from "@/lib/data";
+import { dossiers, documents, formatDate, getCritere, getGroupe, grille, groupes, meta, partis, partisMeta, scrutinDe } from "@/lib/data";
 import { StatutBadge } from "@/components/Fiche";
 import { GroupeTag } from "@/components/GroupeTag";
 
 export const metadata: Metadata = { title: "Méthode" };
 
-function H2({ children }: { children: React.ReactNode }) {
-  return <h2 className="mt-10 text-xl font-bold">{children}</h2>;
+function H2({ children, id }: { children: React.ReactNode; id?: string }) {
+  return <h2 id={id} className="mt-10 scroll-mt-4 text-xl font-bold">{children}</h2>;
 }
 
 export default function MethodePage() {
@@ -39,6 +39,59 @@ export default function MethodePage() {
           </div>
         ))}
       </dl>
+
+      <H2>Les programmes des partis</H2>
+      <ul className="mt-2 list-disc space-y-1.5 pl-5">
+        <li>
+          Un document par parti, par ordre de priorité : <strong>programme 2027</strong> s&apos;il est
+          publié, sinon <strong>programme présidentiel 2022</strong>, sinon{" "}
+          <strong>texte officiel du parti</strong> (projet, motion de congrès). Le badge de chaque
+          proposition indique la provenance et l&apos;année.
+        </li>
+        <li>
+          Seuls des PDF officiels, téléchargés depuis le site du parti, sont utilisés. Un parti qui
+          n&apos;avait pas son propre candidat en 2022 n&apos;hérite pas du programme d&apos;un autre.
+        </li>
+        <li>
+          Le texte est extrait page par page. Une même liste de mots-clés par critère, identique pour
+          tous les partis, repère les passages candidats. Chaque proposition retenue comporte un
+          résumé neutre, une <strong>citation courte et exacte</strong> et son numéro de page.
+        </li>
+        <li>
+          Un contrôle automatique vérifie que chaque citation figure mot pour mot à la page indiquée
+          du PDF ; seules les différences typographiques (apostrophes, guillemets, espaces,
+          césures de fin de ligne) sont tolérées. Sinon, la proposition est refusée.
+        </li>
+        <li>
+          « Pas de proposition trouvée dans le programme » signifie que le document a été lu pour ce
+          critère sans résultat : c&apos;est aussi une information. « Programme pas encore analysé »
+          signifie qu&apos;aucun document n&apos;a encore été traité.
+        </li>
+      </ul>
+      <p className="mt-2 text-sm text-ink-3">
+        Documents analysés à ce jour : {documents.length === 0 ? "aucun." : documents.length + "."}
+      </p>
+
+      <H2 id="partis">Partis et groupes parlementaires</H2>
+      <p className="mt-2">
+        {partisMeta.note} Statut : <strong>{partisMeta.statut}</strong>.
+      </p>
+      <table className="mt-3 w-full text-sm">
+        <tbody>
+          {partis.map((p) => (
+            <tr key={p.id} className="border-b border-line align-top">
+              <td className="py-1.5 pr-3">
+                <Link href={`/parti/${p.id}`}>{p.nom}</Link>
+              </td>
+              <td className="py-1.5">
+                {p.groupes.map((g) => getGroupe(g)!.sigle).join(" puis ")}
+                {p.remarque && <span className="block text-xs text-ink-3">{p.remarque}</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="mt-2 text-xs text-ink-3">LIOT et les non-inscrits ne correspondent à aucun parti unique : seuls leurs votes sont affichés.</p>
 
       <H2>Comment les textes sont sélectionnés</H2>
       <ul className="mt-2 list-disc space-y-1.5 pl-5">
@@ -174,7 +227,7 @@ export default function MethodePage() {
       <ul className="mt-2 list-disc space-y-1.5 pl-5">
         <li>{grille.textes.length} textes seulement : trop peu pour un classement robuste.</li>
         <li>Un vote ne dit pas pourquoi un député a voté ainsi ; il ne remplace pas une position.</li>
-        <li>Le Sénat, les programmes 2027 et les analyses juridiques ne sont pas encore couverts.</li>
+        <li>Le Sénat et les analyses juridiques ne sont pas encore couverts ; les programmes sont en cours d&apos;intégration.</li>
       </ul>
     </article>
   );

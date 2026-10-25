@@ -24,12 +24,26 @@ législatifs), ne garde que les scrutins listés dans `data/grille.json` et écr
 fichiers JSON dans `data/`. Il s'arrête en erreur si un décompte nominatif ne
 correspond pas au décompte officiel.
 
+## Programmes des partis
+
+Voir `programmes/LISEZMOI.md`. En bref : déposer les PDF officiels dans `programmes/`,
+les déclarer dans `programmes/sources.json`, puis :
+
+```bash
+npm run programmes:extraire   # passages candidats par critère → programmes/candidats/
+npm run programmes:verifier   # chaque citation de data/positions.json doit figurer
+                              # mot pour mot à la page indiquée du PDF
+npm test                      # inclut la même vérification
+```
+
 ## Où sont les choses
 
 | Fichier | Rôle |
 |---|---|
 | `data/grille.json` | Critères et sélection des textes (à faire valider par un juriste) |
 | `data/questions.json` | Questions d'exemple et leur reformulation |
+| `data/partis.json` | Partis et groupe(s) parlementaire(s) associé(s) (à valider) |
+| `data/positions.json` | Propositions tirées des programmes, avec citation et page |
 | `data/*.json` (autres) | Générés par `npm run import`, ne pas modifier à la main |
 | `src/lib/stats.ts` | Tous les calculs affichés |
 | `src/lib/question.ts` | Interprétation des questions (point d'entrée pour un futur LLM) |

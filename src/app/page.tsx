@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { grille, questions, textesDuCritere } from "@/lib/data";
+import { documentsDuParti, getGroupe, grille, partis, questions, textesDuCritere } from "@/lib/data";
 import { QuestionBox } from "@/components/QuestionBox";
 
 // Only "Libertés publiques" has content in the demo; the others are announced, not filled.
@@ -36,6 +36,26 @@ export default function Home() {
             ))}
           </ul>
         </div>
+      </section>
+
+      <section id="partis" className="mt-12 scroll-mt-4">
+        <h2 className="text-lg font-semibold">Partis</h2>
+        <p className="mt-1 text-sm text-ink-3">Leurs propositions face aux votes de leur groupe.</p>
+        <ul className="mt-3 grid grid-cols-2 gap-2">
+          {partis.map((p) => (
+            <li key={p.id}>
+              <Link href={`/parti/${p.id}`} className="flex h-full items-start gap-2 rounded border border-line p-2.5 text-sm no-underline hover:border-accent">
+                <span className="mt-1.5 inline-block h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: getGroupe(p.groupes[0])!.couleur }} />
+                <span>
+                  <span className="block font-medium leading-snug text-ink">{p.nom}</span>
+                  <span className="block text-xs text-ink-3">
+                    {documentsDuParti(p.id).length ? "Programme analysé" : "Programme à venir"}
+                  </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mt-12">

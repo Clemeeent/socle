@@ -6,36 +6,20 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
-import { pagesAvecCitation, problemeCitation, trouverCandidats } from "../src/lib/programmes-core";
+import {
+  pagesAvecCitation,
+  problemeCitation,
+  trouverCandidats,
+  TYPES_DOCUMENT,
+  type DocumentProgramme,
+  type Position,
+} from "../src/lib/programmes-core";
 
 const DIR = "programmes";
-const TYPES = ["programme-2027", "programme-presidentiel-2022", "texte-officiel"];
 const STATUTS = ["à valider", "vérifié"];
 
-export type Document = {
-  id: string;
-  parti: string;
-  type: string;
-  titre: string;
-  annee: number;
-  url: string;
-  fichier: string;
-  consulteLe: string;
-  criteresAnalyses: string[];
-};
-
-export type Position = {
-  id: string;
-  parti: string;
-  critere: string;
-  document: string;
-  resume: string;
-  citation: string;
-  page: number;
-  lien: string;
-  date: string;
-  statut: string;
-};
+export type Document = DocumentProgramme;
+export type { Position };
 
 const lireJson = <T>(p: string): T => JSON.parse(readFileSync(p, "utf8"));
 
@@ -77,7 +61,7 @@ export async function verifier(opts: {
   const docs = new Map(opts.documents.map((d) => [d.id, d]));
   for (const d of opts.documents) {
     if (!opts.partis.includes(d.parti)) erreurs.push(`${d.id} : parti inconnu « ${d.parti} »`);
-    if (!TYPES.includes(d.type)) erreurs.push(`${d.id} : type inconnu « ${d.type} »`);
+    if (!(TYPES_DOCUMENT as readonly string[]).includes(d.type)) erreurs.push(`${d.id} : type inconnu « ${d.type} »`);
     if (!/^https:\/\//.test(d.url)) erreurs.push(`${d.id} : l'URL officielle doit commencer par https://`);
     for (const c of d.criteresAnalyses) if (!opts.criteres.includes(c)) erreurs.push(`${d.id} : critère inconnu « ${c} »`);
     if (!existsSync(join(racine, d.fichier))) erreurs.push(`${d.id} : fichier ${d.fichier} absent de ${racine}/`);

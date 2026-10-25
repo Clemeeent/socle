@@ -22,6 +22,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <Link href="/grille/manifester" className="text-ink-2 no-underline hover:underline">
                 La grille
               </Link>
+              <Link href="/#partis" className="text-ink-2 no-underline hover:underline">
+                Partis
+              </Link>
               <Link href="/methode" className="text-ink-2 no-underline hover:underline">
                 Méthode
               </Link>
