@@ -2,15 +2,89 @@
  "statut": "à valider",
  "note": "Correspondance parti ↔ groupe parlementaire proposée par Socle. Les votes sont ceux du groupe, les propositions celles du parti.",
  "partis": [
-  { "id": "lfi", "nom": "La France insoumise", "sigle": "LFI", "groupes": ["PO845413"] },
-  { "id": "pcf", "nom": "Parti communiste français", "sigle": "PCF", "groupes": ["PO845514"], "remarque": "Le groupe GDR réunit aussi des députés ultramarins qui ne sont pas membres du PCF." },
-  { "id": "ecologistes", "nom": "Les Écologistes", "sigle": "LE", "groupes": ["PO845439"], "remarque": "Le groupe Écologiste et social compte aussi des députés d'autres formations." },
-  { "id": "ps", "nom": "Parti socialiste", "sigle": "PS", "groupes": ["PO845419"] },
-  { "id": "modem", "nom": "Mouvement démocrate", "sigle": "MoDem", "groupes": ["PO845454"] },
-  { "id": "renaissance", "nom": "Renaissance", "sigle": "RE", "groupes": ["PO845407"] },
-  { "id": "horizons", "nom": "Horizons", "sigle": "HOR", "groupes": ["PO845470"] },
-  { "id": "lr", "nom": "Les Républicains", "sigle": "LR", "groupes": ["PO845425"] },
-  { "id": "udr", "nom": "Union des droites pour la République", "sigle": "UDR", "groupes": ["PO847173", "PO872880"], "remarque": "Groupe « UDR » (2024-2025), puis « Union des droites pour la République » (depuis septembre 2025)." },
-  { "id": "rn", "nom": "Rassemblement national", "sigle": "RN", "groupes": ["PO845401"] }
+  {
+   "id": "lfi",
+   "nom": "La France insoumise",
+   "sigle": "LFI",
+   "groupes": [
+    "PO845413"
+   ]
+  },
+  {
+   "id": "pcf",
+   "nom": "Parti communiste français",
+   "sigle": "PCF",
+   "groupes": [
+    "PO845514"
+   ],
+   "remarque": "Le groupe GDR réunit aussi des députés ultramarins qui ne sont pas membres du PCF."
+  },
+  {
+   "id": "ecologistes",
+   "nom": "Les Écologistes",
+   "sigle": "Écologistes",
+   "groupes": [
+    "PO845439"
+   ],
+   "remarque": "Le groupe Écologiste et social compte aussi des députés d'autres formations."
+  },
+  {
+   "id": "ps",
+   "nom": "Parti socialiste",
+   "sigle": "PS",
+   "groupes": [
+    "PO845419"
+   ]
+  },
+  {
+   "id": "modem",
+   "nom": "Mouvement démocrate",
+   "sigle": "MoDem",
+   "groupes": [
+    "PO845454"
+   ]
+  },
+  {
+   "id": "renaissance",
+   "nom": "Renaissance",
+   "sigle": "Renaissance",
+   "groupes": [
+    "PO845407"
+   ]
+  },
+  {
+   "id": "horizons",
+   "nom": "Horizons",
+   "sigle": "Horizons",
+   "groupes": [
+    "PO845470"
+   ]
+  },
+  {
+   "id": "lr",
+   "nom": "Les Républicains",
+   "sigle": "LR",
+   "groupes": [
+    "PO845425"
+   ]
+  },
+  {
+   "id": "udr",
+   "nom": "Union des droites pour la République",
+   "sigle": "UDR",
+   "groupes": [
+    "PO847173",
+    "PO872880"
+   ],
+   "remarque": "Groupe « UDR » (2024-2025), puis « Union des droites pour la République » (depuis septembre 2025)."
+  },
+  {
+   "id": "rn",
+   "nom": "Rassemblement national",
+   "sigle": "RN",
+   "groupes": [
+    "PO845401"
+   ]
+  }
  ]
 }

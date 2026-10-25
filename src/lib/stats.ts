@@ -1,14 +1,9 @@
 // All the numbers shown on the site are computed here, from the official tallies.
-import { getGroupe, groupes, scrutinDe, type Groupe, type Texte, type VoteGroupe } from "./data";
+import { getGroupe, grille, partis, scrutinDe, voteDuParti, type Texte, type VoteGroupe } from "./data";
 
-export type Repartition = { pour: number; contre: number; abstention: number; absent: number; membres: number };
+import { CATEGORIES, part, pct, type Repartition } from "./format";
 
-export const CATEGORIES = [
-  { key: "pour", label: "Pour" },
-  { key: "contre", label: "Contre" },
-  { key: "abstention", label: "Abstention" },
-  { key: "absent", label: "Absent ou non-votant" },
-] as const;
+export { CATEGORIES, part, pct, type Repartition };
 
 // "Absent" = group members with no recorded vote, plus those who did not take part (nonVotant).
 export function repartition(v: VoteGroupe): Repartition {
@@ -30,53 +25,59 @@ function ajoute(a: Repartition, b: Repartition): Repartition {
   };
 }
 
-export const part = (n: number, total: number) => (total === 0 ? 0 : n / total);
-export const pct = (x: number) => `${Math.round(x * 100)} %`;
 
-export type LigneGroupe = { groupe: Groupe; total: Repartition; textes: number };
+// ── Party ranking (answer pages) ─────────────────────────────────────────────
 
-// Sum of every seat of the group over the selected votes: share = votes "pour" / seats.
-export function parGroupe(textes: Texte[]): LigneGroupe[] {
-  const lignes = new Map<string, LigneGroupe>();
-  for (const t of textes) {
-    for (const v of scrutinDe(t).groupes) {
-      const groupe = getGroupe(v.organeRef)!;
-      const l = lignes.get(v.organeRef) ?? { groupe, total: vide(), textes: 0 };
-      lignes.set(v.organeRef, { groupe, total: ajoute(l.total, repartition(v)), textes: l.textes + 1 });
-    }
-  }
-  return groupes.flatMap((g) => lignes.get(g.organeRef) ?? []);
+export type DetailTexte = { id: string; titre: string; r: Repartition | null };
+export type LignePartiData = {
+  id: string;
+  sigle: string;
+  nom: string;
+  couleur: string;
+  total: Repartition;
+  textes: DetailTexte[];
+};
+
+// One line per party (its group's votes), sorted by share of "pour", most first.
+// Ties keep the hemicycle order. Groups without a party (LIOT, NI) are left out.
+export function classementPartis(textes: Texte[]): LignePartiData[] {
+  return partis
+    .map((p) => {
+      let total = vide();
+      const details = textes.map((t) => {
+        const v = voteDuParti(p, scrutinDe(t));
+        const r = v ? repartition(v) : null;
+        if (r) total = ajoute(total, r);
+        return { id: t.id, titre: t.titreCourt, r };
+      });
+      return {
+        id: p.id,
+        sigle: p.sigle,
+        nom: p.nom,
+        couleur: getGroupe(p.groupes[0])!.couleur,
+        total,
+        textes: details,
+      };
+    })
+    .toSorted((a, b) => part(b.total.pour, b.total.membres) - part(a.total.pour, a.total.membres));
 }
 
-export type Phrase = { texte: string; sources: { label: string; href: string }[] };
+// "votés en 2025-2026"
+export function periode(textes: Texte[]) {
+  const annees = [...new Set(textes.map((t) => scrutinDe(t).date.slice(0, 4)))].toSorted();
+  return annees.length > 1 ? `${annees[0]}-${annees[annees.length - 1]}` : annees[0];
+}
 
-export function synthese(textes: Texte[]): Phrase[] {
-  if (textes.length === 0) return [];
-  const sources = textes.map((t) => {
-    const s = scrutinDe(t);
-    return { label: `Scrutin n° ${s.numero}`, href: s.url };
+// The views of the ranking: all criteria together, then one per criterion.
+export function vuesClassement(criteres: string[], chapeauTous: string) {
+  const textesDe = (ids: string[]) => grille.textes.filter((t) => t.criteres.some((c) => ids.includes(c)));
+  const vue = (id: string, label: string, chapeau: string, ids: string[]) => {
+    const textes = textesDe(ids);
+    return { id, label, chapeau, nTextes: textes.length, lignes: classementPartis(textes) };
+  };
+  const parCritere = criteres.map((id) => {
+    const c = grille.criteres.find((x) => x.id === id)!;
+    return vue(id, c.label, c.chapeau, [id]);
   });
-  const adoptes = textes.filter((t) => scrutinDe(t).sort === "adopté").length;
-  // Non-attached deputies are not a group: they are left out of the comparison.
-  const lignes = parGroupe(textes).filter((l) => !l.groupe.nonInscrits);
-  const tri = lignes.toSorted((a, b) => part(b.total.pour, b.total.membres) - part(a.total.pour, a.total.membres));
-  const haut = tri[0];
-  const bas = tri[tri.length - 1];
-  const tous = lignes.reduce((acc, l) => ajoute(acc, l.total), vide());
-  const n = textes.length;
-  const nom = (l: LigneGroupe) => `${l.groupe.libelle} (${l.groupe.sigle})`;
-  return [
-    {
-      texte: `${adoptes} des ${n} texte${n > 1 ? "s" : ""} retenu${n > 1 ? "s ont" : " a"} été adopté${n > 1 ? "s" : ""} par l'Assemblée nationale lors du vote sur l'ensemble.`,
-      sources,
-    },
-    {
-      texte: `La part de députés ayant voté pour va de ${pct(part(bas.total.pour, bas.total.membres))} pour le groupe ${nom(bas)} à ${pct(part(haut.total.pour, haut.total.membres))} pour le groupe ${nom(haut)}.`,
-      sources,
-    },
-    {
-      texte: `Sur l'ensemble de ces votes, ${pct(part(tous.absent, tous.membres))} des sièges des groupes n'ont pas exprimé de vote (absents ou non-votants).`,
-      sources,
-    },
-  ];
+  return criteres.length > 1 ? [vue("tous", "Tous", chapeauTous, criteres), ...parCritere] : parCritere;
 }

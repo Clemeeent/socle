@@ -154,6 +154,11 @@ export default function MethodePage() {
           cela signifie qu&apos;il a voté contre.
         </li>
         <li>
+          Sur les pages réponse, les partis sont <strong>classés</strong> par part de votes « pour »,
+          du plus au moins. Les groupes sans parti associé (LIOT, non-inscrits) n&apos;entrent pas dans
+          ce classement.
+        </li>
+        <li>
           <strong>Absent ou non-votant</strong> = effectif − pour − contre − abstentions. Cela inclut
           les députés qui ne prennent pas part au vote (par exemple la présidence de séance).
         </li>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
-import { grille, meta, formatDate } from "@/lib/data";
+import { meta, formatDate } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: { default: "Socle — les faits avant le débat", template: "%s · Socle" },
@@ -17,6 +17,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="mx-auto max-w-3xl px-4 h-14 flex items-center justify-between">
             <Link href="/" className="font-bold text-lg tracking-tight text-ink no-underline">
               Socle<span className="text-accent">.</span>
+              <span className="ml-2 rounded bg-warn-bg px-1.5 py-0.5 align-middle text-[10px] font-medium uppercase tracking-wide text-warn-ink">
+                démo
+              </span>
             </Link>
             <nav className="flex gap-4 text-sm">
               <Link href="/#themes" className="text-ink-2 no-underline hover:underline">
@@ -31,11 +34,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </nav>
           </div>
         </header>
-        <div role="note" className="bg-warn-bg text-warn-ink text-sm">
-          <div className="mx-auto max-w-3xl px-4 py-2">
-            <strong>{grille.avertissement}</strong> Version de démonstration.
-          </div>
-        </div>
         <main className="flex-1 mx-auto w-full max-w-3xl px-4 py-6">{children}</main>
         <footer className="border-t border-line bg-bg-alt text-sm text-ink-3">
           <div className="mx-auto max-w-3xl px-4 py-6 space-y-2">

@@ -2,22 +2,48 @@
   {
     "slug": "lois-liberticides",
     "question": "Quels partis votent le plus de lois liberticides ?",
-    "motsCles": ["liberticide", "liberté", "libertés", "restreign"],
-    "reformulation": "Tu cherches les textes qui restreignent des libertés publiques. « Liberticide » est un jugement : nous le traduisons en quatre critères vérifiables. Voici nos critères.",
-    "criteres": ["manifester", "surveillance", "expression", "police"]
+    "motsCles": [
+      "liberticide",
+      "liberté",
+      "libertés",
+      "restreign"
+    ],
+    "chapeau": "qui restreignent une liberté publique",
+    "criteres": [
+      "manifester",
+      "surveillance",
+      "expression",
+      "police"
+    ]
   },
   {
     "slug": "surveillance",
     "question": "Qui a voté pour étendre la surveillance ?",
-    "motsCles": ["surveillance", "caméra", "données", "renseignement", "fichier"],
-    "reformulation": "Tu cherches les textes qui étendent la surveillance ou l'usage des données personnelles. Voici le critère que nous utilisons.",
-    "criteres": ["surveillance"]
+    "motsCles": [
+      "surveillance",
+      "caméra",
+      "données",
+      "renseignement",
+      "fichier"
+    ],
+    "chapeau": "qui étendent la surveillance ou l'usage des données personnelles",
+    "criteres": [
+      "surveillance"
+    ]
   },
   {
     "slug": "pouvoirs-de-police",
     "question": "Qui a voté pour plus de pouvoirs de police ?",
-    "motsCles": ["police", "policier", "état d'urgence", "sécurité", "ordre public"],
-    "reformulation": "Tu cherches les textes qui étendent les pouvoirs de police ou des régimes d'exception. Voici le critère que nous utilisons.",
-    "criteres": ["police"]
+    "motsCles": [
+      "police",
+      "policier",
+      "état d'urgence",
+      "sécurité",
+      "ordre public"
+    ],
+    "chapeau": "qui étendent les pouvoirs de police ou des régimes d'exception",
+    "criteres": [
+      "police"
+    ]
   }
 ]

@@ -2,7 +2,8 @@
   "theme": {
     "id": "libertes-publiques",
     "label": "Libertés publiques",
-    "intro": "« Liberticide » est un jugement, pas un fait. Socle le traduit en critères vérifiables, appliqués de la même façon à tous les partis : un texte est retenu s'il répond à au moins un critère."
+    "intro": "« Liberticide » est un jugement, pas un fait. Socle le traduit en critères vérifiables, appliqués de la même façon à tous les partis : un texte est retenu s'il répond à au moins un critère.",
+    "chapeau": "qui restreignent une liberté publique"
   },
   "statut": "à valider",
   "miseAJour": "2026-10-25",
@@ -23,7 +24,8 @@
         "dispersion",
         "liberté de réunion",
         "droit de grève"
-      ]
+      ],
+      "chapeau": "qui encadrent ou restreignent les rassemblements"
     },
     {
       "id": "surveillance",
@@ -42,7 +44,8 @@
         "CNIL",
         "chiffrement",
         "vie privée"
-      ]
+      ],
+      "chapeau": "qui étendent la surveillance ou l'usage des données personnelles"
     },
     {
       "id": "expression",
@@ -60,7 +63,8 @@
         "lanceur d'alerte",
         "blasphème",
         "désinformation"
-      ]
+      ],
+      "chapeau": "qui restreignent la liberté d'expression ou l'accès aux moyens de publication"
     },
     {
       "id": "police",
@@ -80,7 +84,8 @@
         "rétention",
         "pouvoirs exceptionnels",
         "état d'exception"
-      ]
+      ],
+      "chapeau": "qui étendent les pouvoirs de police ou des régimes d'exception"
     }
   ],
   "textes": [

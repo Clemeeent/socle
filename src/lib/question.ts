@@ -3,7 +3,7 @@
 // Later: replace the body of interpreterQuestion with an LLM call; the pages don't change.
 import { getQuestion, questions, type Question } from "./data";
 
-export type Interpretation = Pick<Question, "slug" | "reformulation" | "criteres">;
+export type Interpretation = Pick<Question, "slug" | "chapeau" | "criteres">;
 
 const normalise = (s: string) =>
   s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");

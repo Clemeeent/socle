@@ -11,7 +11,7 @@ import positionsJson from "../../data/positions.json";
 import sourcesJson from "../../programmes/sources.json";
 import { TYPES_DOCUMENT, type DocumentProgramme, type Position } from "./programmes-core";
 
-export type Critere = { id: string; label: string; definition: string };
+export type Critere = { id: string; label: string; definition: string; chapeau: string };
 
 export type Texte = {
   id: string;
@@ -71,12 +71,12 @@ export type Question = {
   slug: string;
   question: string;
   motsCles: string[];
-  reformulation: string;
+  chapeau: string; // completes "Sur N textes … "
   criteres: string[];
 };
 
 export const grille = grilleJson as {
-  theme: { id: string; label: string; intro: string };
+  theme: { id: string; label: string; intro: string; chapeau: string };
   statut: string;
   miseAJour: string;
   avertissement: string;

@@ -1,5 +1,5 @@
 // Horizontal stacked bar: pour / contre / abstention / absent, as shares of the group's seats.
-import { CATEGORIES, part, pct, type Repartition } from "@/lib/stats";
+import { CATEGORIES, part, pct, type Repartition } from "@/lib/format";
 
 const FILL: Record<(typeof CATEGORIES)[number]["key"], string> = {
   pour: "var(--vote-pour)",

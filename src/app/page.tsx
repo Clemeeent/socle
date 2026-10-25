@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { documentsDuParti, getGroupe, grille, partis, questions, textesDuCritere, lienCritere, lienTheme, theme } from "@/lib/data";
+import { documentsDuParti, getGroupe, grille, partis, questions, lienTheme, theme } from "@/lib/data";
 import { QuestionBox } from "@/components/QuestionBox";
 
 function etatProgramme(partiId: string) {
@@ -21,8 +21,7 @@ export default function Home() {
           <span className="text-ink-3">Le débat ensuite.</span>
         </h1>
         <p className="mt-3 leading-relaxed text-ink-2">
-          Socle répond aux questions politiques avec des votes et des textes officiels, sourcés et
-          datés, selon des critères visibles et identiques pour tous les partis.
+          Pose une question politique : Socle répond avec les votes et les programmes officiels.
         </p>
         <div className="mt-6">
           <QuestionBox />
@@ -66,36 +65,19 @@ export default function Home() {
 
       <section id="themes" className="mt-12 scroll-mt-4">
         <h2 className="text-lg font-semibold">Thèmes</h2>
-        <ol className="mt-3 divide-y divide-line border-y border-line">
-          <li className="py-3">
-            <Link href={lienTheme()} className="font-semibold text-ink no-underline hover:underline">
-              1. {theme.label} →
-            </Link>
-            <ol className="mt-2 space-y-1.5 pl-4 text-sm">
-              {grille.criteres.map((c, i) => {
-                const n = textesDuCritere(c.id).length;
-                return (
-                  <li key={c.id} className="flex justify-between gap-2">
-                    <Link href={lienCritere(c.id)}>
-                      1.{i + 1} {c.label}
-                    </Link>
-                    <span className="shrink-0 text-ink-3">
-                      {n} texte{n > 1 ? "s" : ""}
-                    </span>
-                  </li>
-                );
-              })}
-            </ol>
-          </li>
-          {THEMES_A_VENIR.map((t, i) => (
-            <li key={t} className="flex justify-between py-3 text-ink-3">
-              <span>
-                {i + 2}. {t}
-              </span>
-              <span className="text-xs">En préparation</span>
-            </li>
-          ))}
-        </ol>
+        <Link
+          href={lienTheme()}
+          className="mt-3 flex items-center justify-between rounded border border-line p-3 no-underline hover:border-accent"
+        >
+          <span>
+            <span className="block font-semibold text-ink">{theme.label}</span>
+            <span className="block text-xs text-ink-3">
+              {grille.criteres.length} critères · {grille.textes.length} textes
+            </span>
+          </span>
+          <span aria-hidden className="text-accent">→</span>
+        </Link>
+        <p className="mt-2 text-sm text-ink-3">Bientôt : {THEMES_A_VENIR.join(", ")}.</p>
       </section>
     </div>
   );
