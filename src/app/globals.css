@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Sober, DSFR-inspired tokens (without the State's identity: no Marianne font, no logo). */
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --bg-alt: #f6f6f6;
+  --ink: #161616;
+  --ink-2: #3a3a3a;
+  --ink-3: #666666;
+  --line: #dddddd;
+  --accent: #1f3c88;
+  --accent-soft: #e8edff;
+  --warn-bg: #fff4e0;
+  --warn-ink: #6b4300;
+  --ok-bg: #e3f4e8;
+  --ok-ink: #1d5a2c;
+
+  /* Vote categories: diverging pair + neutral midpoint + empty. */
+  --vote-pour: #2f4fa8;
+  --vote-contre: #c8641e;
+  --vote-abstention: #9aa0a6;
+  --vote-absent: #e6e7ea;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-warn-bg: var(--warn-bg);
+  --color-warn-ink: var(--warn-ink);
+  --color-ok-bg: var(--ok-bg);
+  --color-ok-ink: var(--ok-ink);
+  --color-pour: var(--vote-pour);
+  --color-contre: var(--vote-contre);
+  --color-abstention: var(--vote-abstention);
+  --color-absent: var(--vote-absent);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

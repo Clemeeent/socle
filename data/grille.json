@@ -1,0 +1,89 @@
+{
+  "statut": "à valider",
+  "miseAJour": "2026-10-25",
+  "avertissement": "Sélection provisoire, non validée par un juriste.",
+  "criteres": [
+    {
+      "id": "manifester",
+      "label": "Droit de manifester",
+      "definition": "Textes qui créent, élargissent ou durcissent des interdictions, des obligations de déclaration, des sanctions ou des pouvoirs de dispersion visant les rassemblements."
+    },
+    {
+      "id": "surveillance",
+      "label": "Surveillance et données personnelles",
+      "definition": "Textes qui créent ou étendent des fichiers, des techniques de renseignement, de la vidéoprotection ou des traitements automatisés de données personnelles."
+    },
+    {
+      "id": "expression",
+      "label": "Liberté d'expression",
+      "definition": "Textes qui créent ou étendent des restrictions, des obligations de retrait ou des sanctions portant sur des contenus, des propos ou l'accès à des moyens de publication."
+    },
+    {
+      "id": "police",
+      "label": "Pouvoirs de police et état d'urgence",
+      "definition": "Textes qui étendent les pouvoirs d'enquête, de contrôle, de contrainte ou de privation de liberté de l'administration ou de la police, ou des régimes d'exception."
+    }
+  ],
+  "textes": [
+    {
+      "id": "narcotrafic",
+      "titreCourt": "Sortir la France du piège du narcotrafic",
+      "scrutin": { "legislature": 17, "numero": 1473 },
+      "dossierRef": "DLR5L17N50169",
+      "criteres": ["surveillance", "police"],
+      "justification": "Le texte porte sur les moyens d'enquête et de renseignement contre la criminalité organisée.",
+      "base": "intitulé et objet général du texte",
+      "statut": "à valider"
+    },
+    {
+      "id": "surete-transports",
+      "titreCourt": "Renforcement de la sûreté dans les transports",
+      "scrutin": { "legislature": 17, "numero": 1041 },
+      "dossierRef": "DLR5L16N49176",
+      "criteres": ["police", "surveillance"],
+      "justification": "Le texte porte sur les prérogatives des agents chargés de la sûreté dans les transports.",
+      "base": "intitulé et objet général du texte",
+      "statut": "à valider"
+    },
+    {
+      "id": "prevention-attentats",
+      "titreCourt": "Sécurité, rétention administrative et prévention des risques d'attentat",
+      "scrutin": { "legislature": 17, "numero": 7405 },
+      "dossierRef": "DLR5L17N53284",
+      "criteres": ["police"],
+      "justification": "L'intitulé vise la rétention administrative et la prévention du terrorisme, deux domaines de pouvoirs de privation ou de restriction de liberté.",
+      "base": "intitulé du texte",
+      "statut": "à valider"
+    },
+    {
+      "id": "ordre-public",
+      "titreCourt": "Réponses immédiates aux phénomènes troublant l'ordre public",
+      "scrutin": { "legislature": 17, "numero": 8433 },
+      "dossierRef": "DLR5L17N53980",
+      "criteres": ["police"],
+      "justification": "L'intitulé vise l'ordre public, la sécurité et la tranquillité publique, domaine des pouvoirs de police.",
+      "base": "intitulé du texte",
+      "statut": "à valider"
+    },
+    {
+      "id": "rave-parties",
+      "titreCourt": "Pénalisation de l'organisation de rave-parties",
+      "scrutin": { "legislature": 17, "numero": 6124 },
+      "dossierRef": "DLR5L17N51711",
+      "criteres": ["manifester"],
+      "justification": "Le texte sanctionne l'organisation de rassemblements. Rattachement discutable : une rave-party relève de la liberté de réunion plus que du droit de manifester.",
+      "base": "intitulé du texte",
+      "statut": "à valider"
+    },
+    {
+      "id": "reseaux-sociaux-mineurs",
+      "titreCourt": "Protéger les mineurs des risques des réseaux sociaux",
+      "scrutin": { "legislature": 17, "numero": 8431 },
+      "dossierRef": "DLR5L17N53187",
+      "criteres": ["expression", "surveillance"],
+      "justification": "Le texte encadre l'accès des mineurs aux réseaux sociaux, ce qui touche à l'accès aux moyens de publication et peut impliquer un contrôle de l'âge des utilisateurs.",
+      "base": "intitulé du texte",
+      "statut": "à valider"
+    }
+  ]
+}

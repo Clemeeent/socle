@@ -1,0 +1,52 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import "./globals.css";
+import { grille, meta, formatDate } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: { default: "Socle — les faits avant le débat", template: "%s · Socle" },
+  description:
+    "Un socle de faits sourcés sur la politique française : votes de l'Assemblée nationale, méthode visible.",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="fr">
+      <body className="min-h-dvh flex flex-col">
+        <header className="border-b border-line">
+          <div className="mx-auto max-w-3xl px-4 h-14 flex items-center justify-between">
+            <Link href="/" className="font-bold text-lg tracking-tight text-ink no-underline">
+              Socle<span className="text-accent">.</span>
+            </Link>
+            <nav className="flex gap-4 text-sm">
+              <Link href="/grille/manifester" className="text-ink-2 no-underline hover:underline">
+                La grille
+              </Link>
+              <Link href="/methode" className="text-ink-2 no-underline hover:underline">
+                Méthode
+              </Link>
+            </nav>
+          </div>
+        </header>
+        <div role="note" className="bg-warn-bg text-warn-ink text-sm">
+          <div className="mx-auto max-w-3xl px-4 py-2">
+            <strong>{grille.avertissement}</strong> Version de démonstration.
+          </div>
+        </div>
+        <main className="flex-1 mx-auto w-full max-w-3xl px-4 py-6">{children}</main>
+        <footer className="border-t border-line bg-bg-alt text-sm text-ink-3">
+          <div className="mx-auto max-w-3xl px-4 py-6 space-y-2">
+            <p>
+              Votes : open data officiel de l&apos;Assemblée nationale, importé le{" "}
+              {formatDate(meta.importeLe)}. Textes : Légifrance.
+            </p>
+            <p>
+              Socle est un projet indépendant, sans lien avec l&apos;Assemblée nationale ni aucun
+              parti. <Link href="/methode">Lire la méthode</Link>.
+            </p>
+          </div>
+        </footer>
+      </body>
+    </html>
+  );
+}
