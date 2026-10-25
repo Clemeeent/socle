@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Socle — v1 de démonstration
 
-## Getting Started
+Site de référence sourcé sur la politique française : votes de l'Assemblée nationale,
+critères visibles, mêmes règles pour tous les groupes.
 
-First, run the development server:
+## Lancer le site en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Puis ouvrir http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Mettre à jour les votes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run import           # réutilise les fichiers déjà téléchargés (.cache/)
+npm run import -- --fresh  # retélécharge l'open data de l'Assemblée
+```
 
-## Learn More
+Le script télécharge l'open data officiel (scrutins, députés et groupes, dossiers
+législatifs), ne garde que les scrutins listés dans `data/grille.json` et écrit les
+fichiers JSON dans `data/`. Il s'arrête en erreur si un décompte nominatif ne
+correspond pas au décompte officiel.
 
-To learn more about Next.js, take a look at the following resources:
+## Où sont les choses
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Fichier | Rôle |
+|---|---|
+| `data/grille.json` | Critères et sélection des textes (à faire valider par un juriste) |
+| `data/questions.json` | Questions d'exemple et leur reformulation |
+| `data/*.json` (autres) | Générés par `npm run import`, ne pas modifier à la main |
+| `src/lib/stats.ts` | Tous les calculs affichés |
+| `src/lib/question.ts` | Interprétation des questions (point d'entrée pour un futur LLM) |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Déployer
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le projet se déploie tel quel sur Vercel : les données sont déjà dans `data/`, la
+construction du site n'a pas besoin d'accès réseau.

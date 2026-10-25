@@ -62,7 +62,7 @@ export function Hemicycle({ scrutin }: { scrutin: Scrutin }) {
     <figure>
       <svg
         viewBox={`0 0 ${W} ${R_OUT + 20}`}
-        className="w-full h-auto"
+        className="mx-auto h-auto w-full max-w-xl"
         role="img"
         aria-label={`Hémicycle du scrutin n° ${scrutin.numero} : ${scrutin.decompte.pour} pour, ${scrutin.decompte.contre} contre, ${scrutin.decompte.abstention} abstentions.`}
       >

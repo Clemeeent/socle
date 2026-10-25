@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- raw open data JSON, validated by the checks below */
 /**
  * Downloads the Assemblée nationale open data and writes the small JSON files
  * the site reads (data/scrutins.json, data/groupes.json, data/deputes.json,
