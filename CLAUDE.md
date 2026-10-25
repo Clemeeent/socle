@@ -10,6 +10,17 @@ Les deux personnes du projet sont des non-développeurs : expliquer simplement, 
 exactes, dire comment tester. Demander avant toute action en ligne ou irréversible (déploiement,
 suppression de données, changement de réglages GitHub).
 
+## Vocabulaire (entités)
+- **Thème** : grand axe stable de la politique (Économie, Santé, Éducation, Culture, Sécurité et
+  justice, Environnement…). Liste courte, sert à classer.
+- **Dossier** : sujet de débat transversal et d'actualité (ex. « les manifestations », « la police »,
+  « nos libertés reculent-elles ? »). Il rassemble des éléments venant de plusieurs thèmes et porte
+  ses **critères** vérifiables et ses **questions** types.
+- Éléments rattachés à un ou plusieurs thèmes et pouvant figurer dans plusieurs dossiers : **texte
+  voté** (scrutin, votes des groupes et députés), **proposition** (citation d'un document de parti),
+  plus tard **étude/rapport officiel**, **donnée manquante**, **affirmation** avec verdict.
+- **Parti** ↔ **groupe parlementaire** ↔ **député**.
+
 ## Principes non négociables
 - **Neutralité totale** : mêmes critères pour tous les partis, méthode visible (page `/methode`).
 - Toujours séparer le **fait** (sourcé, daté), ses **lectures** possibles et les **valeurs**.

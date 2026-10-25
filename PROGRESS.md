@@ -27,11 +27,21 @@ _Dernière mise à jour : 25 octobre 2026._
   - ordre de l'hémicycle (déduit des numéros de place) à comparer au plan officiel.
 - Résumés neutres des textes : à rédiger et faire valider par un juriste.
 
+## Décisions récentes
+- Vocabulaire : **thèmes** = grands axes stables ; **dossiers** = sujets transversaux qui
+  agrègent des éléments de plusieurs thèmes et portent les critères. Voir `CLAUDE.md`.
+  Conséquence (pas encore faite) : « Libertés publiques » devient un dossier, ses textes sont
+  classés dans des thèmes (Sécurité et justice, Numérique…).
+
 ## Prochaines étapes
+0. Restructurer le site en thèmes + dossiers (à planifier et valider avant de coder).
 1. Design : plus de finesse (typographie, rythme, micro-interactions), à partir de références
    fournies par les porteurs du projet.
 2. Analyse des programmes dès que les PDF sont disponibles.
-3. Idée V2 (discutée, non commencée) : « dossiers » sur 2-3 grands sujets 2025-2026 —
+3. Idée V2 (discutée, non commencée) : dans les dossiers, des affirmations —
    affirmation qui circule → sources officielles → verdict vrai / faux / nuancé → qui l'a dite,
    reprise, ou a relayé la source officielle. Pas de classement global des médias (neutralité,
    risque juridique). Couche factuelle possible : actionnariat des médias.
+4. Dossier « police » envisagé : critères vérifiables (contrôles d'identité, décisions de justice,
+   rapports d'instances indépendantes), rubrique « ce qui n'est pas mesuré », comparaisons
+   internationales (sources officielles étrangères), votes et propositions. Sources à vérifier.
