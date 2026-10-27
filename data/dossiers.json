@@ -146,6 +146,105 @@
      "base": "intitulé du texte"
     }
    ]
+  },
+  {
+   "id": "budget-education",
+   "titre": "Budget de l'éducation",
+   "question": "« 10 milliards pour l'éducation » : la plus grande part du budget jamais consacrée à l'éducation ?",
+   "chapeau": "sur le budget de l'éducation",
+   "intro": "Une affirmation entendue dans le débat public est confrontée aux séries officielles. La réponse dépend de l'indicateur choisi : un montant en euros, une part du budget de l'État ou une part de la richesse nationale ne racontent pas la même chose. Chaque indicateur est donc montré séparément, avec sa source.",
+   "couleur": "menthe",
+   "statut": "à valider",
+   "miseAJour": "2026-10-27",
+   "themes": [
+    "education",
+    "economie"
+   ],
+   "criteres": [],
+   "selection": [],
+   "affirmations": [
+    {
+     "id": "dix-milliards",
+     "texte": "Les 10 milliards pour l'éducation, c'est la plus grande part du budget jamais consacrée à l'éducation.",
+     "contexte": "Formulation entendue dans un débat, rapportée par les porteurs du projet.",
+     "origine": {
+      "etat": "à retrouver",
+      "qui": null,
+      "quand": null,
+      "source": null
+     },
+     "verdict": "à établir",
+     "explication": null,
+     "indicateurs": [
+      {
+       "id": "montant-courant",
+       "label": "Crédits de l'Éducation nationale, en euros courants",
+       "ceQuIlMesure": "Le montant inscrit au budget de l'État pour l'enseignement scolaire, chaque année, sans tenir compte de l'inflation.",
+       "unite": "Md€",
+       "sources": [
+        {
+         "organisme": "Ministère de l'Économie et des Finances — direction du Budget",
+         "publication": "Lois de finances et documents budgétaires (mission « Enseignement scolaire »)",
+         "site": "budget.gouv.fr",
+         "url": null
+        }
+       ],
+       "valeurs": []
+      },
+      {
+       "id": "montant-constant",
+       "label": "Les mêmes crédits, en euros constants",
+       "ceQuIlMesure": "Le même montant corrigé de la hausse des prix, pour comparer des années différentes à pouvoir d'achat égal.",
+       "unite": "Md€",
+       "sources": [
+        {
+         "organisme": "Ministère de l'Économie et des Finances — direction du Budget",
+         "publication": "Lois de finances et documents budgétaires (mission « Enseignement scolaire »)",
+         "site": "budget.gouv.fr",
+         "url": null
+        },
+        {
+         "organisme": "Insee",
+         "publication": "Indice des prix à la consommation",
+         "site": "insee.fr",
+         "url": null
+        }
+       ],
+       "valeurs": []
+      },
+      {
+       "id": "part-budget-etat",
+       "label": "Part de l'enseignement scolaire dans le budget de l'État",
+       "ceQuIlMesure": "La place de l'éducation par rapport aux autres dépenses de l'État : une hausse en euros peut s'accompagner d'une part stable ou en baisse.",
+       "unite": "%",
+       "sources": [
+        {
+         "organisme": "Ministère de l'Économie et des Finances — direction du Budget",
+         "publication": "Lois de finances et documents budgétaires (mission « Enseignement scolaire »)",
+         "site": "budget.gouv.fr",
+         "url": null
+        }
+       ],
+       "valeurs": []
+      },
+      {
+       "id": "die-pib",
+       "label": "Dépense intérieure d'éducation, en % du PIB",
+       "ceQuIlMesure": "Tout ce que le pays dépense pour l'éducation (État, collectivités, ménages, entreprises), rapporté à la richesse produite.",
+       "unite": "% du PIB",
+       "sources": [
+        {
+         "organisme": "Ministère de l'Éducation nationale — DEPP",
+         "publication": "Repères et références statistiques (chapitre sur le coût de l'éducation)",
+         "site": "education.gouv.fr",
+         "url": null
+        }
+       ],
+       "valeurs": []
+      }
+     ]
+    }
+   ]
   }
  ]
 }

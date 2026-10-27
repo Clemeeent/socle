@@ -31,6 +31,29 @@ export type Critere = {
 // Why a text belongs to a dossier, and under which of its criteria.
 export type Selection = { texte: string; criteres: string[]; justification: string; base: string };
 
+// A claim heard in public debate, confronted with official series. Values are only filled from
+// downloaded official sources; until then the verdict stays "à établir".
+export type SourceIndicateur = { organisme: string; publication: string; site: string; url: string | null };
+export type Valeur = { annee: number; valeur: number; source: string; reference: string };
+export type Indicateur = {
+  id: string;
+  label: string;
+  ceQuIlMesure: string;
+  unite: string;
+  sources: SourceIndicateur[];
+  valeurs: Valeur[];
+};
+export const VERDICTS = ["vrai", "faux", "nuancé", "à établir"] as const;
+export type Affirmation = {
+  id: string;
+  texte: string;
+  contexte: string;
+  origine: { etat: "à retrouver" | "trouvée"; qui: string | null; quand: string | null; source: string | null };
+  verdict: (typeof VERDICTS)[number];
+  explication: string | null;
+  indicateurs: Indicateur[];
+};
+
 export type Dossier = {
   id: string;
   titre: string;
@@ -42,6 +65,8 @@ export type Dossier = {
   miseAJour: string;
   criteres: Critere[];
   selection: Selection[];
+  themes?: string[]; // for dossiers without voted texts
+  affirmations?: Affirmation[];
 };
 
 export type Texte = {
@@ -134,10 +159,10 @@ export const selectionsDuTexte = (texteId: string) =>
   dossiers.flatMap((d) => d.selection.filter((s) => s.texte === texteId).map((s) => ({ dossier: d, ...s })));
 
 export const themesDuDossier = (d: Dossier) =>
-  themes.filter((t) => textesDuDossier(d).some((x) => x.themes.includes(t.id)));
+  themes.filter((t) => d.themes?.includes(t.id) || textesDuDossier(d).some((x) => x.themes.includes(t.id)));
 export const textesDuTheme = (themeId: string) => textes.filter((t) => t.themes.includes(themeId));
 export const dossiersDuTheme = (themeId: string) =>
-  dossiers.filter((d) => textesDuDossier(d).some((t) => t.themes.includes(themeId)));
+  dossiers.filter((d) => themesDuDossier(d).some((t) => t.id === themeId));
 
 export function scrutinDe(texte: Texte): Scrutin {
   const s = scrutins.find(

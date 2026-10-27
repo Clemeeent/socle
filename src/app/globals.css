@@ -28,6 +28,10 @@
   --dossier-bleu-ink: #1b2b80;
   --dossier-bleu-a: #ffcc4d;
   --dossier-bleu-b: #ff8a6b;
+  --dossier-menthe-bg: #dcf3ec;
+  --dossier-menthe-ink: #0b4f43;
+  --dossier-menthe-a: #ffcc4d;
+  --dossier-menthe-b: #ff8a6b;
 }
 
 @theme inline {

@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { dossiers, recherche, textesDuTheme, themes } from "@/lib/data";
+import { dossiers, dossiersDuTheme, recherche, textesDuTheme, themes } from "@/lib/data";
 import { lienRecherche } from "@/lib/question";
 import { CarteDossier } from "@/components/Dossier";
 import { QuestionBox } from "@/components/QuestionBox";
 import { TuileTheme } from "@/components/TuileTheme";
+
+const aDuContenu = (id: string) => textesDuTheme(id).length + dossiersDuTheme(id).length > 0;
 
 export default function Home() {
   return (
@@ -42,7 +44,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <p className="mt-3 text-sm text-ink-3">Prochains dossiers : la police, les manifestations…</p>
+        <p className="mt-3 text-sm text-ink-3">Prochains dossiers : la police, les violences en manifestation…</p>
       </section>
 
       <section id="themes" className="mt-12 scroll-mt-4">
@@ -50,7 +52,7 @@ export default function Home() {
         <p className="mt-1 text-sm text-ink-3">Tous les textes votés, rangés par grand sujet.</p>
         <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
           {themes
-            .filter((t) => textesDuTheme(t.id).length > 0)
+            .filter((t) => aDuContenu(t.id))
             .map((t) => (
               <li key={t.id}>
                 <TuileTheme t={t} />
@@ -60,7 +62,7 @@ export default function Home() {
         <p className="mt-4 text-sm text-ink-3">
           Bientôt :{" "}
           {themes
-            .filter((t) => textesDuTheme(t.id).length === 0)
+            .filter((t) => !aDuContenu(t.id))
             .map((t) => t.label)
             .join(" · ")}
         </p>

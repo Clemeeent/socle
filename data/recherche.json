@@ -32,5 +32,16 @@
   ],
   "dossier": "libertes",
   "critere": "police"
+ },
+ {
+  "question": "Les 10 milliards pour l'éducation, c'est un record ?",
+  "motsCles": [
+   "éducation",
+   "école",
+   "enseignement",
+   "10 milliards",
+   "budget de l'éducation"
+  ],
+  "dossier": "budget-education"
  }
 ]

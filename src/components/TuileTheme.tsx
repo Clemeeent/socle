@@ -3,8 +3,9 @@ import { dossiersDuTheme, lienTheme, textesDuTheme, type Theme } from "@/lib/dat
 import { IconeTheme } from "./Icones";
 
 export function TuileTheme({ t }: { t: Theme }) {
-  const n = textesDuTheme(t.id).length + dossiersDuTheme(t.id).length;
-  const vide = n === 0;
+  const nTextes = textesDuTheme(t.id).length;
+  const nDossiers = dossiersDuTheme(t.id).length;
+  const vide = nTextes + nDossiers === 0;
   return (
     <Link
       href={lienTheme(t.id)}
@@ -15,7 +16,11 @@ export function TuileTheme({ t }: { t: Theme }) {
       <IconeTheme id={t.id} className={`h-7 w-7 ${vide ? "" : "text-accent"}`} />
       <span className="text-[0.95rem] font-semibold leading-tight">{t.label}</span>
       <span className="mt-auto text-xs text-ink-3">
-        {vide ? "Bientôt" : `${textesDuTheme(t.id).length} texte${textesDuTheme(t.id).length > 1 ? "s" : ""}`}
+        {vide
+          ? "Bientôt"
+          : nTextes
+            ? `${nTextes} texte${nTextes > 1 ? "s" : ""}`
+            : `${nDossiers} dossier${nDossiers > 1 ? "s" : ""}`}
       </span>
     </Link>
   );
