@@ -37,6 +37,36 @@ _Dernière mise à jour : 27 octobre 2026._
   « Qu'ont-ils voté ? » sur tous les scrutins (données complètes) et enregistrement des
   questions sans réponse pour choisir les prochains dossiers.
 
+## À faire en priorité : 3 dossiers à partir de vrais débats (données réelles)
+Exemples tirés de discussions réelles du porteur du projet. Chaque chiffre doit venir d'une source
+officielle téléchargée (jamais de mémoire) ; si une donnée n'existe pas, le dire (« non mesuré »).
+Nécessite un accès réseau complet (l'environnement de la session doit être en « Full »).
+
+1. **« La police est-elle raciste ? »** (thème Sécurité et justice)
+   - Contrôles d'identité : enquêtes du Défenseur des droits (defenseurdesdroits.fr).
+   - Décisions de justice : Cour de cassation (contrôles au faciès, 2016), Conseil d'État (2023).
+   - IGPN : rapports annuels (interieur.gouv.fr).
+   - Ce qui n'est pas mesuré en France et pourquoi (statistiques ethniques, enregistrement des
+     contrôles).
+   - Comparaison Angleterre/Pays de Galles : statistiques officielles « stop and search » par
+     origine (gov.uk, Home Office), polices territoriales, commissaires élus.
+   - Votes de l'Assemblée liés (récépissé, polices municipales) : aucun trouvé dans les scrutins
+     de la 17e législature (recherche faite le 27/10/2026) ; à vérifier sur la législature 16.
+   - Propositions des partis : dès que les programmes sont analysés.
+2. **« Les 10 milliards pour l'éducation : la plus grande part du budget jamais consacrée à
+   l'éducation ? »** (thème Éducation) — format affirmation → verdict vrai / faux / nuancé.
+   - Séries officielles : budget de l'Éducation nationale (mission Enseignement scolaire), part
+     dans le budget de l'État, dépense intérieure d'éducation en % du PIB, en euros constants
+     (education.gouv.fr « Repères et références statistiques », budget.gouv.fr, INSEE).
+   - Montrer que la réponse dépend de l'indicateur (montant, part du budget, part du PIB).
+   - Retrouver l'origine exacte du chiffre « 10 milliards » (qui, quand) avant de conclure.
+3. **« Les violences en manifestation viennent de l'ultragauche ? »** (thèmes Sécurité et
+   justice, Institutions) — affirmation → déclarations publiques des services de renseignement
+   (citation exacte + source), textes votés sur le maintien de l'ordre.
+
+Structure à prévoir : un dossier peut contenir des **affirmations** (texte de l'affirmation,
+verdict, explication courte, indicateurs avec sources) en plus des questions fondées sur des votes.
+
 ## Prochaines étapes
 1. Design : première passe faite (Figtree, dossiers colorés, thèmes en tuiles, accueil simplifié).
    À affiner avec les porteurs du projet.
