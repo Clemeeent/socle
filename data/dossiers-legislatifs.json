@@ -1,0 +1,54 @@
+{
+ "DLR5L17N53187": {
+  "uid": "DLR5L17N53187",
+  "titre": "Protéger les mineurs des risques auxquels les expose l’utilisation des réseaux sociaux",
+  "urlAN": "https://www.assemblee-nationale.fr/dyn/17/dossiers/proteger_mineurs_reseaux_sociaux_17e",
+  "promulgation": {
+   "dateJO": "2026-08-25",
+   "referenceNOR": "ECOX2602236L",
+   "urlLegifrance": "https://www.legifrance.gouv.fr/WAspad/UnTexteDeJorf?numjo=ECOX2602236L"
+  }
+ },
+ "DLR5L17N53284": {
+  "uid": "DLR5L17N53284",
+  "titre": "Renforcer la sécurité, la rétention administrative et la prévention des risques d’attentat",
+  "urlAN": "https://www.assemblee-nationale.fr/dyn/17/dossiers/retention_admin_prevention_attentats_17e",
+  "promulgation": {
+   "dateJO": "2026-07-28",
+   "referenceNOR": "INTX2608182L",
+   "urlLegifrance": "https://www.legifrance.gouv.fr/WAspad/UnTexteDeJorf?numjo=INTX2608182L"
+  }
+ },
+ "DLR5L17N51711": {
+  "uid": "DLR5L17N51711",
+  "titre": "Renforcer la pénalisation de l’organisation de rave-parties",
+  "urlAN": "https://www.assemblee-nationale.fr/dyn/17/dossiers/penalisation_rave_party_17e",
+  "promulgation": null
+ },
+ "DLR5L17N50169": {
+  "uid": "DLR5L17N50169",
+  "titre": "Proposition de loi visant à sortir la France du piège du narcotrafic",
+  "urlAN": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N50169",
+  "promulgation": {
+   "dateJO": "2025-06-14",
+   "referenceNOR": "JUSX2430702L",
+   "urlLegifrance": "https://www.legifrance.gouv.fr/WAspad/UnTexteDeJorf?numjo=JUSX2430702L"
+  }
+ },
+ "DLR5L16N49176": {
+  "uid": "DLR5L16N49176",
+  "titre": "Proposition de loi relative au renforcement de la sûreté dans les transports",
+  "urlAN": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N49176",
+  "promulgation": null
+ },
+ "DLR5L17N53980": {
+  "uid": "DLR5L17N53980",
+  "titre": "Projet de loi visant à offrir des réponses immédiates aux phénomènes troublant l’ordre public, la sécurité et la tranquillité de nos concitoyens",
+  "urlAN": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53980",
+  "promulgation": {
+   "dateJO": "2026-08-19",
+   "referenceNOR": "INTD2604047L",
+   "urlLegifrance": "https://www.legifrance.gouv.fr/WAspad/UnTexteDeJorf?numjo=INTD2604047L"
+  }
+ }
+}

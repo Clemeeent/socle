@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { dossiers, formatDate, getCritere, getTexte, grille, lienCritere, scrutinDe } from "@/lib/data";
+import {
+  dossiersLegislatifs,
+  formatDate,
+  getCritere,
+  getTexte,
+  getTheme,
+  lienCritere,
+  lienDossier,
+  lienTheme,
+  scrutinDe,
+  selectionsDuTexte,
+  textes,
+} from "@/lib/data";
 import { classementPartis } from "@/lib/stats";
 import { Classement } from "@/components/Classement";
 import { Deplier } from "@/components/Deplier";
@@ -9,7 +21,7 @@ import { Hemicycle } from "@/components/Hemicycle";
 import { PiedFiche } from "@/components/PiedFiche";
 
 export const dynamicParams = false;
-export const generateStaticParams = () => grille.textes.map((t) => ({ id: t.id }));
+export const generateStaticParams = () => textes.map((t) => ({ id: t.id }));
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -21,18 +33,23 @@ export default async function TextePage({ params }: { params: Promise<{ id: stri
   const texte = getTexte(id);
   if (!texte) notFound();
   const s = scrutinDe(texte);
-  const d = dossiers[texte.dossierRef];
+  const d = dossiersLegislatifs[texte.dossierLegislatif];
+  const selections = selectionsDuTexte(texte.id);
   const prom = d.promulgation;
   const adopte = s.sort === "adopté";
 
   return (
     <article>
-      <nav aria-label="Fil d'Ariane" className="text-xs text-ink-3">
-        {texte.criteres.map((c, i) => (
-          <span key={c}>
-            {i > 0 && " · "}
-            <Link href={lienCritere(c)} className="text-ink-3">{getCritere(c)?.label}</Link>
-          </span>
+      <nav aria-label="Classement" className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-3">
+        {selections.map((x) => (
+          <Link key={x.dossier.id} href={lienDossier(x.dossier.id)} className="font-semibold text-ink-3">
+            Dossier {x.dossier.titre}
+          </Link>
+        ))}
+        {texte.themes.map((id) => (
+          <Link key={id} href={lienTheme(id)} className="text-ink-3">
+            {getTheme(id)?.label}
+          </Link>
         ))}
       </nav>
       <h1 className="mt-1 text-2xl font-bold leading-tight">{texte.titreCourt}</h1>
@@ -77,10 +94,26 @@ export default async function TextePage({ params }: { params: Promise<{ id: stri
           </p>
         </Deplier>
         <Deplier titre="Pourquoi ce texte a été retenu">
-          <p className="text-sm leading-relaxed">{texte.justification}</p>
-          <p className="mt-2 text-xs text-ink-3">
-            Rattachement proposé à partir de : {texte.base}. Statut : {texte.statut}.
-          </p>
+          <ul className="space-y-3">
+            {selections.map((x) => (
+              <li key={x.dossier.id} className="text-sm">
+                <p>
+                  Dossier <Link href={lienDossier(x.dossier.id)}>{x.dossier.titre}</Link>, question
+                  {x.criteres.length > 1 ? "s" : ""} :{" "}
+                  {x.criteres.map((c, i) => (
+                    <span key={c}>
+                      {i > 0 && ", "}
+                      <Link href={lienCritere(c)}>{getCritere(c)?.label}</Link>
+                    </span>
+                  ))}
+                </p>
+                <p className="mt-1 leading-relaxed text-ink-2">{x.justification}</p>
+                <p className="mt-1 text-xs text-ink-3">
+                  Rattachement proposé à partir de : {x.base}. Statut : {x.dossier.statut}.
+                </p>
+              </li>
+            ))}
+          </ul>
         </Deplier>
       </div>
 

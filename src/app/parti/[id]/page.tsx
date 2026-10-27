@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { documentsDuParti, getGroupe, getParti, grille, lienCritere, partis, positions, scrutinDe } from "@/lib/data";
+import { criteres, documentsDuParti, dossiers, getGroupe, getParti, lienCritere, lienDossier, partis, positions, scrutinDe, textes } from "@/lib/data";
 import { Confrontation, SourceBadge } from "@/components/Confrontation";
 import { Deplier } from "@/components/Deplier";
 import { PiedFiche } from "@/components/PiedFiche";
@@ -35,16 +35,23 @@ export default async function PartiPage({ params }: { params: Promise<{ id: stri
       </h1>
       <p className="mt-2 text-lg leading-snug">Ce qu&apos;il propose, et ce que ses députés ont voté, critère par critère :</p>
 
-      <div className="mt-4 border-t border-line">
-        {grille.criteres.map((c) => (
-          <Rangee key={c.id} titre={c.label} propose={resumePropose(p.id, c.id)} pour={partPour(p, c.id)}>
-            <Confrontation parti={p} critere={c.id} />
-            <Link href={lienCritere(c.id)} className="mt-3 inline-block text-sm">
-              Comparer avec les autres partis →
-            </Link>
-          </Rangee>
-        ))}
-      </div>
+      {dossiers.map((d) => (
+        <section key={d.id} className="mt-5">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-ink-3">
+            <Link href={lienDossier(d.id)} className="text-ink-3">Dossier {d.titre}</Link>
+          </h2>
+          <div className="mt-1 border-t border-line">
+            {d.criteres.map((c) => (
+              <Rangee key={c.id} titre={c.label} propose={resumePropose(p.id, c.id)} pour={partPour(p, c.id)}>
+                <Confrontation parti={p} critere={c.id} />
+                <Link href={lienCritere(c.id)} className="mt-3 inline-block text-sm">
+                  Comparer avec les autres partis →
+                </Link>
+              </Rangee>
+            ))}
+          </div>
+        </section>
+      ))}
 
       <div className="mt-6 border-t border-line">
         <Deplier
@@ -65,7 +72,7 @@ export default async function PartiPage({ params }: { params: Promise<{ id: stri
                   </span>
                   <span className="mt-0.5 block text-xs text-ink-3">
                     {d.criteresAnalyses.length
-                      ? `Analysé pour ${d.criteresAnalyses.length} critère${d.criteresAnalyses.length > 1 ? "s" : ""} sur ${grille.criteres.length}.`
+                      ? `Analysé pour ${d.criteresAnalyses.length} critère${d.criteresAnalyses.length > 1 ? "s" : ""} sur ${criteres.length}.`
                       : "Document identifié, pas encore analysé."}
                     {d.remarque && ` ${d.remarque}`}
                   </span>
@@ -92,7 +99,7 @@ export default async function PartiPage({ params }: { params: Promise<{ id: stri
         verifie={verifie}
         sources={[
           ...docs.map((d) => ({ label: `${d.titre}${d.annee ? ` (${d.annee})` : ""}`, href: d.url })),
-          ...grille.textes.map((t) => ({ label: `Scrutin n° ${scrutinDe(t).numero} — ${t.titreCourt}`, href: scrutinDe(t).url })),
+          ...textes.map((t) => ({ label: `Scrutin n° ${scrutinDe(t).numero} — ${t.titreCourt}`, href: scrutinDe(t).url })),
         ]}
       />
     </article>

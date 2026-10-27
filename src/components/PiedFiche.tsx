@@ -1,6 +1,6 @@
 // Level 3 of every page: status, date and sources, folded into one discreet line.
 import Link from "next/link";
-import { formatDate, grille, meta } from "@/lib/data";
+import { AVERTISSEMENT, formatDate, meta } from "@/lib/data";
 
 export function PiedFiche({
   sources,
@@ -16,7 +16,7 @@ export function PiedFiche({
           {verifie ? "✓ Vérifié par un juriste" : "Sourcé automatiquement"}
         </span>
         <span>· Mis à jour le {formatDate(meta.importeLe)}</span>
-        <span>· {grille.avertissement}</span>
+        <span>· {AVERTISSEMENT}</span>
       </p>
       <details className="mt-2">
         <summary className="cursor-pointer text-accent">

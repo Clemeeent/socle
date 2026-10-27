@@ -1,0 +1,36 @@
+[
+ {
+  "question": "Quels partis votent le plus de lois liberticides ?",
+  "motsCles": [
+   "liberticide",
+   "liberté",
+   "libertés",
+   "restreign"
+  ],
+  "dossier": "libertes"
+ },
+ {
+  "question": "Qui a voté pour étendre la surveillance ?",
+  "motsCles": [
+   "surveillance",
+   "caméra",
+   "données",
+   "renseignement",
+   "fichier"
+  ],
+  "dossier": "libertes",
+  "critere": "surveillance"
+ },
+ {
+  "question": "Qui a voté pour plus de pouvoirs de police ?",
+  "motsCles": [
+   "police",
+   "policier",
+   "état d'urgence",
+   "sécurité",
+   "ordre public"
+  ],
+  "dossier": "libertes",
+  "critere": "police"
+ }
+]

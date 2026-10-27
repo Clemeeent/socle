@@ -1,17 +1,14 @@
-// Turns a free-text question into the criteria of the grid.
-// v1: matches the written-in-advance example questions by keyword.
-// Later: replace the body of interpreterQuestion with an LLM call; the pages don't change.
-import { getQuestion, questions, type Question } from "./data";
-
-export type Interpretation = Pick<Question, "slug" | "chapeau" | "criteres">;
+// Turns a free-text question into a place in Socle (a dossier, or one of its questions).
+// v1: matches sample questions by keyword. Later: replace the body of interpreterQuestion
+// with an LLM call restricted to Socle's own content; the pages don't change.
+import { lienCritere, lienDossier, recherche, type Recherche } from "./data";
 
 const normalise = (s: string) =>
-  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-export async function interpreterQuestion(q: string): Promise<Interpretation | null> {
+export const lienRecherche = (r: Recherche) => (r.critere ? lienCritere(r.critere) : lienDossier(r.dossier));
+
+export async function interpreterQuestion(q: string): Promise<Recherche | null> {
   const texte = normalise(q);
-  const trouvee = questions.find((x) => x.motsCles.some((m) => texte.includes(normalise(m))));
-  return trouvee ?? null;
+  return recherche.find((x) => x.motsCles.some((m) => texte.includes(normalise(m)))) ?? null;
 }
-
-export const questionParSlug = (slug: string) => getQuestion(slug);

@@ -1,6 +1,6 @@
 # Avancement
 
-_Dernière mise à jour : 25 octobre 2026._
+_Dernière mise à jour : 27 octobre 2026._
 
 ## Fait
 - Import des votes de l'Assemblée (6 scrutins, 13 groupes) avec contrôle des décomptes.
@@ -30,13 +30,18 @@ _Dernière mise à jour : 25 octobre 2026._
 ## Décisions récentes
 - Vocabulaire : **thèmes** = grands axes stables ; **dossiers** = sujets transversaux qui
   agrègent des éléments de plusieurs thèmes et portent les critères. Voir `CLAUDE.md`.
-  Conséquence (pas encore faite) : « Libertés publiques » devient un dossier, ses textes sont
-  classés dans des thèmes (Sécurité et justice, Numérique…).
+  Fait : « Libertés publiques » est un dossier (4 questions), les textes sont classés par thème.
+- Vision produit (débat entre les deux porteurs) : moteur de recherche (tout trouver) vs site
+  éditorial (une vingtaine de sujets). Compromis retenu pour le MVP : dossiers éditoriaux
+  rédigés avec l'IA et relus ; recherche limitée au contenu de Socle ; plus tard, moteur
+  « Qu'ont-ils voté ? » sur tous les scrutins (données complètes) et enregistrement des
+  questions sans réponse pour choisir les prochains dossiers.
 
 ## Prochaines étapes
-0. Restructurer le site en thèmes + dossiers (à planifier et valider avant de coder).
-1. Design : plus de finesse (typographie, rythme, micro-interactions), à partir de références
-   fournies par les porteurs du projet.
+1. Design : première passe faite (Figtree, dossiers colorés, thèmes en tuiles, accueil simplifié).
+   À affiner avec les porteurs du projet.
+5. Enregistrer les questions sans réponse : nécessite un service externe (formulaire), à choisir.
+6. Moteur « Qu'ont-ils voté ? » sur tous les scrutins de la législature.
 2. Analyse des programmes dès que les PDF sont disponibles.
 3. Idée V2 (discutée, non commencée) : dans les dossiers, des affirmations —
    affirmation qui circule → sources officielles → verdict vrai / faux / nuancé → qui l'a dite,

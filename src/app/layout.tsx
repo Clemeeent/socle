@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import "@fontsource-variable/figtree";
 import "./globals.css";
 import { meta, formatDate } from "@/lib/data";
 
@@ -21,15 +22,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 démo
               </span>
             </Link>
-            <nav className="flex gap-4 text-sm">
-              <Link href="/#themes" className="text-ink-2 no-underline hover:underline">
+            <nav className="flex gap-4 text-sm font-medium">
+              <Link href="/#dossiers" className="text-ink-2 no-underline hover:text-accent">
+                Dossiers
+              </Link>
+              <Link href="/#themes" className="text-ink-2 no-underline hover:text-accent">
                 Thèmes
               </Link>
-              <Link href="/#partis" className="text-ink-2 no-underline hover:underline">
+              <Link href="/partis" className="text-ink-2 no-underline hover:text-accent">
                 Partis
-              </Link>
-              <Link href="/methode" className="text-ink-2 no-underline hover:underline">
-                Méthode
               </Link>
             </nav>
           </div>

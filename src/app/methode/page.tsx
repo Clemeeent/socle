@@ -1,6 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { dossiers, documents, formatDate, getCritere, getGroupe, grille, groupes, meta, partis, partisMeta, scrutinDe, lienCritere } from "@/lib/data";
+import {
+  AVERTISSEMENT,
+  documents,
+  dossiers,
+  dossiersLegislatifs,
+  formatDate,
+  getCritere,
+  getGroupe,
+  getTexte,
+  groupes,
+  lienCritere,
+  lienDossier,
+  meta,
+  partis,
+  partisMeta,
+  scrutinDe,
+  textes,
+} from "@/lib/data";
 import { StatutBadge } from "@/components/Fiche";
 import { GroupeTag } from "@/components/GroupeTag";
 
@@ -25,20 +42,33 @@ export default function MethodePage() {
         Socle sépare toujours trois choses : le <strong>fait</strong> (un vote, daté et sourcé), ses{" "}
         <strong>lectures possibles</strong> (ce que le texte change, à analyser par un juriste) et les{" "}
         <strong>valeurs</strong> (est-ce bien ou mal ?), qui appartiennent au lecteur. Un mot comme
-        « liberticide » est un jugement : pour chaque thème, nous le traduisons en critères vérifiables.
+        « liberticide » est un jugement : dans chaque dossier, nous le traduisons en critères vérifiables.
       </p>
 
-      <H2>Les critères</H2>
-      <dl className="mt-3 space-y-3">
-        {grille.criteres.map((c) => (
-          <div key={c.id} className="rounded border border-line p-3">
-            <dt className="font-semibold">
-              <Link href={lienCritere(c.id)}>{c.label}</Link>
-            </dt>
-            <dd className="mt-1 text-sm text-ink-2">{c.definition}</dd>
-          </div>
-        ))}
-      </dl>
+      <H2>Thèmes et dossiers</H2>
+      <p className="mt-2">
+        Les <strong>thèmes</strong> sont les grands axes de la politique (Économie, Santé, Sécurité et
+        justice…) : ils servent à ranger chaque texte. Les <strong>dossiers</strong> sont les grands
+        débats du moment : ils rassemblent des textes de plusieurs thèmes et traduisent la question
+        posée en critères vérifiables.
+      </p>
+      {dossiers.map((d) => (
+        <div key={d.id} className="mt-4">
+          <h3 className="font-semibold">
+            Dossier <Link href={lienDossier(d.id)}>{d.titre}</Link> : ses critères
+          </h3>
+          <dl className="mt-2 space-y-3">
+            {d.criteres.map((c) => (
+              <div key={c.id} className="rounded border border-line p-3">
+                <dt className="font-semibold">
+                  <Link href={lienCritere(c.id)}>{c.label}</Link>
+                </dt>
+                <dd className="mt-1 text-sm text-ink-2">{c.definition}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      ))}
 
       <H2>Les programmes des partis</H2>
       <ul className="mt-2 list-disc space-y-1.5 pl-5">
@@ -110,7 +140,7 @@ export default function MethodePage() {
           du texte, pas d&apos;une analyse article par article.
         </li>
         <li>
-          <strong>{grille.avertissement}</strong> La liste n&apos;est pas exhaustive : d&apos;autres textes
+          <strong>{AVERTISSEMENT}</strong> La liste n&apos;est pas exhaustive : d&apos;autres textes
           pourraient relever de ces critères.
         </li>
       </ul>
@@ -124,7 +154,8 @@ export default function MethodePage() {
             </tr>
           </thead>
           <tbody>
-            {grille.textes.map((t) => {
+            {dossiers.flatMap((d) => d.selection).map((sel) => {
+              const t = getTexte(sel.texte)!;
               const s = scrutinDe(t);
               return (
                 <tr key={t.id} className="border-b border-line align-top">
@@ -134,9 +165,9 @@ export default function MethodePage() {
                       Scrutin n° {s.numero}, {formatDate(s.date)}
                     </span>
                   </td>
-                  <td className="py-2 pr-3 text-xs">{t.criteres.map((c) => getCritere(c)?.label).join(", ")}</td>
+                  <td className="py-2 pr-3 text-xs">{sel.criteres.map((c) => getCritere(c)?.label).join(", ")}</td>
                   <td className="py-2 text-xs text-ink-2">
-                    {t.justification} <em>Statut : {t.statut}.</em>
+                    {sel.justification} <em>Statut : {t.statut}.</em>
                   </td>
                 </tr>
               );
@@ -213,7 +244,7 @@ export default function MethodePage() {
             <a href={u}>{u}</a>
           </li>
         ))}
-        {Object.values(dossiers)
+        {Object.values(dossiersLegislatifs)
           .filter((d) => d.promulgation?.urlLegifrance)
           .map((d) => (
             <li key={d.uid}>
@@ -231,7 +262,7 @@ export default function MethodePage() {
 
       <H2>Limites de cette version</H2>
       <ul className="mt-2 list-disc space-y-1.5 pl-5">
-        <li>{grille.textes.length} textes seulement : trop peu pour un classement robuste.</li>
+        <li>{textes.length} textes seulement : trop peu pour un classement robuste.</li>
         <li>Un vote ne dit pas pourquoi un député a voté ainsi ; il ne remplace pas une position.</li>
         <li>Le Sénat et les analyses juridiques ne sont pas encore couverts ; les programmes sont en cours d&apos;intégration.</li>
       </ul>

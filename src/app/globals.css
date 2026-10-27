@@ -4,14 +4,14 @@
 :root {
   color-scheme: light;
   --bg: #ffffff;
-  --bg-alt: #f6f6f6;
-  --ink: #161616;
-  --ink-2: #3a3a3a;
-  --ink-3: #666666;
-  --line: #dddddd;
-  --accent: #1f3c88;
-  --accent-soft: #e8edff;
-  --warn-bg: #fff4e0;
+  --bg-alt: #f5f4f0;
+  --ink: #14161f;
+  --ink-2: #3d4150;
+  --ink-3: #6b6f7b;
+  --line: #e4e2dc;
+  --accent: #2a3eb1;
+  --accent-soft: #eef0ff;
+  --warn-bg: #fff4dc;
   --warn-ink: #6b4300;
   --ok-bg: #e3f4e8;
   --ok-ink: #1d5a2c;
@@ -21,6 +21,13 @@
   --vote-contre: #c8641e;
   --vote-abstention: #9aa0a6;
   --vote-absent: #e6e7ea;
+
+  /* Dossier palettes ("gros pavés colorés"): background, ink, two illustration accents.
+     Never party colours. */
+  --dossier-bleu-bg: #e6ebff;
+  --dossier-bleu-ink: #1b2b80;
+  --dossier-bleu-a: #ffcc4d;
+  --dossier-bleu-b: #ff8a6b;
 }
 
 @theme inline {
@@ -40,10 +47,11 @@
   --color-contre: var(--vote-contre);
   --color-abstention: var(--vote-abstention);
   --color-absent: var(--vote-absent);
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Figtree Variable", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 body {
+  font-size: 1.0625rem;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
@@ -60,4 +68,15 @@ body {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.015em;
+  }
+  h1 {
+    font-weight: 800;
+  }
 }

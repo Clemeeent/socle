@@ -36,10 +36,15 @@ suppression de données, changement de réglages GitHub).
 
 ## Données
 - **Votes** : open data de l'Assemblée nationale (17e législature). `npm run import` télécharge et
-  écrit `data/scrutins.json`, `groupes.json`, `deputes.json`, `dossiers.json`, `meta.json` (ne pas
+  écrit `data/scrutins.json`, `groupes.json`, `deputes.json`, `dossiers-legislatifs.json`, `meta.json` (ne pas
   les modifier à la main). Le script vérifie chaque décompte nominatif contre le décompte officiel.
-- **Sélection** : `data/grille.json` (thème, critères avec mots-clés, textes retenus). Un seul vote
-  par texte : vote sur l'ensemble, dernière lecture à l'Assemblée (CMP si elle existe).
+- **Textes** : `data/textes.json` (scrutin retenu, dossier législatif, thèmes). Un seul vote par
+  texte : vote sur l'ensemble, dernière lecture à l'Assemblée (CMP si elle existe).
+- **Thèmes** : `data/themes.json`. **Dossiers** : `data/dossiers.json` (titre, grande question,
+  critères avec question / définition / mots-clés, sélection des textes avec justification).
+  Ne pas confondre avec `data/dossiers-legislatifs.json` (généré, dossiers de l'Assemblée).
+- **Recherche** : `data/recherche.json` (questions types → dossier ou question de dossier) ;
+  point d'entrée pour un futur moteur IA limité au contenu de Socle (`src/lib/question.ts`).
 - **Partis** : `data/partis.json` (parti → groupe(s) parlementaire(s)). LIOT et non-inscrits : pas de parti.
 - **Programmes** : PDF officiels dans `programmes/`, déclarés dans `programmes/sources.json`.
   Priorité : programme 2027 > programme présidentiel 2022 > texte officiel du parti. Un parti
@@ -51,8 +56,13 @@ suppression de données, changement de réglages GitHub).
   « Programme à venir » (pas encore analysé) : champ `criteresAnalyses`.
 
 ## Design
-- Mobile d'abord, sobre et crédible (Wikipédia moderne, inspiré du DSFR **sans** la police Marianne,
-  le logo ni l'identité de l'État).
+- Mobile d'abord, sobre et crédible, direction artistique inspirée du site « droit à l'erreur »
+  des impôts (oups.gouv.fr) : ton direct, gros pavés colorés, questions en langage courant.
+  Jamais l'identité de l'État (pas de Marianne, de logo ni de bleu-blanc-rouge officiel).
+- Police : Figtree (auto-hébergée via `@fontsource-variable/figtree`).
+- Les **dossiers** ont un traitement à part : bloc coloré (`--dossier-<couleur>-*` dans
+  `globals.css`, jamais une couleur de parti) et illustration d'hémicycle abstraite
+  (`IllustrationDossier`). Les **thèmes** restent sobres (tuiles blanches + icône).
 - **Progressive disclosure** : niveau 1 = la réponse en un écran (une phrase + un visuel) ;
   niveau 2 = détails repliés (`Deplier`, `Rangee`) ; niveau 3 = sources/statut/date dans une ligne
   en pied de page (`PiedFiche`). Pas d'encart explicatif répété : la structure doit répondre.

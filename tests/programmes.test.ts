@@ -94,13 +94,13 @@ describe("verifier (fictional test PDF)", () => {
 describe("data files", () => {
   it("every position in data/positions.json is verified against its PDF", async () => {
     const sources = JSON.parse(readFileSync("programmes/sources.json", "utf8"));
-    const grille = JSON.parse(readFileSync("data/grille.json", "utf8"));
+    const dossiers = JSON.parse(readFileSync("data/dossiers.json", "utf8")).dossiers;
     const partis = JSON.parse(readFileSync("data/partis.json", "utf8"));
     const erreurs = await verifier({
       documents: sources.documents,
       positions: JSON.parse(readFileSync("data/positions.json", "utf8")),
       partis: partis.partis.map((p: { id: string }) => p.id),
-      criteres: grille.criteres.map((c: { id: string }) => c.id),
+      criteres: dossiers.flatMap((d: { criteres: { id: string }[] }) => d.criteres.map((c) => c.id)),
     });
     expect(erreurs).toEqual([]);
   });

@@ -1,0 +1,49 @@
+{
+ "statut": "à valider",
+ "themes": [
+  {
+   "id": "economie",
+   "label": "Économie et fiscalité"
+  },
+  {
+   "id": "travail",
+   "label": "Travail et protection sociale"
+  },
+  {
+   "id": "sante",
+   "label": "Santé"
+  },
+  {
+   "id": "education",
+   "label": "Éducation"
+  },
+  {
+   "id": "culture",
+   "label": "Culture"
+  },
+  {
+   "id": "securite-justice",
+   "label": "Sécurité et justice"
+  },
+  {
+   "id": "institutions",
+   "label": "Institutions et démocratie"
+  },
+  {
+   "id": "environnement",
+   "label": "Environnement et énergie"
+  },
+  {
+   "id": "immigration",
+   "label": "Immigration"
+  },
+  {
+   "id": "international",
+   "label": "International et défense"
+  },
+  {
+   "id": "numerique",
+   "label": "Numérique"
+  }
+ ]
+}

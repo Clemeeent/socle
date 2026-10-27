@@ -112,7 +112,10 @@ export async function verifier(opts: {
 async function main() {
   const commande = process.argv[2];
   const sources = lireJson<{ regle: string; documents: Document[] }>(join(DIR, "sources.json"));
-  const grille = lireJson<{ criteres: { id: string; motsCles: string[] }[] }>("data/grille.json");
+  // Criteria of every dossier: same keywords for every party.
+  const criteres = lireJson<{ dossiers: { criteres: { id: string; motsCles: string[] }[] }[] }>(
+    "data/dossiers.json",
+  ).dossiers.flatMap((d) => d.criteres);
   const partis = lireJson<{ partis: { id: string }[] }>("data/partis.json").partis.map((p) => p.id);
 
   if (commande === "telecharger") {
@@ -150,9 +153,9 @@ async function main() {
     mkdirSync(join(DIR, "candidats"), { recursive: true });
     for (const d of presents) {
       const pages = await pagesDe(d, DIR);
-      const candidats = trouverCandidats(pages, grille.criteres);
+      const candidats = trouverCandidats(pages, criteres);
       writeFileSync(join(DIR, "candidats", `${d.id}.json`), JSON.stringify(candidats, null, 1) + "\n");
-      const parCritere = grille.criteres.map((c) => `${c.id} ${candidats.filter((x) => x.critere === c.id).length}`);
+      const parCritere = criteres.map((c) => `${c.id} ${candidats.filter((x) => x.critere === c.id).length}`);
       console.log(`${d.id} : ${pages.length} pages · passages candidats : ${parCritere.join(", ")}`);
     }
     return;
@@ -163,7 +166,7 @@ async function main() {
       documents: sources.documents,
       positions: lireJson<Position[]>("data/positions.json"),
       partis,
-      criteres: grille.criteres.map((c) => c.id),
+      criteres: criteres.map((c) => c.id),
     });
     if (erreurs.length) {
       console.error(`${erreurs.length} problème(s) :\n- ${erreurs.join("\n- ")}`);

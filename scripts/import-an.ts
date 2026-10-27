@@ -2,9 +2,9 @@
 /**
  * Downloads the Assemblée nationale open data and writes the small JSON files
  * the site reads (data/scrutins.json, data/groupes.json, data/deputes.json,
- * data/dossiers.json, data/meta.json).
+ * data/dossiers-legislatifs.json, data/meta.json).
  *
- * Only the scrutins listed in data/grille.json are kept.
+ * Only the scrutins of the texts listed in data/textes.json are kept.
  * Usage: npm run import
  */
 import { mkdirSync, existsSync, readFileSync, writeFileSync } from "node:fs";
@@ -22,9 +22,11 @@ const sources = {
   acteurs: `${BASE}/17/amo/tous_acteurs_mandats_organes_xi_legislature/AMO30_tous_acteurs_tous_mandats_tous_organes_historique.json.zip`,
 };
 
-type Grille = {
-  textes: { id: string; scrutin: { legislature: number; numero: number }; dossierRef: string }[];
-};
+type Textes = {
+  id: string;
+  scrutin: { legislature: number; numero: number };
+  dossierLegislatif: string;
+}[];
 
 // The open data is XML converted to JSON: a single child is an object, several are an array.
 const list = <T>(x: T | T[] | null | undefined): T[] =>
@@ -61,17 +63,17 @@ const NOMINATIF: Record<VoteKey, string> = {
 };
 
 async function main() {
-  const grille: Grille = JSON.parse(readFileSync(join(DATA, "grille.json"), "utf8"));
+  const textes: Textes = JSON.parse(readFileSync(join(DATA, "textes.json"), "utf8"));
 
   // 1. Scrutins
   const scrutins = [];
   const groupeRefs = new Set<string>();
   const acteurRefs = new Set<string>();
   const seats = new Map<string, number[]>(); // organeRef → seat numbers, to order groups
-  const legs = [...new Set(grille.textes.map((t) => t.scrutin.legislature))];
+  const legs = [...new Set(textes.map((t) => t.scrutin.legislature))];
   for (const leg of legs) {
     const wanted = new Set(
-      grille.textes
+      textes
         .filter((t) => t.scrutin.legislature === leg)
         .map((t) => `VTANR5L${leg}V${t.scrutin.numero}`),
     );
@@ -168,9 +170,9 @@ async function main() {
 
   // 3. Dossiers législatifs (for titles, AN page and Légifrance link)
   const dossiers: Record<string, unknown> = {};
-  const dossierLegs = [...new Set(grille.textes.map((t) => Number(t.dossierRef.match(/L(\d+)N/)![1])))];
+  const dossierLegs = [...new Set(textes.map((t) => Number(t.dossierLegislatif.match(/L(\d+)N/)![1])))];
   for (const leg of dossierLegs) {
-    const refs = new Set(grille.textes.map((t) => t.dossierRef));
+    const refs = new Set(textes.map((t) => t.dossierLegislatif));
     const files = await readZip(sources.dossiers(leg), (n) =>
       refs.has(n.split("/").pop()!.replace(/\.json$/, "")),
     );
@@ -192,8 +194,8 @@ async function main() {
       };
     }
   }
-  for (const t of grille.textes) {
-    if (!dossiers[t.dossierRef]) throw new Error(`Dossier ${t.dossierRef} introuvable`);
+  for (const t of textes) {
+    if (!dossiers[t.dossierLegislatif]) throw new Error(`Dossier ${t.dossierLegislatif} introuvable`);
   }
 
   const write = (name: string, value: unknown) =>
@@ -201,7 +203,7 @@ async function main() {
   write("scrutins.json", scrutins);
   write("groupes.json", groupesOrdonnes);
   write("deputes.json", deputes);
-  write("dossiers.json", dossiers);
+  write("dossiers-legislatifs.json", dossiers);
   write("meta.json", {
     importeLe: new Date().toISOString().slice(0, 10),
     sources: [

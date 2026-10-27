@@ -1,0 +1,80 @@
+[
+ {
+  "id": "narcotrafic",
+  "titreCourt": "Sortir la France du piège du narcotrafic",
+  "scrutin": {
+   "legislature": 17,
+   "numero": 1473
+  },
+  "dossierLegislatif": "DLR5L17N50169",
+  "themes": [
+   "securite-justice"
+  ],
+  "statut": "à valider"
+ },
+ {
+  "id": "surete-transports",
+  "titreCourt": "Renforcement de la sûreté dans les transports",
+  "scrutin": {
+   "legislature": 17,
+   "numero": 1041
+  },
+  "dossierLegislatif": "DLR5L16N49176",
+  "themes": [
+   "securite-justice"
+  ],
+  "statut": "à valider"
+ },
+ {
+  "id": "prevention-attentats",
+  "titreCourt": "Sécurité, rétention administrative et prévention des risques d'attentat",
+  "scrutin": {
+   "legislature": 17,
+   "numero": 7405
+  },
+  "dossierLegislatif": "DLR5L17N53284",
+  "themes": [
+   "securite-justice"
+  ],
+  "statut": "à valider"
+ },
+ {
+  "id": "ordre-public",
+  "titreCourt": "Réponses immédiates aux phénomènes troublant l'ordre public",
+  "scrutin": {
+   "legislature": 17,
+   "numero": 8433
+  },
+  "dossierLegislatif": "DLR5L17N53980",
+  "themes": [
+   "securite-justice"
+  ],
+  "statut": "à valider"
+ },
+ {
+  "id": "rave-parties",
+  "titreCourt": "Pénalisation de l'organisation de rave-parties",
+  "scrutin": {
+   "legislature": 17,
+   "numero": 6124
+  },
+  "dossierLegislatif": "DLR5L17N51711",
+  "themes": [
+   "securite-justice"
+  ],
+  "statut": "à valider"
+ },
+ {
+  "id": "reseaux-sociaux-mineurs",
+  "titreCourt": "Protéger les mineurs des risques des réseaux sociaux",
+  "scrutin": {
+   "legislature": 17,
+   "numero": 8431
+  },
+  "dossierLegislatif": "DLR5L17N53187",
+  "themes": [
+   "numerique"
+  ],
+  "statut": "à valider"
+ }
+]

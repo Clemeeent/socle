@@ -1,5 +1,15 @@
 // All the numbers shown on the site are computed here, from the official tallies.
-import { getGroupe, grille, partis, scrutinDe, voteDuParti, type Texte, type VoteGroupe } from "./data";
+import {
+  getGroupe,
+  partis,
+  scrutinDe,
+  textesDuCritere,
+  textesDuDossier,
+  voteDuParti,
+  type Dossier,
+  type Texte,
+  type VoteGroupe,
+} from "./data";
 
 import { CATEGORIES, part, pct, type Repartition } from "./format";
 
@@ -68,16 +78,18 @@ export function periode(textes: Texte[]) {
   return annees.length > 1 ? `${annees[0]}-${annees[annees.length - 1]}` : annees[0];
 }
 
-// The views of the ranking: all criteria together, then one per criterion.
-export function vuesClassement(criteres: string[], chapeauTous: string) {
-  const textesDe = (ids: string[]) => grille.textes.filter((t) => t.criteres.some((c) => ids.includes(c)));
-  const vue = (id: string, label: string, chapeau: string, ids: string[]) => {
-    const textes = textesDe(ids);
-    return { id, label, chapeau, nTextes: textes.length, lignes: classementPartis(textes) };
-  };
-  const parCritere = criteres.map((id) => {
-    const c = grille.criteres.find((x) => x.id === id)!;
-    return vue(id, c.label, c.chapeau, [id]);
+// The views of the ranking: all the dossier's criteria together, then one per criterion.
+export function vuesClassement(dossier: Dossier, seulement?: string) {
+  const vue = (id: string, label: string, chapeau: string, textes: Texte[]) => ({
+    id,
+    label,
+    chapeau,
+    nTextes: textes.length,
+    lignes: classementPartis(textes),
   });
-  return criteres.length > 1 ? [vue("tous", "Tous", chapeauTous, criteres), ...parCritere] : parCritere;
+  const parCritere = dossier.criteres
+    .filter((c) => !seulement || c.id === seulement)
+    .map((c) => vue(c.id, c.label, c.chapeau, textesDuCritere(c.id)));
+  if (seulement) return parCritere;
+  return [vue("tous", "Tous", dossier.chapeau, textesDuDossier(dossier)), ...parCritere];
 }
