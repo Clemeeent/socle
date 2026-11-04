@@ -208,8 +208,10 @@ export type Carte = {
   // The answer as a short narrative. "[n]" cites the n-th source of the card (see sourcesCarte);
   // a paragraph may open on one of the passages. Written by AI from the card's facts, then reviewed.
   recit: { titre: string; paragraphes: { passage?: number; texte: string }[]; redaction: { par: "ia" | "humain"; relu: boolean; date: string } };
-  // Open questions to start the discussion (values, choices), never facts.
-  debat: string[];
+  // Open questions to start the discussion (values, choices), never facts. A question may offer
+  // positions to pick ("quick replies"); each points to the card's sources that support it
+  // (appuis) and those that could give it pause (doutes) — no new argument is written.
+  debat: { question: string; positions?: { label: string; appuis: number[]; doutes: number[] }[] }[];
 };
 
 export const cartesMeta = cartesJson as { statut: string; note: string; cartes: Carte[] };

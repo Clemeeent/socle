@@ -99,6 +99,19 @@ Nécessite un accès réseau complet (l'environnement de la session doit être e
 Structure à prévoir : un dossier peut contenir des **affirmations** (texte de l'affirmation,
 verdict, explication courte, indicateurs avec sources) en plus des questions fondées sur des votes.
 
+## Priorité décidée (novembre 2026)
+Pousser **une** idée loin : un vérificateur capable de traiter n'importe quelle phrase, à partir
+d'un corpus de sources officielles, qui dit « on ne sait pas » plutôt que d'inventer.
+- Fait : jeu de test `evaluation/phrases.json` (6 phrases réelles) + `npm run evaluer`.
+  Point de départ (mots-clés) : 5/6 bien orientées ; « Vivement la dissolution de la police
+  nationale » part vers le mauvais endroit.
+- Fait : réponses rapides « Et toi ? » pour se situer sur les questions de débat.
+- À faire : collecter ~20 phrases réelles ; clé d'API Claude ; accès réseau aux sources ; chaîne
+  phrase → affirmations → recherche dans le corpus → récit cité ou « on ne sait pas » → contrôle
+  automatique des chiffres ; d'abord en coulisses (brouillons de cartes relus), puis en direct.
+- Plus tard : débat à deux (lien partagé, socle commun de la discussion), bot WhatsApp/Telegram,
+  vérification en direct des débats de campagne.
+
 ## Prochaines étapes
 1. Design : première passe faite (Figtree, dossiers colorés, thèmes en tuiles, accueil simplifié).
    À affiner avec les porteurs du projet.

@@ -52,6 +52,10 @@ describe("narratives", () => {
         if (p.passage !== undefined) expect(c.decoupage[p.passage], `${c.id} passage ${p.passage}`).toBeDefined();
       }
       expect(c.debat.length, c.id).toBeGreaterThan(0);
+      for (const q of c.debat)
+        for (const p of q.positions ?? [])
+          for (const n of [...p.appuis, ...p.doutes])
+            expect(n >= 1 && n <= nSources, `${c.id} « ${p.label} » : [${n}]`).toBe(true);
     }
   });
 });

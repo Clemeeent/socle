@@ -170,9 +170,78 @@
     }
    },
    "debat": [
-    "Faut-il enregistrer chaque contrôle d'identité, par exemple avec un récépissé ?",
-    "Le problème vient-il de comportements individuels ou de l'organisation du travail policier ?",
-    "Une police plus locale, comme en Angleterre, changerait-elle la relation avec la population ?"
+    {
+     "question": "Faut-il enregistrer chaque contrôle d'identité, par exemple avec un récépissé ?",
+     "positions": [
+      {
+       "label": "Oui, chaque contrôle",
+       "appuis": [
+        6,
+        7
+       ],
+       "doutes": [
+        7
+       ]
+      },
+      {
+       "label": "À tester d'abord",
+       "appuis": [
+        3
+       ],
+       "doutes": [
+        4
+       ]
+      },
+      {
+       "label": "Non, pas nécessaire",
+       "appuis": [
+        4
+       ],
+       "doutes": [
+        1,
+        2
+       ]
+      }
+     ]
+    },
+    {
+     "question": "Le problème vient-il de comportements individuels ou de l'organisation du travail policier ?",
+     "positions": [
+      {
+       "label": "Surtout individuels",
+       "appuis": [
+        4
+       ],
+       "doutes": [
+        1,
+        5
+       ]
+      },
+      {
+       "label": "Un peu des deux",
+       "appuis": [
+        1,
+        4
+       ],
+       "doutes": [
+        3
+       ]
+      },
+      {
+       "label": "Surtout l'organisation",
+       "appuis": [
+        1,
+        2
+       ],
+       "doutes": [
+        4
+       ]
+      }
+     ]
+    },
+    {
+     "question": "Une police plus locale, comme en Angleterre, changerait-elle la relation avec la population ?"
+    }
    ]
   },
   {
@@ -354,9 +423,60 @@
     }
    },
    "debat": [
-    "Faut-il juger un budget à son montant, à sa part de la richesse nationale, ou à ce qu'il permet de faire ?",
-    "Où mettre l'argent en priorité : salaires des enseignants, taille des classes, bâtiments ?",
-    "Une hausse en euros qui suit à peine l'inflation est-elle une vraie hausse ?"
+    {
+     "question": "Faut-il juger un budget à son montant, à sa part de la richesse nationale, ou à ce qu'il permet de faire ?",
+     "positions": [
+      {
+       "label": "Au montant",
+       "appuis": [
+        2
+       ],
+       "doutes": [
+        4
+       ]
+      },
+      {
+       "label": "À la part de la richesse",
+       "appuis": [
+        4
+       ],
+       "doutes": [
+        2
+       ]
+      },
+      {
+       "label": "À ce qu'il permet",
+       "appuis": [],
+       "doutes": []
+      }
+     ]
+    },
+    {
+     "question": "Où mettre l'argent en priorité : salaires des enseignants, taille des classes, bâtiments ?"
+    },
+    {
+     "question": "Une hausse en euros qui suit à peine l'inflation est-elle une vraie hausse ?",
+     "positions": [
+      {
+       "label": "Oui, c'est une hausse",
+       "appuis": [
+        2
+       ],
+       "doutes": [
+        1
+       ]
+      },
+      {
+       "label": "Pas vraiment",
+       "appuis": [
+        1
+       ],
+       "doutes": [
+        2
+       ]
+      }
+     ]
+    }
    ]
   },
   {
@@ -487,8 +607,31 @@
     }
    },
    "debat": [
-    "Comment vérifier une information attribuée à un service de renseignement ?",
-    "Quelle responsabilité pour un média qui relaie une source anonyme ?"
+    {
+     "question": "Comment vérifier une information attribuée à un service de renseignement ?"
+    },
+    {
+     "question": "Quelle responsabilité pour un média qui relaie une source anonyme ?",
+     "positions": [
+      {
+       "label": "Vérifier avant de relayer",
+       "appuis": [
+        2,
+        3
+       ],
+       "doutes": []
+      },
+      {
+       "label": "Une source anonyme peut suffire",
+       "appuis": [
+        3
+       ],
+       "doutes": [
+        2
+       ]
+      }
+     ]
+    }
    ]
   },
   {
@@ -628,8 +771,35 @@
     }
    },
    "debat": [
-    "Comment distinguer, dans une manifestation, violences politiques et pillages ?",
-    "Les réponses (interdictions, dissolutions, maintien de l'ordre) doivent-elles viser des groupes ou des actes ?"
+    {
+     "question": "Comment distinguer, dans une manifestation, violences politiques et pillages ?"
+    },
+    {
+     "question": "Les réponses (interdictions, dissolutions, maintien de l'ordre) doivent-elles viser des groupes ou des actes ?",
+     "positions": [
+      {
+       "label": "Viser des groupes",
+       "appuis": [
+        1,
+        3
+       ],
+       "doutes": [
+        2,
+        4
+       ]
+      },
+      {
+       "label": "Viser des actes",
+       "appuis": [
+        2,
+        4
+       ],
+       "doutes": [
+        1
+       ]
+      }
+     ]
+    }
    ]
   },
   {
@@ -703,9 +873,15 @@
     }
    },
    "debat": [
-    "Où placer le curseur entre sécurité et libertés ?",
-    "Un texte voté au nom de la sécurité peut-il quand même restreindre une liberté ?",
-    "Faut-il juger un parti sur ses votes, ses propositions, ou les deux ?"
+    {
+     "question": "Où placer le curseur entre sécurité et libertés ?"
+    },
+    {
+     "question": "Un texte voté au nom de la sécurité peut-il quand même restreindre une liberté ?"
+    },
+    {
+     "question": "Faut-il juger un parti sur ses votes, ses propositions, ou les deux ?"
+    }
    ]
   }
  ]

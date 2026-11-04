@@ -98,6 +98,10 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
   surligné, des renvois numérotés `[n]` vers les sources (`sourcesCarte`), la mention « générée par
   IA · non relue / relue par un humain » (`recit.redaction`), puis « Pour lancer le débat » (questions
   ouvertes, jamais des faits), « Pour aller plus loin » et la liste des sources.
+- **Se situer** (`Positionnement.tsx`) : sous une question de débat, des réponses rapides (positions
+  sur un spectre) ; choisir montre, parmi les faits sourcés de la carte, « ce qui va dans ton sens »
+  et « ce qui pourrait te faire douter » (`debat[].positions[].appuis/doutes` = numéros de sources).
+  Aucun argument nouveau n'est écrit, rien n'est enregistré ni envoyé.
 - **Progressive disclosure** : niveau 1 = la réponse en un écran (une phrase + un visuel) ;
   niveau 2 = détails repliés (`Deplier`, `Rangee`) ; niveau 3 = sources/statut/date dans une ligne
   en pied de page (`PiedFiche`). Pas d'encart explicatif répété : la structure doit répondre.
@@ -106,6 +110,11 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
 - Couleurs de vote : pour = bleu, contre = orange, abstention = gris, absent = gris clair
   (tokens dans `src/app/globals.css`). Couleurs de groupe = celles de l'open data.
 - Accessibilité : jamais la couleur seule, `prefers-reduced-motion` respecté.
+
+## Évaluation
+- `evaluation/phrases.json` : phrases réellement entendues en débat, avec la ou les réponses
+  attendues ; `npm run evaluer` mesure combien sont bien orientées. Toute amélioration du
+  vérificateur (dont la future IA) se mesure sur cette liste. Y ajouter chaque nouvelle phrase.
 
 ## Stack et commandes
 - Next.js 16 (App Router) + TypeScript strict + Tailwind 4, données en JSON local, pas de backend.

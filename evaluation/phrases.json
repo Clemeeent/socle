@@ -1,0 +1,60 @@
+{
+ "consigne": "Phrases réellement entendues en débat. Ajouter les nouvelles à la fin. 'attendu' = la ou les réponses acceptables : un id de carte, ou « dossier:<id> » (liste vide si rien ne devrait encore répondre). Lancer : npm run evaluer",
+ "phrases": [
+  {
+   "id": "p01",
+   "phrase": "Quels partis votent le plus de lois liberticides ?",
+   "contexte": "Question à l'origine du projet.",
+   "ajoutee": "2026-10-25",
+   "attendu": [
+    "lois-liberticides",
+    "dossier:libertes"
+   ]
+  },
+  {
+   "id": "p02",
+   "phrase": "Vivement la dissolution de la police nationale.",
+   "contexte": "Commentaire sous une vidéo d'intervention policière.",
+   "ajoutee": "2026-10-27",
+   "attendu": [
+    "police-raciste"
+   ]
+  },
+  {
+   "id": "p03",
+   "phrase": "La police nationale est masculiniste, raciste et xénophobe, il faut s'inspirer des Anglais et miser sur le municipalisme.",
+   "contexte": "Réponse dans la même discussion.",
+   "ajoutee": "2026-10-27",
+   "attendu": [
+    "police-raciste"
+   ]
+  },
+  {
+   "id": "p04",
+   "phrase": "Les 10 milliards pour l'éducation, c'est la plus grande part du budget jamais consacrée à l'éducation.",
+   "contexte": "Débat sur le budget de l'Éducation nationale.",
+   "ajoutee": "2026-10-27",
+   "attendu": [
+    "education-10-milliards"
+   ]
+  },
+  {
+   "id": "p05",
+   "phrase": "Dans les manifestations, tous les problèmes viennent de l'ultragauche.",
+   "contexte": "Discussion après les manifestations d'octobre 2026.",
+   "ajoutee": "2026-10-27",
+   "attendu": [
+    "violences-ultragauche"
+   ]
+  },
+  {
+   "id": "p06",
+   "phrase": "La DGSI a trouvé des armes de guerre chez les émeutiers.",
+   "contexte": "Information reprise après les manifestations du 17 octobre 2026.",
+   "ajoutee": "2026-11-04",
+   "attendu": [
+    "armes-de-guerre-17-octobre"
+   ]
+  }
+ ]
+}

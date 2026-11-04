@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { cartesVoisines, dossierDeLaCarte, getDossier, lienCarte, lienDossier, type Carte } from "@/lib/data";
 import type { Passage } from "@/lib/decoupage";
+import { Positionnement } from "./Positionnement";
 
 export const COULEURS_PASSAGE: Record<Passage["type"], { fond: string; trait: string }> = {
   donnee: { fond: "#e6ebff", trait: "#2a3eb1" },
@@ -10,7 +11,7 @@ export const COULEURS_PASSAGE: Record<Passage["type"], { fond: string; trait: st
   source: { fond: "#fde8e7", trait: "#c43d32" },
 };
 
-type Source = { label: string; url: string; statut: string };
+type Source = { label: string; url: string; statut: string; texte: string };
 
 // "[3]" → a superscript link to the 3rd source.
 function avecCitations(texte: string) {
@@ -73,14 +74,20 @@ export function SuiteRecit({ c, sources }: { c: Carte; sources: Source[] }) {
       {c.debat.length > 0 && (
         <section className="mt-10">
           <h2 className="text-lg font-bold">Pour lancer le débat</h2>
-          <p className="mt-1 text-sm text-ink-3">Ici, les faits ne tranchent pas : ce sont des choix, à discuter.</p>
-          <ul className="mt-3 space-y-2">
-            {c.debat.map((q) => (
-              <li key={q} className="flex gap-3 text-[1.05rem] leading-snug">
-                <span aria-hidden className="text-accent">→</span>
-                <span>{q}</span>
-              </li>
-            ))}
+          <p className="mt-1 text-sm text-ink-3">Ici, les faits ne tranchent pas : ce sont des choix. Et toi, tu te situes où ?</p>
+          <ul className="mt-4 space-y-6">
+            {c.debat.map((q) =>
+              q.positions ? (
+                <li key={q.question}>
+                  <Positionnement question={q.question} positions={q.positions} sources={sources} />
+                </li>
+              ) : (
+                <li key={q.question} className="flex gap-3 text-[1.05rem] leading-snug">
+                  <span aria-hidden className="text-accent">→</span>
+                  <span>{q.question}</span>
+                </li>
+              ),
+            )}
           </ul>
         </section>
       )}

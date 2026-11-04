@@ -121,7 +121,8 @@ export const faitsCarte = (c: Carte): Fait[] => {
 };
 
 // Numbered sources of a card, as cited by "[n]" in its narrative: facts, then unknowns with a source.
+// Each keeps the sentence it supports, so positions can quote it.
 export const sourcesCarte = (c: Carte) => [
-  ...faitsCarte(c).map((f) => ({ ...f.source, statut: f.statut })),
-  ...c.inconnu.flatMap((x) => (x.source ? [{ ...x.source, statut: "à vérifier" }] : [])),
+  ...faitsCarte(c).map((f) => ({ ...f.source, statut: f.statut, texte: f.texte })),
+  ...c.inconnu.flatMap((x) => (x.source ? [{ ...x.source, statut: "à vérifier", texte: x.texte }] : [])),
 ];

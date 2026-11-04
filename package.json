@@ -11,7 +11,8 @@
     "test": "vitest run",
     "programmes:extraire": "tsx scripts/programmes.ts extraire",
     "programmes:verifier": "tsx scripts/programmes.ts verifier",
-    "programmes:telecharger": "tsx scripts/programmes.ts telecharger"
+    "programmes:telecharger": "tsx scripts/programmes.ts telecharger",
+    "evaluer": "tsx scripts/evaluer.ts"
   },
   "dependencies": {
     "@fontsource-variable/figtree": "^5.3.0",
