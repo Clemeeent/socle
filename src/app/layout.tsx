@@ -3,6 +3,7 @@ import Link from "next/link";
 import "@fontsource-variable/figtree";
 import "./globals.css";
 import { meta, formatDate } from "@/lib/data";
+import { Menu } from "@/components/Menu";
 
 export const metadata: Metadata = {
   // Absolute URLs for link previews (set by the GitHub Pages workflow).
@@ -16,7 +17,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="fr">
       <body className="min-h-dvh flex flex-col">
-        <header className="border-b border-line">
+        <header>
           <div className="mx-auto max-w-3xl px-4 h-14 flex items-center justify-between">
             <Link href="/" className="font-bold text-lg tracking-tight text-ink no-underline">
               Socle<span className="text-accent">.</span>
@@ -24,17 +25,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 démo
               </span>
             </Link>
-            <nav className="flex gap-4 text-sm font-medium">
-              <Link href="/cartes" className="text-ink-2 no-underline hover:text-accent">
-                Vérifs
-              </Link>
-              <Link href="/#dossiers" className="text-ink-2 no-underline hover:text-accent">
-                Dossiers
-              </Link>
-              <Link href="/partis" className="text-ink-2 no-underline hover:text-accent">
-                Partis
-              </Link>
-            </nav>
+            <Menu />
           </div>
         </header>
         <main className="flex-1 mx-auto w-full max-w-3xl px-4 py-6">{children}</main>

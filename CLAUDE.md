@@ -78,7 +78,11 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
 - Les **dossiers** ont un traitement à part : bloc coloré (`--dossier-<couleur>-*` dans
   `globals.css`, jamais une couleur de parti) et illustration d'hémicycle abstraite
   (`IllustrationDossier`). Les **thèmes** restent sobres (tuiles blanches + icône).
-- Accueil « recherche d'abord » (façon assistant) : une question, un grand champ, des suggestions ;
+- Navigation : logo + bouton « Menu » (`Menu.tsx`, modèle disclosure : aria-expanded, Échap, clic
+  extérieur, retour du focus).
+- Accueil « recherche d'abord » (façon assistant) : une question, un grand champ dont le texte
+  indicatif fait défiler des phrases d'exemple (pause au focus, aucune rotation si mouvement réduit ;
+  champ vide + Entrée = vérifier l'exemple affiché) ;
   puis un carrousel des cartes en tuiles colorées avec motif génératif (`Motif`, graine = id de la
   carte, couleur = famille du verdict, toujours écrit en toutes lettres), puis les dossiers.
 - **Vérificateur** (`Verificateur.tsx`) : la phrase saisie reste au centre, effet « réflexion »

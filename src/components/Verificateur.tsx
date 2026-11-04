@@ -30,7 +30,16 @@ export function Verificateur() {
   const [q, setQ] = useState("");
   const [etat, setEtat] = useState<Etat>({ nom: "saisie", inconnue: false });
   const [etape, setEtape] = useState(0);
+  const [exempleIndex, setExempleIndex] = useState(0);
+  const [pause, setPause] = useState(false);
   const haut = useRef<HTMLDivElement>(null);
+
+  // Rotate the example while the field is empty and not focused (never with reduced motion).
+  useEffect(() => {
+    if (etat.nom !== "saisie" || pause || q || mouvementReduit()) return;
+    const t = setInterval(() => setExempleIndex((i) => i + 1), 3500);
+    return () => clearInterval(t);
+  }, [etat.nom, pause, q]);
 
   // The thinking phase: a few visible steps, then the result.
   useEffect(() => {
@@ -61,30 +70,39 @@ export function Verificateur() {
   }
 
   if (etat.nom === "saisie") {
+    const exemple = cartes[exempleIndex % cartes.length].affirmation;
     return (
-      <div ref={haut} className="text-center">
-        <p className="text-sm font-semibold text-accent">Les faits d&apos;abord, le débat ensuite</p>
-        <h1 className="mt-2 text-[2.2rem] leading-[1.08]">Qu&apos;est-ce qu&apos;on t&apos;a affirmé ?</h1>
-        <p className="mx-auto mt-3 max-w-md text-ink-2">
-          Colle la phrase : Socle la découpe, montre ce qui est mesurable, ce qui dépend des mots, et d&apos;où ça
-          vient.
-        </p>
+      <div ref={haut}>
+        <h1 className="text-center text-[2rem] leading-[1.1]">Qu&apos;est-ce qu&apos;on t&apos;a affirmé ?</h1>
         <form
-          className="mt-6 text-left"
+          className="mt-6"
           role="search"
           onSubmit={(e) => {
             e.preventDefault();
-            verifier(q);
+            // An empty field checks the example on display.
+            verifier(q.trim() ? q : exemple);
           }}
         >
           <label htmlFor="question" className="sr-only">
-            La phrase entendue
+            La phrase entendue en débat
           </label>
           <div className="relative rounded-[1.75rem] border border-line bg-white p-2 shadow-[0_10px_40px_-12px_rgba(42,62,177,0.35)] focus-within:border-accent">
+            {!q && (
+              // Rotating example, shown like a placeholder (decorative: the button label names it).
+              <p
+                key={exempleIndex}
+                aria-hidden
+                className="apparait pointer-events-none absolute inset-x-5 top-4 pr-12 text-lg leading-snug text-ink-3"
+              >
+                «&nbsp;{exemple}&nbsp;»
+              </p>
+            )}
             <textarea
               id="question"
               value={q}
               rows={3}
+              onFocus={() => setPause(true)}
+              onBlur={() => setPause(false)}
               onChange={(e) => {
                 setQ(e.target.value);
                 if (etat.inconnue) setEtat({ nom: "saisie", inconnue: false });
@@ -93,44 +111,25 @@ export function Verificateur() {
                 // Enter sends, Shift+Enter goes to a new line (like chat apps).
                 if (e.key === "Enter" && !e.shiftKey) {
                   e.preventDefault();
-                  verifier(q);
+                  verifier(q.trim() ? q : exemple);
                 }
               }}
-              placeholder="Colle ici la phrase qu'on t'a lancée…"
-              className="block w-full resize-none bg-transparent px-3 pb-12 pt-2 text-lg leading-snug outline-none placeholder:text-ink-3"
+              className="relative block w-full resize-none bg-transparent px-3 pb-12 pt-2 text-lg leading-snug outline-none"
             />
             <button
               type="submit"
-              aria-label="Vérifier"
-              disabled={!q.trim()}
-              className="absolute bottom-3 right-3 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-xl text-white disabled:opacity-40"
+              aria-label={q.trim() ? "Vérifier cette phrase" : `Vérifier l'exemple : ${exemple}`}
+              className="absolute bottom-3 right-3 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-xl text-white"
             >
               ↑
             </button>
           </div>
         </form>
         {etat.inconnue && (
-          <p className="mt-3 rounded-2xl bg-warn-bg p-3 text-left text-sm text-warn-ink" role="status">
-            Cette phrase n&apos;a pas encore été vérifiée. Essaie un des exemples ci-dessous.
+          <p className="mt-3 rounded-2xl bg-warn-bg p-3 text-sm text-warn-ink" role="status">
+            Cette phrase n&apos;a pas encore été vérifiée. Essaie un des exemples qui défilent dans le champ.
           </p>
         )}
-        <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-ink-3">Essaie avec</p>
-        <ul className="mt-2 flex flex-wrap justify-center gap-2">
-          {cartes.slice(0, 4).map((c) => (
-            <li key={c.id}>
-              <button
-                type="button"
-                onClick={() => {
-                  setQ(c.affirmation);
-                  verifier(c.affirmation);
-                }}
-                className="rounded-full border border-line bg-white px-3 py-1.5 text-left text-sm text-ink-2 hover:border-accent hover:text-accent"
-              >
-                « {c.affirmation} »
-              </button>
-            </li>
-          ))}
-        </ul>
       </div>
     );
   }
