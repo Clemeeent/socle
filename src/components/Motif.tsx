@@ -13,7 +13,7 @@ export const PALETTES: Record<string, Palette> = {
 };
 
 // Small deterministic PRNG (mulberry32) seeded by a string hash.
-function aleatoire(graine: string) {
+export function aleatoire(graine: string) {
   let h = 1779033703;
   for (let i = 0; i < graine.length; i++) h = Math.imul(h ^ graine.charCodeAt(i), 3432918353);
   let a = h >>> 0;

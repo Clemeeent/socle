@@ -2,13 +2,15 @@ import Link from "next/link";
 import { cartes, dossiers } from "@/lib/data";
 import { TuileCarte } from "@/components/Carte";
 import { CarteDossier } from "@/components/Dossier";
+import { FondDebat } from "@/components/FondDebat";
 import { Verificateur } from "@/components/Verificateur";
 
 export default function Home() {
   return (
     <div>
       {/* Search first: one question, one field, like a chat assistant. */}
-      <section className="flex min-h-[62vh] flex-col justify-center pb-6">
+      <section className="relative isolate flex min-h-[62vh] flex-col justify-center pb-6">
+        <FondDebat className="fond-debat pointer-events-none absolute left-1/2 -top-6 -z-10 h-[calc(100%+1.5rem)] w-screen max-w-[110rem] -translate-x-1/2 opacity-70" />
         <Verificateur />
       </section>
 

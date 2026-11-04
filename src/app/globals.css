@@ -143,3 +143,28 @@ body {
     animation: none;
   }
 }
+
+/* Home background: dots that light up and fade, briefly, then stay off for most of the cycle. */
+@keyframes socle-point {
+  0%, 100% { opacity: 0; }
+  6% { opacity: 0.9; }
+  16% { opacity: 0.9; }
+  26% { opacity: 0; }
+}
+.point-debat {
+  opacity: 0;
+  animation-name: socle-point;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.fond-debat {
+  /* Fades out towards the bottom and the sides so it stays behind the content. */
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, #000 30%, transparent 75%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .point-debat {
+    animation: none;
+    opacity: 0;
+  }
+}
