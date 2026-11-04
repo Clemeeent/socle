@@ -23,7 +23,7 @@ export default async function ThemePage({ params }: { params: Promise<{ id: stri
 
   return (
     <article>
-      <Link href="/#themes" className="text-sm">
+      <Link href="/themes" className="text-sm">
         ← Tous les thèmes
       </Link>
       <h1 className="mt-3 flex items-center gap-3 text-[1.9rem] leading-tight">

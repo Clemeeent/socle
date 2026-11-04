@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { cartes, cartesMeta } from "@/lib/data";
-import { LigneCarte } from "@/components/Carte";
+import { TuileCarte } from "@/components/Carte";
 
 export const metadata: Metadata = { title: "Vérifications" };
 
@@ -12,10 +12,10 @@ export default function CartesPage() {
         Des phrases entendues dans de vrais débats. Pour chacune : ce que disent les données, ce qui dépend
         de la définition, ce qu&apos;on ne sait pas. Une carte à partager dans la conversation.
       </p>
-      <ul className="mt-5 space-y-3">
+      <ul className="mt-5 grid gap-3 sm:grid-cols-2">
         {cartes.map((c) => (
           <li key={c.id}>
-            <LigneCarte c={c} />
+            <TuileCarte c={c} />
           </li>
         ))}
       </ul>

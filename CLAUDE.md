@@ -78,6 +78,9 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
 - Les **dossiers** ont un traitement à part : bloc coloré (`--dossier-<couleur>-*` dans
   `globals.css`, jamais une couleur de parti) et illustration d'hémicycle abstraite
   (`IllustrationDossier`). Les **thèmes** restent sobres (tuiles blanches + icône).
+- Accueil « recherche d'abord » (façon assistant) : une question, un grand champ, des suggestions ;
+  puis un carrousel des cartes en tuiles colorées avec motif génératif (`Motif`, graine = id de la
+  carte, couleur = famille du verdict, toujours écrit en toutes lettres), puis les dossiers.
 - **Progressive disclosure** : niveau 1 = la réponse en un écran (une phrase + un visuel) ;
   niveau 2 = détails repliés (`Deplier`, `Rangee`) ; niveau 3 = sources/statut/date dans une ligne
   en pied de page (`PiedFiche`). Pas d'encart explicatif répété : la structure doit répondre.

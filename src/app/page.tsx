@@ -1,61 +1,42 @@
 import Link from "next/link";
-import { cartes, dossiers, dossiersDuTheme, recherche, textesDuTheme, themes } from "@/lib/data";
-import { lienRecherche } from "@/lib/question";
-import { LigneCarte } from "@/components/Carte";
+import { cartes, dossiers } from "@/lib/data";
+import { TuileCarte } from "@/components/Carte";
 import { CarteDossier } from "@/components/Dossier";
 import { QuestionBox } from "@/components/QuestionBox";
-import { TuileTheme } from "@/components/TuileTheme";
-
-const aDuContenu = (id: string) => textesDuTheme(id).length + dossiersDuTheme(id).length > 0;
 
 export default function Home() {
   return (
     <div>
-      <section className="pt-2">
-        <h1 className="text-[2.1rem] leading-[1.08]">
-          Les faits d&apos;abord.
-          <br />
-          <span className="text-accent">Le débat ensuite.</span>
-        </h1>
-        <p className="mt-3 text-ink-2">
-          Une affirmation t&apos;a été lancée en plein débat ? Vérifie-la, puis partage une carte qui pose
-          les faits sur lesquels tout le monde peut s&apos;accorder.
+      {/* Search first: one question, one field, like a chat assistant. */}
+      <section className="flex min-h-[62vh] flex-col justify-center pb-6 text-center">
+        <p className="text-sm font-semibold text-accent">Les faits d&apos;abord, le débat ensuite</p>
+        <h1 className="mt-2 text-[2.2rem] leading-[1.08]">Qu&apos;est-ce qu&apos;on t&apos;a affirmé ?</h1>
+        <p className="mx-auto mt-3 max-w-md text-ink-2">
+          Socle vérifie la phrase et te donne une carte à partager : ce que disent les données, ce qui dépend de la
+          définition, ce qu&apos;on ne sait pas.
         </p>
-        <div className="mt-5">
+        <div className="mt-6 text-left">
           <QuestionBox />
         </div>
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {recherche.slice(0, 4).map((r) => (
-            <li key={r.question}>
-              <Link
-                href={lienRecherche(r)}
-                className="inline-block rounded-full bg-bg-alt px-3 py-1.5 text-sm text-ink-2 no-underline hover:text-accent"
-              >
-                {r.question}
-              </Link>
-            </li>
-          ))}
-        </ul>
       </section>
 
-      <section id="verifications" className="mt-10 scroll-mt-4">
+      <section id="verifications" className="mt-4 scroll-mt-4">
         <div className="flex items-baseline justify-between">
-          <h2 className="text-xl font-bold">Ce qu&apos;on a vérifié</h2>
+          <h2 className="text-xl font-bold">Déjà vérifié</h2>
           <Link href="/cartes" className="text-sm">Tout voir →</Link>
         </div>
-        <p className="mt-1 text-sm text-ink-3">Des phrases entendues dans de vrais débats.</p>
-        <ul className="mt-4 space-y-3">
-          {cartes.slice(0, 4).map((c) => (
-            <li key={c.id}>
-              <LigneCarte c={c} />
+        {/* Swipeable row of tiles (scroll snap, no script). */}
+        <ul className="-mx-4 mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-3 [scrollbar-width:none]">
+          {cartes.map((c) => (
+            <li key={c.id} className="w-[78%] max-w-[20rem] shrink-0 snap-start">
+              <TuileCarte c={c} />
             </li>
           ))}
         </ul>
       </section>
 
-      <section id="dossiers" className="mt-12 scroll-mt-4">
-        <h2 className="text-xl font-bold">Les dossiers</h2>
-        <p className="mt-1 text-sm text-ink-3">Les grands débats du moment, décortiqués.</p>
+      <section id="dossiers" className="mt-10 scroll-mt-4">
+        <h2 className="text-xl font-bold">Pour aller plus loin : les dossiers</h2>
         <ul className="mt-4 grid gap-4 sm:grid-cols-2">
           {dossiers.map((d) => (
             <li key={d.id}>
@@ -63,27 +44,9 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <p className="mt-3 text-sm text-ink-3">Prochains dossiers : la police, les violences en manifestation…</p>
-      </section>
-
-      <section id="themes" className="mt-12 scroll-mt-4">
-        <h2 className="text-xl font-bold">Les thèmes</h2>
-        <p className="mt-1 text-sm text-ink-3">Tous les textes votés, rangés par grand sujet.</p>
-        <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
-          {themes
-            .filter((t) => aDuContenu(t.id))
-            .map((t) => (
-              <li key={t.id}>
-                <TuileTheme t={t} />
-              </li>
-            ))}
-        </ul>
-        <p className="mt-4 text-sm text-ink-3">
-          Bientôt :{" "}
-          {themes
-            .filter((t) => !aDuContenu(t.id))
-            .map((t) => t.label)
-            .join(" · ")}
+        <p className="mt-6 text-sm">
+          <Link href="/themes">Explorer par thème</Link> · <Link href="/partis">Les partis</Link> ·{" "}
+          <Link href="/methode">La méthode</Link>
         </p>
       </section>
     </div>
