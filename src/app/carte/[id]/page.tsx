@@ -99,6 +99,38 @@ export default async function CartePage({ params }: { params: Promise<{ id: stri
             ))}
           </ul>
         </Deplier>
+        <Deplier titre={<>Comment les médias en ont parlé <span className="font-normal text-ink-3">· {c.medias.length || "à venir"}</span></>}>
+          {c.medias.length ? (
+            <>
+              <ul className="space-y-4">
+                {c.medias.map((m) => (
+                  <li key={m.media + m.titre}>
+                    <p className="flex flex-wrap items-baseline gap-x-2 text-sm">
+                      <span className="font-semibold">{m.media}</span>
+                      {m.date && <span className="text-xs text-ink-3">{m.date}</span>}
+                      <span className="rounded-full bg-bg-alt px-2 py-0.5 text-xs text-ink-2">{m.role}</span>
+                    </p>
+                    <a
+                      href={m.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      // A "via" entry describes the coverage; only the others are exact headlines.
+                      className={`mt-1 block text-[0.95rem] leading-snug ${m.via ? "italic" : ""}`}
+                    >
+                      {m.titre} ↗
+                    </a>
+                    {m.via && <p className="text-xs text-ink-3">{m.via}</p>}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-xs text-ink-3">
+                Liste non exhaustive, relevée par recherche. Socle décrit ce que chaque média a publié, sans le noter.
+              </p>
+            </>
+          ) : (
+            <p className="text-sm text-ink-3">Revue de presse à venir.</p>
+          )}
+        </Deplier>
         {c.valeurs && (
           <Deplier titre="Ce qui reste à débattre">
             <p className="text-[0.95rem] leading-relaxed">{c.valeurs}</p>

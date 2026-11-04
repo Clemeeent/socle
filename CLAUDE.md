@@ -50,7 +50,9 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
   critères avec question / définition / mots-clés, sélection des textes avec justification).
   Ne pas confondre avec `data/dossiers-legislatifs.json` (généré, dossiers de l'Assemblée).
 - **Cartes** : `data/cartes.json` (affirmation, contexte, verdict, en bref, faits avec source et
-  statut, définitions, inconnu, valeurs). Verdicts : `jugement`, `depend`, `nuance`, `dementi`,
+  statut, définitions, inconnu, valeurs, médias). Les médias : qui a publié quoi (titre exact,
+  lien, rôle neutre : « diffuse l'affirmation », « relaie le démenti », « vérifie »…), jamais de note
+  ni de classement ; uniquement dans la page, pas dans les images de partage. Verdicts : `jugement`, `depend`, `nuance`, `dementi`,
   `vrai`, `faux` — jamais de « vrai/faux » sur un jugement. Faits relevés par recherche web :
   `statut: "à vérifier"` tant qu'ils n'ont pas été contrôlés sur la source. Une carte liée à un
   dossier (`dossier`) reçoit en plus des faits calculés depuis les votes (`faitsDuDossier`).

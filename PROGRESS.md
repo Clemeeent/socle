@@ -48,6 +48,8 @@ Outil pour le moment du débat : vérifier une affirmation et partager une carte
 Fait : 5 cartes tirées de vrais débats (police raciste ?, 10 milliards pour l'éducation, armes de
 guerre du 17 octobre, violences et ultragauche, lois liberticides), page `/cartes`, page carte avec
 boutons Partager / Partager l'image / Copier le lien / Télécharger, images générées au build.
+Chaque carte a une section « Comment les médias en ont parlé » (titres exacts, rôle neutre, sans note),
+visible dans la page seulement.
 **À faire** : contrôler chaque fait « à vérifier » directement sur sa source (cette session n'avait
 accès qu'aux résultats de recherche, pas aux sites officiels), puis passer leur statut à « vérifié ».
 Test proposé : 2-3 semaines d'usage réel des cartes dans de vrais débats (envoyées par WhatsApp),

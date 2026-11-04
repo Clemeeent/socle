@@ -200,6 +200,8 @@ export type Carte = {
   definitions: string[];
   inconnu: { texte: string; source?: SourceRef }[];
   valeurs: string;
+  // Who reported the claim and how (role in neutral words). Never a rating of the outlet.
+  medias: { media: string; titre: string; url: string; role: string; date?: string; via?: string }[];
 };
 
 export const cartesMeta = cartesJson as { statut: string; note: string; cartes: Carte[] };
