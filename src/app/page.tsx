@@ -2,22 +2,14 @@ import Link from "next/link";
 import { cartes, dossiers } from "@/lib/data";
 import { TuileCarte } from "@/components/Carte";
 import { CarteDossier } from "@/components/Dossier";
-import { QuestionBox } from "@/components/QuestionBox";
+import { Verificateur } from "@/components/Verificateur";
 
 export default function Home() {
   return (
     <div>
       {/* Search first: one question, one field, like a chat assistant. */}
-      <section className="flex min-h-[62vh] flex-col justify-center pb-6 text-center">
-        <p className="text-sm font-semibold text-accent">Les faits d&apos;abord, le débat ensuite</p>
-        <h1 className="mt-2 text-[2.2rem] leading-[1.08]">Qu&apos;est-ce qu&apos;on t&apos;a affirmé ?</h1>
-        <p className="mx-auto mt-3 max-w-md text-ink-2">
-          Socle vérifie la phrase et te donne une carte à partager : ce que disent les données, ce qui dépend de la
-          définition, ce qu&apos;on ne sait pas.
-        </p>
-        <div className="mt-6 text-left">
-          <QuestionBox />
-        </div>
+      <section className="flex min-h-[62vh] flex-col justify-center pb-6">
+        <Verificateur />
       </section>
 
       <section id="verifications" className="mt-4 scroll-mt-4">

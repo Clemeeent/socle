@@ -104,6 +104,49 @@
      "role": "analyse",
      "url": "https://www.inegalites.fr/Des-controles-de-police-tres-inegaux-selon-la-couleur-de-la-peau"
     }
+   ],
+   "decoupage": [
+    {
+     "extrait": "La police française",
+     "motsCles": [
+      "la police",
+      "police",
+      "policiers",
+      "policier",
+      "flics",
+      "forces de l'ordre"
+     ],
+     "type": "definition",
+     "note": "Qui, exactement ? Des policiers (des individus), des pratiques (les contrôles) ou l'institution ? Les données portent surtout sur les contrôles d'identité."
+    },
+    {
+     "extrait": "est raciste",
+     "motsCles": [
+      "raciste",
+      "racistes",
+      "racisme",
+      "discrimin",
+      "faciès",
+      "facies"
+     ],
+     "type": "donnee",
+     "note": "Mesuré : les jeunes hommes perçus comme noirs, arabes ou maghrébins ont 4 fois plus de risques d'être contrôlés. Le Conseil d'État parle d'une pratique « établie », sans caractère « systémique ».",
+     "source": {
+      "label": "Défenseur des droits, Enquête Accès aux droits 2024",
+      "url": "https://www.defenseurdesdroits.fr/sites/default/files/2025-06/ddd_EAD-2024_volume-1_relations-police-population.pdf"
+     }
+    },
+    {
+     "motsCles": [
+      "systémique",
+      "systemique",
+      "systématique",
+      "systematique",
+      "structurel"
+     ],
+     "type": "definition",
+     "note": "« Systémique » : le Conseil d'État a écarté ce mot au sens juridique en 2023 ; d'autres l'emploient dans un sens plus large."
+    }
    ]
   },
   {
@@ -205,6 +248,62 @@
      "role": "rapporte les chiffres officiels",
      "url": "https://education.newstank.fr/article/view/412573/depense-interieure-education-6-8-pib-2024-10920-eleve-11660-etudiant-depp.html"
     }
+   ],
+   "decoupage": [
+    {
+     "extrait": "10 milliards",
+     "motsCles": [
+      "10 milliards",
+      "dix milliards",
+      "10 md",
+      "milliards"
+     ],
+     "type": "donnee",
+     "note": "Origine du chiffre non retrouvée. Le chiffre officiel le plus proche : +12,13 milliards d'euros depuis 2019, hors pensions.",
+     "source": {
+      "label": "Sénat, avis sur le projet de loi de finances 2026",
+      "url": "https://www.senat.fr/rap/a25-144-31/a25-144-31_mono.html"
+     }
+    },
+    {
+     "extrait": "l'éducation",
+     "motsCles": [
+      "éducation nationale",
+      "l'éducation",
+      "éducation",
+      "education",
+      "école",
+      "ecole",
+      "enseignement"
+     ],
+     "type": "definition",
+     "note": "Quel périmètre ? Le ministère seul (63,02 milliards en 2026), avec les pensions (89,64 milliards), ou toute la dépense d'éducation du pays ?",
+     "source": {
+      "label": "Sénat, avis sur le projet de loi de finances 2026",
+      "url": "https://www.senat.fr/rap/a25-144-31/a25-144-31_mono.html"
+     }
+    },
+    {
+     "extrait": "n'a jamais eu une aussi grande part du budget",
+     "motsCles": [
+      "un record historique",
+      "record historique",
+      "un record",
+      "n'a jamais eu une aussi grande part du budget",
+      "jamais",
+      "record",
+      "historique",
+      "plus grande part",
+      "part du budget",
+      "le plus"
+     ],
+     "type": "donnee",
+     "note": "En part de la richesse nationale, non : 6,8 % du PIB en 2024, contre environ 7,7 % au milieu des années 1990. En euros, oui, le budget augmente.",
+     "source": {
+      "label": "DEPP, Repères et références statistiques 2025",
+      "url": "https://www.education.gouv.fr/sites/default/files/2025-07/rers2025-chapitre-10-441741.pdf"
+     }
+    }
    ]
   },
   {
@@ -280,6 +379,40 @@
      "titre": "Des fusils automatiques ont-ils été retrouvés entre les mains de manifestants le 17 octobre ?",
      "role": "vérifie",
      "url": "https://lessurligneurs.eu/des-fusils-automatiques-ont-ils-ete-retrouves-entre-les-mains-de-manifestants-le-17-octobre/"
+    }
+   ],
+   "decoupage": [
+    {
+     "extrait": "Selon la DGSI",
+     "motsCles": [
+      "selon la dgsi",
+      "dgsi",
+      "renseignement"
+     ],
+     "type": "source",
+     "note": "La DGSI « dément complètement cette information » et dit ne pas en être la source.",
+     "source": {
+      "label": "Les Surligneurs",
+      "url": "https://lessurligneurs.eu/des-fusils-automatiques-ont-ils-ete-retrouves-entre-les-mains-de-manifestants-le-17-octobre/"
+     }
+    },
+    {
+     "extrait": "des armes de guerre",
+     "motsCles": [
+      "des armes de guerre",
+      "armes de guerre",
+      "arme de guerre",
+      "armes",
+      "kalachnikov",
+      "kalach",
+      "fusil"
+     ],
+     "type": "donnee",
+     "note": "Aucune confirmation officielle. La journaliste a ensuite reconnu que ses informations ne venaient pas de la direction de la DGSI ; le JDD maintient les siennes.",
+     "source": {
+      "label": "Puremédias",
+      "url": "https://www.ozap.com/actu/cest-completement-faux-la-dgsi-dement-complement-des-informations-revelees-par-cnews-sur-les-evenements-du-17-octobre/657553"
+     }
     }
    ]
   },
@@ -359,6 +492,47 @@
      "role": "rapporte une note du renseignement, avant les faits",
      "url": "https://europe1.fr/societe/manifestations-de-jeudi-le-renseignement-redoute-une-journee-a-tres-hauts-risques-1206047"
     }
+   ],
+   "decoupage": [
+    {
+     "extrait": "Les violences",
+     "motsCles": [
+      "les violences",
+      "violences",
+      "violence",
+      "casse",
+      "casseurs",
+      "pillages",
+      "émeutes",
+      "emeutes"
+     ],
+     "type": "definition",
+     "note": "Débordements ou pillages ? Le renseignement, cité par l'AFP, les distingue.",
+     "source": {
+      "label": "AFP, via France 24",
+      "url": "https://www.france24.com/fr/info-en-continu/20261020-violences-en-france-le-renseignement-estime-que-l-ultragauche-et-l-extr%C3%AAme-gauche-radicale-%C3%A9taient-en-pointe-samedi"
+     }
+    },
+    {
+     "extrait": "c'est l'ultragauche",
+     "motsCles": [
+      "c'est l'ultragauche",
+      "ultragauche",
+      "ultra-gauche",
+      "ultra gauche",
+      "extrême gauche",
+      "extreme gauche",
+      "black bloc",
+      "black blocs",
+      "gauchistes"
+     ],
+     "type": "donnee",
+     "note": "« En pointe » dans les débordements selon le renseignement, mais « pas à l'origine des pillages ». La procureure de Paris dit ne pas pouvoir le confirmer pour Paris.",
+     "source": {
+      "label": "AFP, via France 24",
+      "url": "https://www.france24.com/fr/info-en-continu/20261020-violences-en-france-le-renseignement-estime-que-l-ultragauche-et-l-extr%C3%AAme-gauche-radicale-%C3%A9taient-en-pointe-samedi"
+     }
+    }
    ]
   },
   {
@@ -383,7 +557,33 @@
     }
    ],
    "valeurs": "Faut-il plus de sécurité ou plus de libertés ? C'est le cœur du débat, et il appartient à chacun.",
-   "medias": []
+   "medias": [],
+   "decoupage": [
+    {
+     "extrait": "toujours les mêmes partis",
+     "motsCles": [
+      "toujours les mêmes partis",
+      "mêmes partis",
+      "memes partis",
+      "partis",
+      "parti"
+     ],
+     "type": "donnee",
+     "note": "Les votes diffèrent fortement d'un parti à l'autre sur les textes retenus : le détail est dans la carte, chiffres de l'Assemblée à l'appui."
+    },
+    {
+     "extrait": "lois liberticides",
+     "motsCles": [
+      "lois liberticides",
+      "liberticides",
+      "liberticide",
+      "libertés",
+      "libertes"
+     ],
+     "type": "definition",
+     "note": "« Liberticide » est un jugement. Socle le traduit en 4 critères vérifiables : manifestation, surveillance, expression, pouvoirs de police."
+    }
+   ]
   }
  ]
 }

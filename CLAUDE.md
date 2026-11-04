@@ -81,6 +81,12 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
 - Accueil « recherche d'abord » (façon assistant) : une question, un grand champ, des suggestions ;
   puis un carrousel des cartes en tuiles colorées avec motif génératif (`Motif`, graine = id de la
   carte, couleur = famille du verdict, toujours écrit en toutes lettres), puis les dossiers.
+- **Vérificateur** (`Verificateur.tsx`) : la phrase saisie reste au centre, effet « réflexion »
+  (shimmer + étapes), puis ses passages sont surlignés et numérotés (données / définition / source),
+  avec une note sourcée sous la phrase, puis le socle commun et le lien vers la carte. v1 : le
+  découpage est préparé dans chaque carte (`decoupage` : extrait, mots-clés, type, note, source) et
+  les mots du lecteur sont reconnus par `src/lib/decoupage.ts` ; les notes ne reprennent que des
+  faits déjà sourcés dans la carte. Plus tard : découpage par une IA limitée aux sources de Socle.
 - **Progressive disclosure** : niveau 1 = la réponse en un écran (une phrase + un visuel) ;
   niveau 2 = détails repliés (`Deplier`, `Rangee`) ; niveau 3 = sources/statut/date dans une ligne
   en pied de page (`PiedFiche`). Pas d'encart explicatif répété : la structure doit répondre.

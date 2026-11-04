@@ -13,6 +13,7 @@ import partisJson from "../../data/partis.json";
 import positionsJson from "../../data/positions.json";
 import sourcesJson from "../../programmes/sources.json";
 import { TYPES_DOCUMENT, type DocumentProgramme, type Position } from "./programmes-core";
+import type { Passage } from "./decoupage";
 
 export const AVERTISSEMENT = "Sélection provisoire, non validée par un juriste.";
 
@@ -202,6 +203,8 @@ export type Carte = {
   valeurs: string;
   // Who reported the claim and how (role in neutral words). Never a rating of the outlet.
   medias: { media: string; titre: string; url: string; role: string; date?: string; via?: string }[];
+  // How the sentence breaks down: passages, each tied to a fact, a definition issue or a source.
+  decoupage: Passage[];
 };
 
 export const cartesMeta = cartesJson as { statut: string; note: string; cartes: Carte[] };

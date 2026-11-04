@@ -50,6 +50,8 @@ guerre du 17 octobre, violences et ultragauche, lois liberticides), page `/carte
 boutons Partager / Partager l'image / Copier le lien / Télécharger, images générées au build.
 Chaque carte a une section « Comment les médias en ont parlé » (titres exacts, rôle neutre, sans note),
 visible dans la page seulement.
+Accueil : vérificateur façon assistant (phrase au centre, réflexion, passages surlignés et
+numérotés avec notes sourcées), découpages préparés dans `data/cartes.json`.
 **À faire** : contrôler chaque fait « à vérifier » directement sur sa source (cette session n'avait
 accès qu'aux résultats de recherche, pas aux sites officiels), puis passer leur statut à « vérifié ».
 Test proposé : 2-3 semaines d'usage réel des cartes dans de vrais débats (envoyées par WhatsApp),
