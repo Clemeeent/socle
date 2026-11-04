@@ -6,15 +6,14 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { cartes, getCarte, lienCarte, VERDICTS, type Carte } from "@/lib/data";
-import { decouper, decouperAffirmation, type Morceau, type Passage } from "@/lib/decoupage";
+import { cartes, getCarte, lienCarte, type Carte } from "@/lib/data";
+import { sourcesCarte } from "@/lib/stats";
+import { PastilleVerdict } from "./Carte";
+import { COULEURS_PASSAGE, Recit, SuiteRecit } from "./Recit";
+import { decouper, decouperAffirmation, type Morceau } from "@/lib/decoupage";
 import { interpreterQuestion, lienRecherche } from "@/lib/question";
 
-const TYPES: Record<Passage["type"], { label: string; fond: string; trait: string }> = {
-  donnee: { label: "Ce que disent les données", fond: "#e6ebff", trait: "#2a3eb1" },
-  definition: { label: "Ça dépend de la définition", fond: "#fff1d6", trait: "#d9692e" },
-  source: { label: "D'où ça vient", fond: "#fde8e7", trait: "#c43d32" },
-};
+const TYPES = COULEURS_PASSAGE;
 
 const ETAPES = ["Je découpe la phrase…", "Je cherche les sources officielles…", "Je sépare les faits des jugements…"];
 
@@ -143,9 +142,13 @@ export function Verificateur() {
   if (!reconnue) morceaux = decouperAffirmation(carte.affirmation, carte.decoupage);
   const numeros = new Map<number, number>();
   morceaux.forEach((m) => m.passage !== undefined && !numeros.has(m.passage) && numeros.set(m.passage, numeros.size + 1));
+  // The reader's words for each passage, reused at the start of the matching paragraph.
+  const extraits: Record<number, string> = {};
+  morceaux.forEach((m) => m.passage !== undefined && (extraits[m.passage] ??= m.texte));
+  const sources = sourcesCarte(carte);
 
   return (
-    <div ref={haut} className="scroll-mt-4" aria-live="polite">
+    <div ref={haut} className="scroll-mt-4" aria-live="polite" data-etat={etat.nom}>
       {!reconnue && resultat && (
         <p className="text-center text-sm text-ink-3">La phrase vérifiée la plus proche :</p>
       )}
@@ -169,9 +172,6 @@ export function Verificateur() {
                   >
                     {m.texte}
                   </mark>
-                  <sup className="ml-0.5 text-sm font-bold" style={{ color: t.trait }}>
-                    {n}
-                  </sup>
                 </span>
               );
             })}
@@ -188,48 +188,14 @@ export function Verificateur() {
         </p>
       ) : (
         <>
-          <ol className="mt-8 space-y-3">
-            {[...numeros.entries()].map(([passage, n]) => {
-              const p = carte.decoupage[passage];
-              const t = TYPES[p.type];
-              const extrait = morceaux.find((m) => m.passage === passage)!.texte;
-              return (
-                <li
-                  key={passage}
-                  className="apparait rounded-2xl border-l-4 bg-white p-4 shadow-[0_1px_0_var(--line)]"
-                  style={{ borderColor: t.trait, animationDelay: `${0.3 + n * 0.35}s` }}
-                >
-                  <p className="flex flex-wrap items-center gap-2 text-xs font-bold">
-                    <span
-                      className="flex h-5 w-5 items-center justify-center rounded-full text-white"
-                      style={{ background: t.trait }}
-                    >
-                      {n}
-                    </span>
-                    <span style={{ color: t.trait }}>{t.label}</span>
-                  </p>
-                  <p className="mt-2 text-sm text-ink-3">« {extrait} »</p>
-                  <p className="mt-1 leading-relaxed">{p.note}</p>
-                  {p.source && (
-                    <a href={p.source.url} target="_blank" rel="noreferrer" className="mt-1 inline-block text-xs">
-                      {p.source.label} ↗
-                    </a>
-                  )}
-                </li>
-              );
-            })}
-          </ol>
-
-          <div
-            className="apparait mt-6 rounded-3xl bg-bg-alt p-5"
-            style={{ animationDelay: `${0.5 + numeros.size * 0.35}s` }}
-          >
-            <p className="text-xs font-bold uppercase tracking-widest text-ink-3">Le socle commun</p>
-            <p className="mt-2 font-semibold leading-snug">{carte.enBref}</p>
-            <p className="mt-2 text-xs text-ink-3">
-              Verdict : {VERDICTS[carte.verdict].label}. Chiffres relevés par recherche, à vérifier sur les sources.
+          <div className="apparait mt-10" style={{ animationDelay: `${0.3 + numeros.size * 0.35}s` }}>
+            <p className="flex flex-wrap items-center gap-2">
+              <PastilleVerdict v={carte.verdict} long />
             </p>
-            <div className="mt-4 grid grid-cols-2 gap-2">
+            <div className="mt-5">
+              <Recit c={carte} sources={sources} extraits={extraits} />
+            </div>
+            <div className="mt-6 grid grid-cols-2 gap-2">
               <Link
                 href={lienCarte(carte.id)}
                 className="rounded-xl bg-accent px-4 py-3 text-center font-semibold text-white no-underline"
@@ -240,6 +206,7 @@ export function Verificateur() {
                 Autre phrase
               </button>
             </div>
+            <SuiteRecit c={carte} sources={sources} />
           </div>
         </>
       )}

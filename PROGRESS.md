@@ -51,7 +51,9 @@ boutons Partager / Partager l'image / Copier le lien / Télécharger, images gé
 Chaque carte a une section « Comment les médias en ont parlé » (titres exacts, rôle neutre, sans note),
 visible dans la page seulement.
 Accueil : vérificateur façon assistant (phrase au centre, réflexion, passages surlignés et
-numérotés avec notes sourcées), découpages préparés dans `data/cartes.json`.
+numérotés), puis réponse narrative avec sources numérotées, « Pour lancer le débat » et « Pour
+aller plus loin ». Récits rédigés par IA à partir des faits des cartes : **à relire** (passer
+`recit.redaction.relu` à `true` après relecture).
 **À faire** : contrôler chaque fait « à vérifier » directement sur sa source (cette session n'avait
 accès qu'aux résultats de recherche, pas aux sites officiels), puis passer leur statut à « vérifié ».
 Test proposé : 2-3 semaines d'usage réel des cartes dans de vrais débats (envoyées par WhatsApp),

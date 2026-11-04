@@ -205,12 +205,21 @@ export type Carte = {
   medias: { media: string; titre: string; url: string; role: string; date?: string; via?: string }[];
   // How the sentence breaks down: passages, each tied to a fact, a definition issue or a source.
   decoupage: Passage[];
+  // The answer as a short narrative. "[n]" cites the n-th source of the card (see sourcesCarte);
+  // a paragraph may open on one of the passages. Written by AI from the card's facts, then reviewed.
+  recit: { titre: string; paragraphes: { passage?: number; texte: string }[]; redaction: { par: "ia" | "humain"; relu: boolean; date: string } };
+  // Open questions to start the discussion (values, choices), never facts.
+  debat: string[];
 };
 
 export const cartesMeta = cartesJson as { statut: string; note: string; cartes: Carte[] };
 export const cartes = cartesMeta.cartes;
 export const getCarte = (id: string) => cartes.find((c) => c.id === id);
 export const lienCarte = (id: string) => `/carte/${id}`;
+// Other cards sharing a theme, for "go further".
+export const cartesVoisines = (c: Carte) =>
+  cartes.filter((x) => x.id !== c.id && x.themes.some((t) => c.themes.includes(t)));
+
 // The dossier that develops the same claim as a card, if any.
 export const dossierDeLaCarte = (id: string) =>
   dossiers.find((d) => d.affirmations?.some((a) => a.carte === id));

@@ -6,7 +6,10 @@ import {
   textesDuCritere,
   textesDuDossier,
   voteDuParti,
+  getDossier,
+  type Carte,
   type Dossier,
+  type Fait,
   type Texte,
   type VoteGroupe,
 } from "./data";
@@ -110,3 +113,15 @@ export function faitsDuDossier(d: Dossier) {
     },
   ];
 }
+
+// All facts of a card: those computed from a dossier's votes first, then the card's own.
+export const faitsCarte = (c: Carte): Fait[] => {
+  const d = c.dossier ? getDossier(c.dossier) : undefined;
+  return [...(d ? faitsDuDossier(d) : []), ...c.faits];
+};
+
+// Numbered sources of a card, as cited by "[n]" in its narrative: facts, then unknowns with a source.
+export const sourcesCarte = (c: Carte) => [
+  ...faitsCarte(c).map((f) => ({ ...f.source, statut: f.statut })),
+  ...c.inconnu.flatMap((x) => (x.source ? [{ ...x.source, statut: "à vérifier" }] : [])),
+];

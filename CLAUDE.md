@@ -93,6 +93,11 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
   découpage est préparé dans chaque carte (`decoupage` : extrait, mots-clés, type, note, source) et
   les mots du lecteur sont reconnus par `src/lib/decoupage.ts` ; les notes ne reprennent que des
   faits déjà sourcés dans la carte. Plus tard : découpage par une IA limitée aux sources de Socle.
+- **Réponses narratives** (`Recit.tsx`, sur l'accueil et la page carte) : pas d'encadrés ni de
+  citations en exergue ; un titre-réponse, des paragraphes suivis qui s'ouvrent sur le passage
+  surligné, des renvois numérotés `[n]` vers les sources (`sourcesCarte`), la mention « générée par
+  IA · non relue / relue par un humain » (`recit.redaction`), puis « Pour lancer le débat » (questions
+  ouvertes, jamais des faits), « Pour aller plus loin » et la liste des sources.
 - **Progressive disclosure** : niveau 1 = la réponse en un écran (une phrase + un visuel) ;
   niveau 2 = détails repliés (`Deplier`, `Rangee`) ; niveau 3 = sources/statut/date dans une ligne
   en pied de page (`PiedFiche`). Pas d'encart explicatif répété : la structure doit répondre.

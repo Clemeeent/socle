@@ -37,3 +37,21 @@ describe("cards", () => {
     }
   });
 });
+
+describe("narratives", () => {
+  it("every citation points to an existing source and every paragraph passage exists", () => {
+    const { cartes } = JSON.parse(readFileSync("data/cartes.json", "utf8"));
+    for (const c of cartes) {
+      // Cards tied to a dossier get one computed fact first.
+      const nSources = (c.dossier ? 1 : 0) + c.faits.length + c.inconnu.filter((x: { source?: unknown }) => x.source).length;
+      for (const p of c.recit.paragraphes) {
+        for (const m of p.texte.matchAll(/\[(\d+)\]/g)) {
+          const n = Number(m[1]);
+          expect(n >= 1 && n <= nSources, `${c.id} : [${n}] sur ${nSources} sources`).toBe(true);
+        }
+        if (p.passage !== undefined) expect(c.decoupage[p.passage], `${c.id} passage ${p.passage}`).toBeDefined();
+      }
+      expect(c.debat.length, c.id).toBeGreaterThan(0);
+    }
+  });
+});

@@ -147,6 +147,32 @@
      "type": "definition",
      "note": "« Systémique » : le Conseil d'État a écarté ce mot au sens juridique en 2023 ; d'autres l'emploient dans un sens plus large."
     }
+   ],
+   "recit": {
+    "titre": "Des contrôles discriminatoires mesurés, un mot qui fait débat",
+    "paragraphes": [
+     {
+      "passage": 0,
+      "texte": "Tout dépend de ce qu'on met derrière ces mots. Si l'on parle des contrôles d'identité, c'est mesuré : selon le Défenseur des droits, les jeunes hommes perçus comme noirs, arabes ou maghrébins ont 4 fois plus de risques d'être contrôlés que le reste de la population, et 12 fois plus de subir une fouille ou une palpation [1]. 39 % des personnes perçues comme arabes, noires ou maghrébines disent avoir été contrôlées au moins une fois en cinq ans, contre 23 % des personnes perçues comme blanches [2]."
+     },
+     {
+      "passage": 1,
+      "texte": "La justice l'a reconnu. En 2023, le Conseil d'État a jugé que ces contrôles discriminatoires sont une pratique « établie », qui « ne se cantonne pas à des cas individuels isolés » [4], deux ans après une condamnation de l'État pour faute lourde [5]. Il a en revanche écarté le mot « systémique » au sens juridique, et refusé d'ordonner des mesures, qui relèvent selon lui des choix politiques."
+     },
+     {
+      "texte": "L'écart mesuré a changé : une enquête de 2017 parlait de 20 fois plus de contrôles [3], mais les méthodes ne sont pas forcément comparables. Surtout, en France, les contrôles d'identité ne sont pas enregistrés de façon systématique [6] : on les mesure par enquête, pas par comptage. L'Angleterre, souvent citée en modèle, publie chaque année ses fouilles selon l'origine des personnes [7] ; les écarts y existent aussi, mais ils sont suivis."
+     }
+    ],
+    "redaction": {
+     "par": "ia",
+     "relu": false,
+     "date": "2026-11-04"
+    }
+   },
+   "debat": [
+    "Faut-il enregistrer chaque contrôle d'identité, par exemple avec un récépissé ?",
+    "Le problème vient-il de comportements individuels ou de l'organisation du travail policier ?",
+    "Une police plus locale, comme en Angleterre, changerait-elle la relation avec la population ?"
    ]
   },
   {
@@ -304,6 +330,33 @@
       "url": "https://www.education.gouv.fr/sites/default/files/2025-07/rers2025-chapitre-10-441741.pdf"
      }
     }
+   ],
+   "recit": {
+    "titre": "Oui en euros, non en part de la richesse du pays",
+    "paragraphes": [
+     {
+      "passage": 0,
+      "texte": "On n'a pas retrouvé d'où vient ce chiffre. Le plus proche dans les documents officiels : le budget du ministère a augmenté de 12,13 milliards d'euros depuis 2019, soit +18,8 %, hors pensions [2]. En 2026, il atteint 63,02 milliards, quasi stable par rapport à 2025 [1]."
+     },
+     {
+      "passage": 1,
+      "texte": "Le montant change beaucoup selon ce qu'on compte. Avec les pensions des personnels, on arrive à 89,64 milliards [3]. Et la dépense d'éducation du pays, qui inclut aussi les collectivités, les familles et les entreprises, est encore plus large."
+     },
+     {
+      "passage": 2,
+      "texte": "C'est là que l'affirmation coince. Rapportée à la richesse nationale, la dépense d'éducation représente 6,8 % du PIB en 2024, contre environ 7,7 à 7,8 % au milieu des années 1990 [4]. Dans le budget de l'État, la part de l'enseignement scolaire était passée de 15,8 % à 18,4 % entre 1989 et 1999 [5] ; on n'a pas trouvé de série récente comparable, et le périmètre des budgets a changé depuis."
+     }
+    ],
+    "redaction": {
+     "par": "ia",
+     "relu": false,
+     "date": "2026-11-04"
+    }
+   },
+   "debat": [
+    "Faut-il juger un budget à son montant, à sa part de la richesse nationale, ou à ce qu'il permet de faire ?",
+    "Où mettre l'argent en priorité : salaires des enseignants, taille des classes, bâtiments ?",
+    "Une hausse en euros qui suit à peine l'inflation est-elle une vraie hausse ?"
    ]
   },
   {
@@ -414,6 +467,28 @@
       "url": "https://www.ozap.com/actu/cest-completement-faux-la-dgsi-dement-complement-des-informations-revelees-par-cnews-sur-les-evenements-du-17-octobre/657553"
      }
     }
+   ],
+   "recit": {
+    "titre": "La source citée dément",
+    "paragraphes": [
+     {
+      "passage": 0,
+      "texte": "L'affirmation a été lancée le 18 octobre sur CNews par une journaliste du JDD, qui citait la DGSI [1]. Dès le lendemain, la DGSI a « complètement » démenti auprès de Libération, du Monde et de BFMTV, et a dit ne pas être la source [2]."
+     },
+     {
+      "passage": 1,
+      "texte": "Quatre jours plus tard, la journaliste a reconnu que ses informations « ne venaient pas de la direction de la DGSI » ; le JDD, lui, maintient les siennes [3]. Aucune source officielle ne confirme la présence d'armes de guerre. À noter : la DGSI n'a pas publié de communiqué, ses démentis ont été donnés à des journalistes."
+     }
+    ],
+    "redaction": {
+     "par": "ia",
+     "relu": false,
+     "date": "2026-11-04"
+    }
+   },
+   "debat": [
+    "Comment vérifier une information attribuée à un service de renseignement ?",
+    "Quelle responsabilité pour un média qui relaie une source anonyme ?"
    ]
   },
   {
@@ -533,6 +608,28 @@
       "url": "https://www.france24.com/fr/info-en-continu/20261020-violences-en-france-le-renseignement-estime-que-l-ultragauche-et-l-extr%C3%AAme-gauche-radicale-%C3%A9taient-en-pointe-samedi"
      }
     }
+   ],
+   "recit": {
+    "titre": "Un rôle « en pointe », pas l'origine de toutes les violences",
+    "paragraphes": [
+     {
+      "passage": 0,
+      "texte": "Le soir même, le ministre de l'Intérieur a dit avoir repéré « énormément de militants de l'ultragauche » organisés en black blocs, et le Premier ministre a estimé que ces groupes avaient organisé la violence dans plusieurs villes [1]. Avant la journée, une note du renseignement territorial évoquait déjà des cortèges interdits menés par des membres de l'ultragauche [3]."
+     },
+     {
+      "passage": 1,
+      "texte": "Mais « les violences » recouvrent plusieurs choses. Selon une source du renseignement citée par l'AFP, l'ultragauche et l'extrême gauche radicale étaient « en pointe » dans les débordements, mais pas à l'origine des pillages [2]. La procureure de Paris a dit ne pas pouvoir confirmer que les auteurs des violences à Paris soient politisés à l'ultragauche [4]. Et aucune répartition publique des personnes interpellées selon leur mouvance n'a été trouvée."
+     }
+    ],
+    "redaction": {
+     "par": "ia",
+     "relu": false,
+     "date": "2026-11-04"
+    }
+   },
+   "debat": [
+    "Comment distinguer, dans une manifestation, violences politiques et pillages ?",
+    "Les réponses (interdictions, dissolutions, maintien de l'ordre) doivent-elles viser des groupes ou des actes ?"
    ]
   },
   {
@@ -583,6 +680,32 @@
      "type": "definition",
      "note": "« Liberticide » est un jugement. Socle le traduit en 4 critères vérifiables : manifestation, surveillance, expression, pouvoirs de police."
     }
+   ],
+   "recit": {
+    "titre": "Des votes très différents d'un parti à l'autre",
+    "paragraphes": [
+     {
+      "passage": 1,
+      "texte": "« Liberticide » est un jugement. Pour pouvoir compter, Socle le traduit en quatre critères vérifiables : le droit de manifester, la surveillance, la liberté d'expression et les pouvoirs de police."
+     },
+     {
+      "passage": 0,
+      "texte": "Sur les textes votés qui répondent à ces critères, les écarts sont nets d'un parti à l'autre [1]. Le classement complet, parti par parti et texte par texte, est dans le dossier."
+     },
+     {
+      "texte": "La sélection des textes est provisoire : elle n'est pas exhaustive et n'a pas encore été validée par un juriste."
+     }
+    ],
+    "redaction": {
+     "par": "ia",
+     "relu": false,
+     "date": "2026-11-04"
+    }
+   },
+   "debat": [
+    "Où placer le curseur entre sécurité et libertés ?",
+    "Un texte voté au nom de la sécurité peut-il quand même restreindre une liberté ?",
+    "Faut-il juger un parti sur ses votes, ses propositions, ou les deux ?"
    ]
   }
  ]

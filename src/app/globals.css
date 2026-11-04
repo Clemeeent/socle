@@ -172,6 +172,10 @@ body {
     linear-gradient(#000 75%, transparent);
   mask-composite: intersect;
 }
+/* Once the answer is shown, the background would sit behind text: hide it. */
+section:has([data-etat="resultat"]) .fond-debat {
+  display: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .point-debat {
     animation: none;
