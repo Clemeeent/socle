@@ -1,6 +1,6 @@
 # Avancement
 
-_Dernière mise à jour : 27 octobre 2026._
+_Dernière mise à jour : 4 novembre 2026._
 
 ## Fait
 - Import des votes de l'Assemblée (6 scrutins, 13 groupes) avec contrôle des décomptes.
@@ -37,7 +37,17 @@ _Dernière mise à jour : 27 octobre 2026._
   « Qu'ont-ils voté ? » sur tous les scrutins (données complètes) et enregistrement des
   questions sans réponse pour choisir les prochains dossiers.
 
-## À faire en priorité : 3 dossiers à partir de vrais débats (données réelles)
+## Nouvelle promesse (4 novembre 2026)
+Outil pour le moment du débat : vérifier une affirmation et partager une carte « socle commun ».
+Fait : 5 cartes tirées de vrais débats (police raciste ?, 10 milliards pour l'éducation, armes de
+guerre du 17 octobre, violences et ultragauche, lois liberticides), page `/cartes`, page carte avec
+boutons Partager / Partager l'image / Copier le lien / Télécharger, images générées au build.
+**À faire** : contrôler chaque fait « à vérifier » directement sur sa source (cette session n'avait
+accès qu'aux résultats de recherche, pas aux sites officiels), puis passer leur statut à « vérifié ».
+Test proposé : 2-3 semaines d'usage réel des cartes dans de vrais débats (envoyées par WhatsApp),
+noter si elles sont lues, acceptées, si le ton change.
+
+## Ancien plan : 3 dossiers à partir de vrais débats (données réelles)
 Exemples tirés de discussions réelles du porteur du projet. Chaque chiffre doit venir d'une source
 officielle téléchargée (jamais de mémoire) ; si une donnée n'existe pas, le dire (« non mesuré »).
 Nécessite un accès réseau complet (l'environnement de la session doit être en « Full »).

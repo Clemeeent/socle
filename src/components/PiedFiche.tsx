@@ -5,9 +5,11 @@ import { AVERTISSEMENT, formatDate, meta } from "@/lib/data";
 export function PiedFiche({
   sources,
   verifie = false,
+  avertissement = AVERTISSEMENT,
 }: {
   sources: { label: string; href: string }[];
   verifie?: boolean;
+  avertissement?: string;
 }) {
   return (
     <footer className="mt-10 border-t border-line pt-3 text-xs text-ink-3">
@@ -16,7 +18,7 @@ export function PiedFiche({
           {verifie ? "✓ Vérifié par un juriste" : "Sourcé automatiquement"}
         </span>
         <span>· Mis à jour le {formatDate(meta.importeLe)}</span>
-        <span>· {AVERTISSEMENT}</span>
+        <span>· {avertissement}</span>
       </p>
       <details className="mt-2">
         <summary className="cursor-pointer text-accent">

@@ -8,6 +8,7 @@ import dossiersLegislatifsJson from "../../data/dossiers-legislatifs.json";
 import deputesJson from "../../data/deputes.json";
 import metaJson from "../../data/meta.json";
 import rechercheJson from "../../data/recherche.json";
+import cartesJson from "../../data/cartes.json";
 import partisJson from "../../data/partis.json";
 import positionsJson from "../../data/positions.json";
 import sourcesJson from "../../programmes/sources.json";
@@ -96,8 +97,8 @@ export type DossierLegislatif = {
   promulgation: { dateJO: string; referenceNOR: string | null; urlLegifrance: string | null } | null;
 };
 
-// Search entries: a sample question and where it leads (a dossier, or one of its criteria).
-export type Recherche = { question: string; motsCles: string[]; dossier: string; critere?: string };
+// Search entries: a sample question and where it leads (a card, a dossier, or one of its questions).
+export type Recherche = { question: string; motsCles: string[]; carte?: string; dossier?: string; critere?: string };
 
 export const themes = (themesJson as { themes: Theme[] }).themes;
 export const dossiers = (dossiersJson as { dossiers: Dossier[] }).dossiers;
@@ -154,6 +155,40 @@ export function formatDate(iso: string) {
     year: "numeric",
   });
 }
+
+// ── Shareable fact-check cards ─────────────────────────────────────────────────
+
+export type SourceRef = { label: string; url: string };
+export type Fait = { texte: string; source: SourceRef; statut: string };
+export type Verdict = "jugement" | "depend" | "nuance" | "dementi" | "vrai" | "faux";
+export type Carte = {
+  id: string;
+  affirmation: string;
+  contexte: string;
+  verifieLe: string;
+  themes: string[];
+  dossier?: string; // facts computed from the dossier's votes
+  verdict: Verdict;
+  enBref: string;
+  faits: Fait[];
+  definitions: string[];
+  inconnu: { texte: string; source?: SourceRef }[];
+  valeurs: string;
+};
+
+export const cartesMeta = cartesJson as { statut: string; note: string; cartes: Carte[] };
+export const cartes = cartesMeta.cartes;
+export const getCarte = (id: string) => cartes.find((c) => c.id === id);
+export const lienCarte = (id: string) => `/carte/${id}`;
+
+export const VERDICTS: Record<Verdict, { label: string; court: string }> = {
+  jugement: { label: "C'est un jugement : voici ce qu'on peut mesurer", court: "Jugement" },
+  depend: { label: "Ça dépend de ce qu'on mesure", court: "Ça dépend" },
+  nuance: { label: "Nuancé", court: "Nuancé" },
+  dementi: { label: "Démenti par la source citée", court: "Démenti" },
+  vrai: { label: "Vrai", court: "Vrai" },
+  faux: { label: "Faux", court: "Faux" },
+};
 
 // ── Parties and their programmes ──────────────────────────────────────────────
 

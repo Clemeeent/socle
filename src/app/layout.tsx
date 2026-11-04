@@ -5,6 +5,8 @@ import "./globals.css";
 import { meta, formatDate } from "@/lib/data";
 
 export const metadata: Metadata = {
+  // Absolute URLs for link previews (set by the GitHub Pages workflow).
+  metadataBase: new URL(process.env.SITE_URL ?? "http://localhost:3000"),
   title: { default: "Socle — les faits avant le débat", template: "%s · Socle" },
   description:
     "Un socle de faits sourcés sur la politique française : votes de l'Assemblée nationale, méthode visible.",
@@ -23,11 +25,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               </span>
             </Link>
             <nav className="flex gap-4 text-sm font-medium">
+              <Link href="/cartes" className="text-ink-2 no-underline hover:text-accent">
+                Vérifs
+              </Link>
               <Link href="/#dossiers" className="text-ink-2 no-underline hover:text-accent">
                 Dossiers
-              </Link>
-              <Link href="/#themes" className="text-ink-2 no-underline hover:text-accent">
-                Thèmes
               </Link>
               <Link href="/partis" className="text-ink-2 no-underline hover:text-accent">
                 Partis

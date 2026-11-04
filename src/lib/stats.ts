@@ -93,3 +93,20 @@ export function vuesClassement(dossier: Dossier, seulement?: string) {
   if (seulement) return parCritere;
   return [vue("tous", "Tous", dossier.chapeau, textesDuDossier(dossier)), ...parCritere];
 }
+
+// Facts for a card tied to a dossier, computed from the official votes (so already checked).
+export function faitsDuDossier(d: Dossier) {
+  const textes = textesDuDossier(d);
+  const lignes = classementPartis(textes).filter((l) => l.total.membres > 0);
+  const p = (l: LignePartiData) => pct(part(l.total.pour, l.total.membres));
+  const haut = lignes[0];
+  const bas = lignes[lignes.length - 1];
+  const source = { label: "Assemblée nationale, scrutins publics", url: scrutinDe(textes[0]).url };
+  return [
+    {
+      texte: `Sur ${textes.length} textes votés en ${periode(textes)} ${d.chapeau}, la part de députés ayant voté pour va de ${p(bas)} (${bas.sigle}) à ${p(haut)} (${haut.sigle}).`,
+      source,
+      statut: "vérifié",
+    },
+  ];
+}

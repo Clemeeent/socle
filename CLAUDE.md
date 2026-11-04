@@ -21,6 +21,12 @@ suppression de données, changement de réglages GitHub).
   plus tard **étude/rapport officiel**, **donnée manquante**, **affirmation** avec verdict.
 - **Parti** ↔ **groupe parlementaire** ↔ **député**.
 
+## Promesse du produit (novembre 2026)
+Socle sert **au moment du débat** : on y vérifie une affirmation entendue et on partage une
+**carte** qui pose le socle commun — ce que disent les données (sourcées), ce qui dépend de la
+définition, ce qu'on ne sait pas, ce qui reste un débat de valeurs. Pas un média : un outil.
+Les dossiers sont la version approfondie des sujets les plus demandés.
+
 ## Principes non négociables
 - **Neutralité totale** : mêmes critères pour tous les partis, méthode visible (page `/methode`).
 - Toujours séparer le **fait** (sourcé, daté), ses **lectures** possibles et les **valeurs**.
@@ -43,6 +49,13 @@ suppression de données, changement de réglages GitHub).
 - **Thèmes** : `data/themes.json`. **Dossiers** : `data/dossiers.json` (titre, grande question,
   critères avec question / définition / mots-clés, sélection des textes avec justification).
   Ne pas confondre avec `data/dossiers-legislatifs.json` (généré, dossiers de l'Assemblée).
+- **Cartes** : `data/cartes.json` (affirmation, contexte, verdict, en bref, faits avec source et
+  statut, définitions, inconnu, valeurs). Verdicts : `jugement`, `depend`, `nuance`, `dementi`,
+  `vrai`, `faux` — jamais de « vrai/faux » sur un jugement. Faits relevés par recherche web :
+  `statut: "à vérifier"` tant qu'ils n'ont pas été contrôlés sur la source. Une carte liée à un
+  dossier (`dossier`) reçoit en plus des faits calculés depuis les votes (`faitsDuDossier`).
+  Images de partage générées au build : `/carte/<id>/partage.png` (1080×1350) et
+  `/carte/<id>/apercu.png` (1200×630, aperçu de lien) via `src/lib/image-carte.tsx`.
 - **Recherche** : `data/recherche.json` (questions types → dossier ou question de dossier) ;
   point d'entrée pour un futur moteur IA limité au contenu de Socle (`src/lib/question.ts`).
 - **Partis** : `data/partis.json` (parti → groupe(s) parlementaire(s)). LIOT et non-inscrits : pas de parti.

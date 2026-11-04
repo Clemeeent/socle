@@ -22,6 +22,20 @@
   --vote-abstention: #9aa0a6;
   --vote-absent: #e6e7ea;
 
+  /* Verdict pills of fact-check cards (never party colours). */
+  --verdict-jugement-bg: #efeaff;
+  --verdict-jugement-ink: #4b2fb0;
+  --verdict-depend-bg: #fff1d6;
+  --verdict-depend-ink: #7a4d00;
+  --verdict-nuance-bg: #fff1d6;
+  --verdict-nuance-ink: #7a4d00;
+  --verdict-dementi-bg: #fde8e7;
+  --verdict-dementi-ink: #a3221a;
+  --verdict-vrai-bg: #e3f4e8;
+  --verdict-vrai-ink: #1d5a2c;
+  --verdict-faux-bg: #fde8e7;
+  --verdict-faux-ink: #a3221a;
+
   /* Dossier palettes ("gros pavés colorés"): background, ink, two illustration accents.
      Never party colours. */
   --dossier-bleu-bg: #e6ebff;

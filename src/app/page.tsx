@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { dossiers, recherche, textesDuTheme, themes } from "@/lib/data";
+import { cartes, dossiers, recherche, textesDuTheme, themes } from "@/lib/data";
 import { lienRecherche } from "@/lib/question";
+import { LigneCarte } from "@/components/Carte";
 import { CarteDossier } from "@/components/Dossier";
 import { QuestionBox } from "@/components/QuestionBox";
 import { TuileTheme } from "@/components/TuileTheme";
@@ -14,12 +15,15 @@ export default function Home() {
           <br />
           <span className="text-accent">Le débat ensuite.</span>
         </h1>
-        <p className="mt-3 text-ink-2">Pose ta question : on répond avec les votes et les programmes officiels.</p>
+        <p className="mt-3 text-ink-2">
+          Une affirmation t&apos;a été lancée en plein débat ? Vérifie-la, puis partage une carte qui pose
+          les faits sur lesquels tout le monde peut s&apos;accorder.
+        </p>
         <div className="mt-5">
           <QuestionBox />
         </div>
         <ul className="mt-3 flex flex-wrap gap-2">
-          {recherche.map((r) => (
+          {recherche.slice(0, 4).map((r) => (
             <li key={r.question}>
               <Link
                 href={lienRecherche(r)}
@@ -27,6 +31,21 @@ export default function Home() {
               >
                 {r.question}
               </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="verifications" className="mt-10 scroll-mt-4">
+        <div className="flex items-baseline justify-between">
+          <h2 className="text-xl font-bold">Ce qu&apos;on a vérifié</h2>
+          <Link href="/cartes" className="text-sm">Tout voir →</Link>
+        </div>
+        <p className="mt-1 text-sm text-ink-3">Des phrases entendues dans de vrais débats.</p>
+        <ul className="mt-4 space-y-3">
+          {cartes.slice(0, 4).map((c) => (
+            <li key={c.id}>
+              <LigneCarte c={c} />
             </li>
           ))}
         </ul>

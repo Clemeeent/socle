@@ -1,5 +1,53 @@
 [
  {
+  "question": "La police est-elle raciste ?",
+  "motsCles": [
+   "raciste",
+   "racisme",
+   "faciès",
+   "facies",
+   "contrôle d'identité",
+   "controle d'identite",
+   "discrimin"
+  ],
+  "carte": "police-raciste"
+ },
+ {
+  "question": "10 milliards pour l'éducation, un record ?",
+  "motsCles": [
+   "éducation",
+   "education",
+   "école",
+   "ecole",
+   "enseignant",
+   "10 milliards"
+  ],
+  "carte": "education-10-milliards"
+ },
+ {
+  "question": "Des armes de guerre chez les émeutiers ?",
+  "motsCles": [
+   "arme",
+   "dgsi",
+   "cnews",
+   "kalach"
+  ],
+  "carte": "armes-de-guerre-17-octobre"
+ },
+ {
+  "question": "Les violences, c'est l'ultragauche ?",
+  "motsCles": [
+   "ultragauche",
+   "ultra-gauche",
+   "extrême gauche",
+   "black bloc",
+   "manifestation",
+   "émeute",
+   "emeute"
+  ],
+  "carte": "violences-ultragauche"
+ },
+ {
   "question": "Quels partis votent le plus de lois liberticides ?",
   "motsCles": [
    "liberticide",

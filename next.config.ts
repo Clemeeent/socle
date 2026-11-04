@@ -5,6 +5,8 @@ import type { NextConfig } from "next";
 const pagesBasePath = process.env.PAGES_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
+  // Lets client code build absolute paths to static files (share images).
+  env: { NEXT_PUBLIC_BASE_PATH: pagesBasePath },
   ...(pagesBasePath && {
     output: "export",
     basePath: pagesBasePath,

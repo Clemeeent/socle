@@ -1,0 +1,188 @@
+{
+ "statut": "à vérifier",
+ "note": "Cartes construites à partir d'affirmations entendues dans de vrais débats. Les chiffres viennent des sources indiquées ; ceux marqués « à vérifier » ont été relevés par recherche et doivent être contrôlés sur la source avant publication définitive.",
+ "cartes": [
+  {
+   "id": "police-raciste",
+   "affirmation": "La police française est raciste.",
+   "contexte": "Entendu sous une vidéo d'intervention policière, avec une proposition : dissoudre la police nationale et s'inspirer du modèle anglais.",
+   "verifieLe": "2026-11-04",
+   "themes": ["securite-justice"],
+   "verdict": "jugement",
+   "enBref": "Des contrôles discriminatoires sont mesurés par le Défenseur des droits et reconnus par la justice. Dire si « la police » est raciste dépend de ce qu'on entend par là.",
+   "faits": [
+    {
+     "texte": "Les jeunes hommes perçus comme noirs, arabes ou maghrébins ont 4 fois plus de risques d'être contrôlés que le reste de la population, et 12 fois plus de subir un contrôle poussé (fouille, palpation).",
+     "source": { "label": "Défenseur des droits, Enquête Accès aux droits 2024 (publiée en juin 2025)", "url": "https://www.defenseurdesdroits.fr/sites/default/files/2025-06/ddd_EAD-2024_volume-1_relations-police-population.pdf" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "39 % des personnes perçues comme arabes, noires ou maghrébines disent avoir été contrôlées au moins une fois en cinq ans, contre 23 % des personnes perçues exclusivement comme blanches.",
+     "source": { "label": "Défenseur des droits, Enquête Accès aux droits 2024", "url": "https://www.defenseurdesdroits.fr/sites/default/files/2025-06/ddd_EAD-2024_volume-1_relations-police-population.pdf" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "En 2017, une précédente enquête estimait ce risque à 20 fois plus élevé pour les jeunes hommes perçus comme noirs ou arabes. Les deux enquêtes n'ont pas forcément la même méthode.",
+     "source": { "label": "Défenseur des droits (2017), rapporté par franceinfo", "url": "https://www.franceinfo.fr/faits-divers/police/cinq-questions-sur-l-enquete-du-defenseur-des-droits-sur-les-controles-au-facies_2027920.html" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "Le 11 octobre 2023, le Conseil d'État a jugé que la pratique de contrôles discriminatoires « est établie » et « ne se cantonne pas à des cas individuels isolés », sans revêtir un caractère « systémique » ou « généralisé ». Il a refusé d'ordonner des mesures, qui relèvent selon lui des choix politiques.",
+     "source": { "label": "Conseil d'État, Assemblée, 11 octobre 2023, n° 454836", "url": "https://www.conseil-etat.fr/actualites/controles-d-identite-discriminatoires-la-determination-d-une-politique-publique-ne-releve-pas-du-juge-administratif" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "En 2021, la cour d'appel de Paris a condamné l'État pour faute lourde à propos de contrôles discriminatoires à la gare du Nord.",
+     "source": { "label": "Conseil d'État, communiqué du 11 octobre 2023", "url": "https://www.conseil-etat.fr/content/download/196845/file/cp_contr%C3%B4le_discriminatoire_web.pdf" },
+     "statut": "à vérifier"
+    }
+   ],
+   "definitions": [
+    "Des policiers racistes, c'est-à-dire des individus ? Les enquêtes ne le mesurent pas directement.",
+    "Des pratiques discriminatoires, comme des contrôles plus fréquents selon l'apparence ? C'est ce que mesurent les enquêtes et ce qu'a reconnu le Conseil d'État.",
+    "Un racisme « systémique », lié à l'organisation elle-même ? Le Conseil d'État a écarté ce mot au sens juridique ; d'autres l'emploient dans un sens plus large."
+   ],
+   "inconnu": [
+    {
+     "texte": "Les contrôles d'identité ne sont pas enregistrés de façon systématique en France : le Défenseur des droits demande leur traçabilité.",
+     "source": { "label": "franceinfo", "url": "https://www.franceinfo.fr/faits-divers/police/violences-policieres/le-defenseur-des-droits-appelle-a-une-tracabilite-des-controles-d-identite-pour-lutter-contre-les-controles-au-facies_3995179.html" }
+    },
+    {
+     "texte": "À comparer : en Angleterre et au pays de Galles, le ministère de l'Intérieur publie chaque année les fouilles (« stop and search ») selon l'origine des personnes. Les écarts y existent aussi, mais ils sont mesurés.",
+     "source": { "label": "Home Office, Stop and search, mars 2025", "url": "https://www.gov.uk/government/statistics/stop-and-search-arrests-and-mental-health-detentions-march-2025" }
+    }
+   ],
+   "valeurs": "Que faire ? Récépissé de contrôle, réforme, police de proximité, polices locales à l'anglaise, dissolution : ce sont des choix politiques, à débattre."
+  },
+  {
+   "id": "education-10-milliards",
+   "affirmation": "Avec ces 10 milliards, l'éducation n'a jamais eu une aussi grande part du budget.",
+   "contexte": "Entendu dans un débat sur le budget de l'Éducation nationale.",
+   "verifieLe": "2026-11-04",
+   "themes": ["education", "economie"],
+   "verdict": "depend",
+   "enBref": "Le budget de l'Éducation nationale a nettement augmenté depuis 2019. Mais rapportée à la richesse du pays, la dépense d'éducation était plus élevée au milieu des années 1990.",
+   "faits": [
+    {
+     "texte": "Budget 2026 du ministère : 63,02 milliards d'euros hors pensions, quasi stable par rapport à 2025 (+0,26 %).",
+     "source": { "label": "Sénat, avis sur le projet de loi de finances 2026, Enseignement scolaire", "url": "https://www.senat.fr/rap/a25-144-31/a25-144-31_mono.html" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "Depuis 2019 : +12,13 milliards d'euros, soit +18,8 % (hors pensions).",
+     "source": { "label": "Sénat, avis sur le projet de loi de finances 2026", "url": "https://www.senat.fr/rap/a25-144-31/a25-144-31_mono.html" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "Avec les pensions des personnels : 89,64 milliards d'euros en 2026.",
+     "source": { "label": "Sénat, avis sur le projet de loi de finances 2026", "url": "https://www.senat.fr/rap/a25-144-31/a25-144-31_mono.html" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "Toutes dépenses d'éducation confondues (État, collectivités, familles, entreprises) : 6,8 % du PIB en 2024, contre un maximum d'environ 7,7 à 7,8 % au milieu des années 1990.",
+     "source": { "label": "Ministère de l'Éducation nationale (DEPP), Repères et références statistiques 2025, chapitre 10", "url": "https://www.education.gouv.fr/sites/default/files/2025-07/rers2025-chapitre-10-441741.pdf" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "Part de l'enseignement scolaire dans le budget de l'État : de 15,8 % en 1989 à 18,4 % en 1999.",
+     "source": { "label": "Sénat, rapport d'information n° 328 (1998-1999)", "url": "https://www.senat.fr/rap/r98-3281/r98-32811.html" },
+     "statut": "à vérifier"
+    }
+   ],
+   "definitions": [
+    "En euros : le budget augmente, mais l'inflation réduit la hausse réelle.",
+    "En part de la richesse nationale (PIB) : non, c'était plus haut au milieu des années 1990.",
+    "En part du budget de l'État : le chiffre change selon qu'on compte les pensions ou non, et le périmètre des budgets a changé depuis les années 1990."
+   ],
+   "inconnu": [
+    {
+     "texte": "L'origine exacte des « 10 milliards » n'a pas été retrouvée. Le chiffre officiel le plus proche : +12,13 milliards depuis 2019, hors pensions."
+    },
+    {
+     "texte": "Pas de série récente trouvée sur la part de l'Éducation nationale dans le budget de l'État : à chercher dans les lois de finances."
+    }
+   ],
+   "valeurs": "Est-ce assez, et pour quoi faire (salaires, nombre d'enseignants, taille des classes) ? C'est un débat de priorités."
+  },
+  {
+   "id": "armes-de-guerre-17-octobre",
+   "affirmation": "Selon la DGSI, des émeutiers du 17 octobre avaient des armes de guerre.",
+   "contexte": "Affirmation diffusée à la télévision après les manifestations du 17 octobre 2026, puis démentie.",
+   "verifieLe": "2026-11-04",
+   "themes": ["securite-justice"],
+   "verdict": "dementi",
+   "enBref": "La DGSI a démenti cette information auprès de plusieurs médias. La journaliste a ensuite reconnu que ses informations ne venaient pas de la direction de la DGSI ; le JDD maintient les siennes.",
+   "faits": [
+    {
+     "texte": "18 octobre 2026 : sur CNews, une journaliste du JDD affirme, en citant la DGSI, que des émeutiers ont été vus avec des armes de guerre.",
+     "source": { "label": "Puremédias", "url": "https://www.ozap.com/actu/cest-completement-faux-la-dgsi-dement-complement-des-informations-revelees-par-cnews-sur-les-evenements-du-17-octobre/657553" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "19 octobre : la DGSI « dément complètement cette information » auprès de CheckNews (Libération), et la dément aussi auprès du Monde et de BFMTV.",
+     "source": { "label": "Les Surligneurs", "url": "https://lessurligneurs.eu/des-fusils-automatiques-ont-ils-ete-retrouves-entre-les-mains-de-manifestants-le-17-octobre/" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "22 octobre : la journaliste reconnaît sur CNews avoir « obtenu des informations qui ne venaient pas de la direction de la DGSI ». Le JDD maintient ses informations.",
+     "source": { "label": "Puremédias", "url": "https://www.ozap.com/actu/cest-completement-faux-la-dgsi-dement-complement-des-informations-revelees-par-cnews-sur-les-evenements-du-17-octobre/657553" },
+     "statut": "à vérifier"
+    }
+   ],
+   "definitions": [
+    "« Selon la DGSI » : une source anonyme dans le renseignement n'est pas la DGSI en tant qu'institution."
+   ],
+   "inconnu": [
+    { "texte": "La DGSI n'a pas publié de communiqué : ses démentis ont été donnés à des journalistes." }
+   ],
+   "valeurs": ""
+  },
+  {
+   "id": "violences-ultragauche",
+   "affirmation": "Les violences des manifestations d'octobre, c'est l'ultragauche.",
+   "contexte": "Entendu après les manifestations du 17 octobre 2026.",
+   "verifieLe": "2026-11-04",
+   "themes": ["securite-justice", "institutions"],
+   "verdict": "nuance",
+   "enBref": "Selon une source sécuritaire citée par l'AFP, l'ultragauche et l'extrême gauche radicale étaient « en pointe » dans les débordements, mais pas à l'origine des pillages.",
+   "faits": [
+    {
+     "texte": "D'après les services de renseignement, cités par l'AFP, « l'ultragauche » et « l'extrême gauche radicale » étaient en pointe dans les débordements de violences, mais pas à l'origine des pillages.",
+     "source": { "label": "AFP, via France 24, 20 octobre 2026", "url": "https://www.france24.com/fr/info-en-continu/20261020-violences-en-france-le-renseignement-estime-que-l-ultragauche-et-l-extr%C3%AAme-gauche-radicale-%C3%A9taient-en-pointe-samedi" },
+     "statut": "à vérifier"
+    },
+    {
+     "texte": "Avant la journée, une note du renseignement territorial évoquait des cortèges interdits menés par des membres de l'ultragauche.",
+     "source": { "label": "Europe 1", "url": "https://europe1.fr/societe/manifestations-de-jeudi-le-renseignement-redoute-une-journee-a-tres-hauts-risques-1206047" },
+     "statut": "à vérifier"
+    }
+   ],
+   "definitions": [
+    "« Ultragauche » : catégorie du renseignement pour des groupes qui prônent l'action violente. Ce n'est ni la gauche ni l'extrême gauche représentées au Parlement.",
+    "« C'est » l'ultragauche : à l'origine, en tête, ou seule responsable ? Les sources disent « en pointe », pas « seule »."
+   ],
+   "inconnu": [
+    { "texte": "Les sources consultées ne donnent pas de répartition des personnes interpellées selon leur mouvance." }
+   ],
+   "valeurs": "Comment répondre (interdictions, dissolutions, maintien de l'ordre) : c'est un débat politique."
+  },
+  {
+   "id": "lois-liberticides",
+   "affirmation": "Ce sont toujours les mêmes partis qui votent les lois liberticides.",
+   "contexte": "Question qui a lancé le projet Socle.",
+   "verifieLe": "2026-10-27",
+   "themes": ["securite-justice", "numerique"],
+   "dossier": "libertes",
+   "verdict": "jugement",
+   "enBref": "« Liberticide » est un jugement. Sur les textes qui restreignent une liberté publique, les votes des partis sont en effet très différents, et mesurables.",
+   "faits": [],
+   "definitions": [
+    "« Liberticide » : Socle le traduit en quatre critères vérifiables (manifestation, surveillance, expression, pouvoirs de police)."
+   ],
+   "inconnu": [
+    { "texte": "La sélection des textes est provisoire et non validée par un juriste." }
+   ],
+   "valeurs": "Faut-il plus de sécurité ou plus de libertés ? C'est le cœur du débat, et il appartient à chacun."
+  }
+ ]
+}
