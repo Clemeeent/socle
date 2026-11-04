@@ -35,6 +35,17 @@ export function IllustrationDossier({ couleur, className = "" }: { couleur: stri
   );
 }
 
+function resumeDossier(d: Dossier, nTextes: number) {
+  const parts = [];
+  const affirmations = d.affirmations ?? [];
+  const enAttente = affirmations.filter((a) => a.verdict === "à établir").length;
+  if (affirmations.length) parts.push(`${affirmations.length} affirmation${affirmations.length > 1 ? "s" : ""}`);
+  if (enAttente) parts.push(enAttente > 1 ? `${enAttente} verdicts à établir` : "verdict à établir");
+  if (d.criteres.length) parts.push(`${d.criteres.length} questions`);
+  if (nTextes) parts.push(`${nTextes} textes votés`);
+  return parts.join(" · ");
+}
+
 export function CarteDossier({ d }: { d: Dossier }) {
   const p = palette(d.couleur);
   const n = textesDuDossier(d).length;
@@ -49,10 +60,13 @@ export function CarteDossier({ d }: { d: Dossier }) {
       <p className="mt-1 text-base leading-snug">{d.question}</p>
       <IllustrationDossier couleur={d.couleur} className="mx-auto mt-4 h-auto w-full max-w-[16rem]" />
       <p className="mt-3 flex items-center justify-between text-sm font-semibold">
-        <span>
-          {d.criteres.length} questions · {n} textes votés
+        <span>{resumeDossier(d, n)}</span>
+        <span
+          aria-hidden
+          className="text-lg transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
+        >
+          →
         </span>
-        <span aria-hidden className="text-lg transition-transform group-hover:translate-x-1 motion-reduce:transition-none">→</span>
       </p>
     </Link>
   );

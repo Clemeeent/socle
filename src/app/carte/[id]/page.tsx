@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { cartes, getCarte, getDossier, getTheme, lienDossier, lienTheme, VERDICTS, type Fait } from "@/lib/data";
+import { cartes, dossierDeLaCarte, getCarte, getDossier, getTheme, lienDossier, lienTheme, VERDICTS, type Fait } from "@/lib/data";
 import { faitsDuDossier } from "@/lib/stats";
 import { BoutonsPartage } from "@/components/BoutonsPartage";
 import { CarteVerif, PastilleVerdict } from "@/components/Carte";
@@ -53,6 +53,7 @@ export default async function CartePage({ params }: { params: Promise<{ id: stri
   const dossier = c.dossier ? getDossier(c.dossier) : undefined;
   const faits = [...(dossier ? faitsDuDossier(dossier) : []), ...c.faits];
   const aVerifier = faits.some((f) => f.statut !== "vérifié");
+  const dossierLie = dossier ?? dossierDeLaCarte(c.id);
 
   return (
     <article>
@@ -68,9 +69,9 @@ export default async function CartePage({ params }: { params: Promise<{ id: stri
       <div className="mt-4 border-t border-line">
         <Deplier ouvert titre={<>Ce que disent les données <span className="font-normal text-ink-3">· {faits.length}</span></>}>
           <ListeFaits faits={faits} />
-          {dossier && (
-            <Link href={lienDossier(dossier.id)} className="mt-4 inline-block text-sm font-semibold">
-              Voir le détail des votes, parti par parti →
+          {dossierLie && (
+            <Link href={lienDossier(dossierLie.id)} className="mt-4 inline-block text-sm font-semibold">
+              {dossier ? "Voir le détail des votes, parti par parti →" : `Aller plus loin : dossier ${dossierLie.titre} →`}
             </Link>
           )}
         </Deplier>

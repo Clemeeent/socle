@@ -50,25 +50,30 @@ export default function MethodePage() {
         Les <strong>thèmes</strong> sont les grands axes de la politique (Économie, Santé, Sécurité et
         justice…) : ils servent à ranger chaque texte. Les <strong>dossiers</strong> sont les grands
         débats du moment : ils rassemblent des textes de plusieurs thèmes et traduisent la question
-        posée en critères vérifiables.
+        posée en critères vérifiables. Un dossier peut aussi partir d&apos;une{" "}
+        <strong>affirmation</strong> qui circule : elle est confrontée aux séries officielles, indicateur
+        par indicateur, et ne reçoit un verdict (vrai, faux, nuancé) qu&apos;une fois son origine retrouvée
+        et les chiffres téléchargés depuis leur source.
       </p>
-      {dossiers.map((d) => (
-        <div key={d.id} className="mt-4">
-          <h3 className="font-semibold">
-            Dossier <Link href={lienDossier(d.id)}>{d.titre}</Link> : ses critères
-          </h3>
-          <dl className="mt-2 space-y-3">
-            {d.criteres.map((c) => (
-              <div key={c.id} className="rounded border border-line p-3">
-                <dt className="font-semibold">
-                  <Link href={lienCritere(c.id)}>{c.label}</Link>
-                </dt>
-                <dd className="mt-1 text-sm text-ink-2">{c.definition}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      ))}
+      {dossiers
+        .filter((d) => d.criteres.length > 0)
+        .map((d) => (
+          <div key={d.id} className="mt-4">
+            <h3 className="font-semibold">
+              Dossier <Link href={lienDossier(d.id)}>{d.titre}</Link> : ses critères
+            </h3>
+            <dl className="mt-2 space-y-3">
+              {d.criteres.map((c) => (
+                <div key={c.id} className="rounded border border-line p-3">
+                  <dt className="font-semibold">
+                    <Link href={lienCritere(c.id)}>{c.label}</Link>
+                  </dt>
+                  <dd className="mt-1 text-sm text-ink-2">{c.definition}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        ))}
 
       <H2>Les programmes des partis</H2>
       <ul className="mt-2 list-disc space-y-1.5 pl-5">

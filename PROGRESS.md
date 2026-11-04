@@ -11,6 +11,12 @@ _Dernière mise à jour : 4 novembre 2026._
 - Chaîne des programmes : déclaration des sources, téléchargement, extraction des passages par
   mots-clés, vérification automatique des citations (testée sur un PDF fictif).
 - Publication automatique sur GitHub Pages.
+- Structure « affirmation » : un dossier peut contenir des affirmations (texte, origine, verdict,
+  indicateurs avec sources et valeurs). Un test refuse tout verdict sans origine retrouvée ni
+  données sourcées pour chaque indicateur.
+- Dossier « Budget de l'éducation » (squelette) : l'affirmation des « 10 milliards », 4 indicateurs
+  (crédits en euros courants, en euros constants, part dans le budget de l'État, dépense
+  intérieure d'éducation en % du PIB). **Aucun chiffre** : verdict « à établir ».
 
 ## En attente
 - **PDF des programmes** : aucun n'est encore téléchargé (sites des partis bloqués depuis
@@ -48,6 +54,16 @@ Test proposé : 2-3 semaines d'usage réel des cartes dans de vrais débats (env
 noter si elles sont lues, acceptées, si le ton change.
 
 ## Ancien plan : 3 dossiers à partir de vrais débats (données réelles)
+## Bloquant pour les dossiers à données réelles
+- Le 27/10/2026, l'environnement cloud refuse l'accès à education.gouv.fr, budget.gouv.fr,
+  data.gouv.fr, insee.fr, legifrance.gouv.fr (« 403 » du proxy : politique réseau). Seul
+  data.assemblee-nationale.fr répond. À régler dans les réglages de l'environnement (accès
+  réseau « Full », ou ajouter ces domaines à la liste autorisée).
+- Une fois l'accès ouvert, pour le dossier éducation : renseigner `url` de chaque source dans
+  `data/dossiers.json` (document exact, pas la page d'accueil), remplir `valeurs` (année, valeur,
+  lien, tableau/page), retrouver l'origine du « 10 milliards », puis seulement écrire le verdict.
+
+## À faire en priorité : 3 dossiers à partir de vrais débats (données réelles)
 Exemples tirés de discussions réelles du porteur du projet. Chaque chiffre doit venir d'une source
 officielle téléchargée (jamais de mémoire) ; si une donnée n'existe pas, le dire (« non mesuré »).
 Nécessite un accès réseau complet (l'environnement de la session doit être en « Full »).
