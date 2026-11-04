@@ -83,7 +83,8 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
 - Accueil « recherche d'abord » (façon assistant) : une question, un grand champ dont le texte
   indicatif fait défiler des phrases d'exemple (pause au focus, aucune rotation si mouvement réduit ;
   champ vide + Entrée = vérifier l'exemple affiché), sur un fond génératif très discret (`FondDebat` :
-  points qui s'allument par petits groupes voisins, SVG + CSS, immobile si mouvement réduit) ;
+  clusters de points placés librement, deux couleurs comme deux voix, qui se remplissent puis
+  s'éteignent ; invisibles éteints, tenus dans les marges ; SVG + CSS, rien si mouvement réduit) ;
   puis un carrousel des cartes en tuiles colorées avec motif génératif (`Motif`, graine = id de la
   carte, couleur = famille du verdict, toujours écrit en toutes lettres), puis les dossiers.
 - **Vérificateur** (`Verificateur.tsx`) : la phrase saisie reste au centre, effet « réflexion »

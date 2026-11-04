@@ -144,23 +144,33 @@ body {
   }
 }
 
-/* Home background: dots that light up and fade, briefly, then stay off for most of the cycle. */
+/* Home background: each dot of a discussion lights up in turn, stays on while the others answer,
+   then the whole cluster fades; off (invisible) for the rest of the cycle. */
 @keyframes socle-point {
-  0%, 100% { opacity: 0; }
-  6% { opacity: 0.9; }
-  16% { opacity: 0.9; }
-  26% { opacity: 0; }
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  4% { opacity: 0.85; transform: scale(1); }
+  28% { opacity: 0.85; transform: scale(1); }
+  40% { opacity: 0; transform: scale(0.9); }
 }
 .point-debat {
   opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
   animation-name: socle-point;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
 .fond-debat {
-  /* Fades out towards the bottom and the sides so it stays behind the content. */
-  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, #000 30%, transparent 75%);
-  mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, #000 30%, transparent 75%);
+  /* Keeps the dots in the margins (clear around the title and the field) and fades them
+     out at the bottom, so the background never sits behind text. */
+  -webkit-mask-image:
+    radial-gradient(ellipse 46% 34% at 50% 55%, transparent 60%, #000 100%),
+    linear-gradient(#000 75%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(ellipse 46% 34% at 50% 55%, transparent 60%, #000 100%),
+    linear-gradient(#000 75%, transparent);
+  mask-composite: intersect;
 }
 @media (prefers-reduced-motion: reduce) {
   .point-debat {

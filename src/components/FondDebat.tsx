@@ -1,67 +1,81 @@
-// Discreet generative background for the top of the home page: a grid of faint dots where small
-// groups of neighbours light up one after another, like an exchange, then fade out.
-// Pure SVG + CSS animation (no script); still with reduced motion. Decorative: aria-hidden.
+// Discreet generative background for the top of the home page: scattered clusters of dots, each one
+// a "discussion" — two colours like two voices answering each other — that fills up dot by dot,
+// then fades out. Nothing is drawn while a dot is off.
+// Pure SVG + CSS animation (seeded, no script); nothing shows with reduced motion. Decorative: aria-hidden.
 import { aleatoire } from "./Motif";
 
-const COLONNES = 40;
-const LIGNES = 12;
-const PAS = 24;
-const COULEURS = ["#9b85ff", "#ffb45e", "#ff8d80", "#8098ff", "#6cc58a"];
-const VOISINS = [
-  [1, 0],
-  [0, 1],
-  [1, 1],
-  [-1, 1],
+const VOIX = [
+  ["#9b85ff", "#ffb45e"],
+  ["#8098ff", "#ff8d80"],
+  ["#6cc58a", "#9b85ff"],
+  ["#ffb45e", "#8098ff"],
+  ["#ff8d80", "#6cc58a"],
 ];
 
-export function FondDebat({ className = "" }: { className?: string }) {
-  const r = aleatoire("socle-debat");
-  // Groups of 2-3 neighbouring dots; each group answers in turn, with its own rhythm.
-  const allumes = new Map<string, { couleur: string; delai: number; duree: number }>();
-  for (let g = 0; g < 48; g++) {
-    let x = Math.floor(r() * COLONNES);
-    let y = Math.floor(r() * LIGNES);
-    const couleur = COULEURS[Math.floor(r() * COULEURS.length)];
-    const debut = r() * 9;
-    const duree = 7 + r() * 5;
-    const taille = 2 + Math.floor(r() * 2);
-    for (let k = 0; k < taille; k++) {
-      const cle = `${x}-${y}`;
-      if (!allumes.has(cle)) allumes.set(cle, { couleur, delai: debut + k * 0.9, duree });
-      const [dx, dy] = VOISINS[Math.floor(r() * VOISINS.length)];
-      x = Math.min(COLONNES - 1, Math.max(0, x + dx));
-      y = Math.min(LIGNES - 1, Math.max(0, y + dy));
-    }
+type Point = { x: number; y: number; r: number; couleur: string; delai: number; duree: number };
+
+// One canvas per screen shape, so a phone shows as many discussions as a desktop.
+const FORMATS = {
+  large: { largeur: 960, hauteur: 300, nombre: 18, ecart: 90 },
+  etroit: { largeur: 390, hauteur: 520, nombre: 9, ecart: 80 },
+};
+
+function discussions(format: keyof typeof FORMATS): Point[] {
+  const { largeur, hauteur, nombre, ecart } = FORMATS[format];
+  const r = aleatoire(`socle-debat-${format}`);
+  const centres: { x: number; y: number }[] = [];
+  // Scattered cluster centres, kept apart from each other.
+  for (let essai = 0; centres.length < nombre && essai < 500; essai++) {
+    const c = { x: 20 + r() * (largeur - 40), y: 20 + r() * (hauteur - 40) };
+    if (centres.every((d) => Math.hypot(d.x - c.x, d.y - c.y) > ecart)) centres.push(c);
   }
-  const points: React.ReactNode[] = [];
-  for (let y = 0; y < LIGNES; y++) {
-    for (let x = 0; x < COLONNES; x++) {
-      const cx = x * PAS + PAS / 2;
-      const cy = y * PAS + PAS / 2;
-      const a = allumes.get(`${x}-${y}`);
-      points.push(<circle key={`b${x}-${y}`} cx={cx} cy={cy} r={2} fill="#e4e2dc" />);
-      if (a)
-        points.push(
-          <circle
-            key={`a${x}-${y}`}
-            cx={cx}
-            cy={cy}
-            r={3.4}
-            fill={a.couleur}
-            className="point-debat"
-            style={{ animationDelay: `${a.delai.toFixed(2)}s`, animationDuration: `${a.duree.toFixed(2)}s` }}
-          />,
-        );
-    }
-  }
+  return centres.flatMap((c) => {
+    const voix = VOIX[Math.floor(r() * VOIX.length)];
+    const n = 3 + Math.floor(r() * 4); // 3 to 6 contributions
+    const debut = r() * 12;
+    const duree = 10 + r() * 6; // whole cycle of this discussion, in seconds
+    const pas = 0.5 + r() * 0.5; // time between two replies
+    let angle = r() * Math.PI * 2;
+    return Array.from({ length: n }, (_, k) => {
+      // Each reply lands near the previous ones, turning around the centre.
+      angle += 1.2 + r() * 1.6;
+      const distance = k === 0 ? 0 : 8 + r() * 16;
+      return {
+        x: c.x + Math.cos(angle) * distance,
+        y: c.y + Math.sin(angle) * distance,
+        r: 2.2 + r() * 2.2,
+        couleur: voix[k % 2],
+        delai: debut + k * pas,
+        duree,
+      };
+    });
+  });
+}
+
+function Toile({ format, className }: { format: keyof typeof FORMATS; className: string }) {
+  const { largeur, hauteur } = FORMATS[format];
   return (
-    <svg
-      viewBox={`0 0 ${COLONNES * PAS} ${LIGNES * PAS}`}
-      preserveAspectRatio="xMidYMid slice"
-      className={className}
-      aria-hidden
-    >
-      {points}
+    <svg viewBox={`0 0 ${largeur} ${hauteur}`} preserveAspectRatio="xMidYMid slice" className={className} aria-hidden>
+      {discussions(format).map((p, i) => (
+        <circle
+          key={i}
+          cx={p.x.toFixed(1)}
+          cy={p.y.toFixed(1)}
+          r={p.r.toFixed(1)}
+          fill={p.couleur}
+          className="point-debat"
+          style={{ animationDelay: `${p.delai.toFixed(2)}s`, animationDuration: `${p.duree.toFixed(2)}s` }}
+        />
+      ))}
     </svg>
+  );
+}
+
+export function FondDebat({ className = "" }: { className?: string }) {
+  return (
+    <div className={className} aria-hidden>
+      <Toile format="etroit" className="h-full w-full sm:hidden" />
+      <Toile format="large" className="hidden h-full w-full sm:block" />
+    </div>
   );
 }
