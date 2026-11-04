@@ -1,0 +1,256 @@
+{
+ "statut": "brouillon généré par IA, non relu",
+ "phrase": "Dans les manifestations, tous les problèmes viennent de l'ultragauche.",
+ "ref": "p05",
+ "genereLe": "2026-11-04T16:36:54.008Z",
+ "modele": "claude-opus-5-5",
+ "cout": 0.1328,
+ "orientation": {
+  "carte": "violences-ultragauche",
+  "dossier": "libertes",
+  "raison": "La phrase attribue les violences en manifestation à l'ultragauche, sujet traité par la carte sur les violences des manifestations d'octobre, formulé ici de façon plus générale."
+ },
+ "analyse": [
+  {
+   "extrait": "tous les problèmes viennent de l'ultragauche",
+   "type": "donnee",
+   "question": "Les violences et dégradations constatées lors des manifestations sont-elles attribuées, par le renseignement ou la justice, à des militants d'ultragauche, et dans quelle proportion ?",
+   "requetes": [
+    "renseignement ultragauche violences manifestations",
+    "procureure de Paris interpellations profils casseurs",
+    "pillages auteurs interpellés manifestation",
+    "extrême gauche radicale en pointe"
+   ]
+  },
+  {
+   "extrait": "tous les problèmes",
+   "type": "definition",
+   "question": "Que recouvre « les problèmes » : violences contre les forces de l'ordre, pillages, dégradations, ou autres incidents ?",
+   "requetes": [
+    "dégradations pillages violences forces de l'ordre blessées",
+    "bilan manifestations incidents"
+   ]
+  },
+  {
+   "extrait": "l'ultragauche",
+   "type": "definition",
+   "question": "Quels groupes ou individus sont désignés par le terme « ultragauche » selon les services de renseignement ?",
+   "requetes": [
+    "ultragauche définition renseignement",
+    "black bloc extrême gauche radicale"
+   ]
+  },
+  {
+   "extrait": "Dans les manifestations",
+   "type": "donnee",
+   "question": "De quelles manifestations parle-t-on, et les constats valent-ils pour toutes les villes et toutes les journées de mobilisation ?",
+   "requetes": [
+    "mobilisation 17 octobre manifestations France",
+    "manifestations Paris province violences"
+   ]
+  }
+ ],
+ "extraitsHorsPhrase": [],
+ "reponse": {
+  "titre": "Le renseignement place l'ultragauche en pointe des violences, mais pas à l'origine des pillages, et la justice ne le confirme pas.",
+  "affirmations": [
+   {
+    "extrait": "tous les problèmes viennent de l'ultragauche",
+    "statut": "nuance",
+    "reponse": "Selon une source sécuritaire citée par l'AFP, le renseignement estime que l'ultragauche et l'extrême gauche radicale ont été en pointe dans les violences, mais pas à l'origine des pillages. D'après Wikipédia, la procureure de Paris déclare ne pas pouvoir confirmer que les auteurs des violences parisiennes soient politisés vers l'ultragauche, et un responsable syndical policier estime leur part à environ 20 % des auteurs de violences. Le ministre de l'Intérieur, lui, attribue les débordements à l'ultragauche et à l'extrême gauche radicale.",
+    "citations": [
+     {
+      "passage": "france24-renseignement-ultragauche#1",
+      "extrait": "ont été en pointe dans les débordements de violences survenus samedi en France, mais pas à l'origine des pillages, après analyse des évènements, affirme une source sécuritaire."
+     },
+     {
+      "passage": "wikipedia-manifestations-17-octobre-2026#100",
+      "extrait": "qui déclare ne pouvoir « absolument pas confirmer » que les auteurs des violences parisiennes soient des personnes « politisées vers l’ultragauche »"
+     },
+     {
+      "passage": "wikipedia-manifestations-17-octobre-2026#101",
+      "extrait": "Ce dernier évalue, d’après les remontées du terrain et du renseignement, la part de l’ultragauche à environ 20 % des auteurs de violences, le reste étant selon lui des pilleurs sans appartenance politique."
+     },
+     {
+      "passage": "cnews-mobilisation-17-octobre#4",
+      "extrait": "«L'ultragauche et l'extrême gauche radicale ont fait dégénérer les actions en s'en prenant violemment aux forces de l'ordre, aux commerces et aux bâtiments publics»"
+     },
+     {
+      "passage": "wikipedia-manifestations-17-octobre-2026#40",
+      "extrait": "Des « nervis » d'extrême droite se mêlent aux casseurs"
+     }
+    ]
+   },
+   {
+    "extrait": "tous les problèmes",
+    "statut": "depend-de-la-definition",
+    "reponse": "La réponse change selon ce qu'on compte. Le renseignement, selon une source sécuritaire citée par l'AFP, impute à ces mouvances les attaques contre les forces de l'ordre et les symboles de l'État, mais pas les pillages. Wikipédia rapporte à la fois des affrontements avec la police, des pillages et des dégradations.",
+    "citations": [
+     {
+      "passage": "france24-renseignement-ultragauche#3",
+      "extrait": "Ils leur imputent une responsabilité dans les prises à partie des forces de l'ordre et des symboles de l'Etat (mairies, etc)."
+     },
+     {
+      "passage": "wikipedia-manifestations-17-octobre-2026#40",
+      "extrait": "Des affrontements violents avec les forces de l’ordre éclatent, et des scènes de pillages et de dégradations importantes ont été rapportées par les autorités"
+     }
+    ]
+   },
+   {
+    "extrait": "l'ultragauche",
+    "statut": "depend-de-la-definition",
+    "reponse": "Selon une source sécuritaire citée par l'AFP, le renseignement désigne par « ultragauche » environ 5.000 militants fichés, répartis entre antifas, anarcho-autonomes et anarchistes. Il la distingue de « l'extrême gauche radicale » (NPA, Révolution permanente) et de « l'extrême gauche » (PCF, LFI), à qui il n'attribue pas d'incidents.",
+    "citations": [
+     {
+      "passage": "france24-renseignement-ultragauche#2",
+      "extrait": "Pour les renseignements, \"l'ultragauche\", dont le nombre de militants fichés est d'environ 5.000, est composée de \"groupuscules violents radicaux, en marge du champ démocratique et républicain\", explique la source sécuritaire."
+     },
+     {
+      "passage": "france24-renseignement-ultragauche#2",
+      "extrait": "Ils sont répartis en trois groupes, \"idéologiquement distincts\" : \"les antifas\", les plus nombreux, \"les anarcho-autonomes\" et les \"anarchistes\", la mouvance la plus ancienne."
+     },
+     {
+      "passage": "france24-renseignement-ultragauche#3",
+      "extrait": "Des organisations ou partis comme le NPA et Révolution permanente qui sont \"peu ou pas dans le champ des partis\" sont classés dans cette catégorie par les renseignements, selon une source sécuritaire."
+     },
+     {
+      "passage": "france24-renseignement-ultragauche#2",
+      "extrait": "Ils classent le PCF et LFI à \"l'extrême gauche\", notent que cette dernière était présente dans les cortèges comme à Paris mais, relèvent-ils, il n'y a pas eu d'incidents de leur fait."
+     }
+    ]
+   },
+   {
+    "extrait": "Dans les manifestations",
+    "statut": "nuance",
+    "reponse": "Les passages portent surtout sur la journée du 17 octobre, qui comptait 110 manifestations selon le ministre de l'Intérieur. Les constats varient selon les villes : la procureure ne parle que de Paris, et un titre de presse cité par Wikipédia évoque des cortèges calmes ailleurs qu'à Valence. Rien ne dit que ces constats valent pour d'autres journées.",
+    "citations": [
+     {
+      "passage": "wikipedia-manifestations-17-octobre-2026#57",
+      "extrait": "Le ministre de l’Intérieur annonce de son côté 550 000 manifestants, dont 110 000 à Paris et ce dans 110 manifestations organisées dans tout le pays"
+     },
+     {
+      "passage": "wikipedia-manifestations-17-octobre-2026#153",
+      "extrait": "Mobilisation du 17 octobre : de “graves troubles” à Valence, neuf gardes à vue ; ailleurs, des cortèges calmes"
+     },
+     {
+      "passage": "wikipedia-manifestations-17-octobre-2026#100",
+      "extrait": "Elle précise toutefois que l’ensemble des auteurs de dégradations n’ont pas été interpellés"
+     }
+    ]
+   }
+  ],
+  "inconnu": [
+   "Aucune proportion officielle (renseignement ou justice) des auteurs de violences appartenant à l'ultragauche n'est donnée ; le seul chiffre vient d'un responsable syndical policier.",
+   "Tous les auteurs de dégradations n'ont pas été interpellés, et la plupart des gardés à vue n'expriment aucune revendication politique, selon la procureure de Paris.",
+   "Les passages ne disent rien des autres journées de mobilisation ni du détail par ville."
+  ],
+  "pourLancerLeDebat": [
+   "Faut-il distinguer les violences contre les forces de l'ordre des pillages quand on cherche des responsables ?",
+   "Comment établir l'appartenance politique d'auteurs de violences qui ne revendiquent rien ?",
+   "Ce qui s'est passé à Paris le 17 octobre peut-il servir de règle pour toutes les manifestations ?"
+  ]
+ },
+ "controles": [],
+ "sources": [
+  {
+   "passage": "france24-renseignement-ultragauche#1",
+   "organisme": "France 24 (AFP)",
+   "titre": "Violences en France : le renseignement estime que l'ultragauche et l'extrême gauche radicale étaient en pointe samedi",
+   "nature": "presse",
+   "url": "https://www.france24.com/fr/info-en-continu/20261020-violences-en-france-le-renseignement-estime-que-l-ultragauche-et-l-extr%C3%AAme-gauche-radicale-%C3%A9taient-en-pointe-samedi",
+   "page": 1
+  },
+  {
+   "passage": "wikipedia-manifestations-17-octobre-2026#100",
+   "organisme": "Wikipédia",
+   "titre": "Manifestations du 17 octobre 2026 en France",
+   "nature": "encyclopedie",
+   "url": "https://fr.wikipedia.org/wiki/Manifestations_du_17_octobre_2026_en_France",
+   "page": 1
+  },
+  {
+   "passage": "wikipedia-manifestations-17-octobre-2026#101",
+   "organisme": "Wikipédia",
+   "titre": "Manifestations du 17 octobre 2026 en France",
+   "nature": "encyclopedie",
+   "url": "https://fr.wikipedia.org/wiki/Manifestations_du_17_octobre_2026_en_France",
+   "page": 1
+  },
+  {
+   "passage": "cnews-mobilisation-17-octobre#4",
+   "organisme": "CNews",
+   "titre": "Mobilisation du 17 octobre : ultragauche, forces de l'ordre blessées, état d'urgence",
+   "nature": "presse",
+   "url": "https://www.cnews.fr/france/2026-10-17/mobilisation-du-17-octobre-ultragauche-forces-de-lordre-blessees-etat-durgence-ce",
+   "page": 1
+  },
+  {
+   "passage": "wikipedia-manifestations-17-octobre-2026#40",
+   "organisme": "Wikipédia",
+   "titre": "Manifestations du 17 octobre 2026 en France",
+   "nature": "encyclopedie",
+   "url": "https://fr.wikipedia.org/wiki/Manifestations_du_17_octobre_2026_en_France",
+   "page": 1
+  },
+  {
+   "passage": "france24-renseignement-ultragauche#3",
+   "organisme": "France 24 (AFP)",
+   "titre": "Violences en France : le renseignement estime que l'ultragauche et l'extrême gauche radicale étaient en pointe samedi",
+   "nature": "presse",
+   "url": "https://www.france24.com/fr/info-en-continu/20261020-violences-en-france-le-renseignement-estime-que-l-ultragauche-et-l-extr%C3%AAme-gauche-radicale-%C3%A9taient-en-pointe-samedi",
+   "page": 1
+  },
+  {
+   "passage": "france24-renseignement-ultragauche#2",
+   "organisme": "France 24 (AFP)",
+   "titre": "Violences en France : le renseignement estime que l'ultragauche et l'extrême gauche radicale étaient en pointe samedi",
+   "nature": "presse",
+   "url": "https://www.france24.com/fr/info-en-continu/20261020-violences-en-france-le-renseignement-estime-que-l-ultragauche-et-l-extr%C3%AAme-gauche-radicale-%C3%A9taient-en-pointe-samedi",
+   "page": 1
+  },
+  {
+   "passage": "wikipedia-manifestations-17-octobre-2026#57",
+   "organisme": "Wikipédia",
+   "titre": "Manifestations du 17 octobre 2026 en France",
+   "nature": "encyclopedie",
+   "url": "https://fr.wikipedia.org/wiki/Manifestations_du_17_octobre_2026_en_France",
+   "page": 1
+  },
+  {
+   "passage": "wikipedia-manifestations-17-octobre-2026#153",
+   "organisme": "Wikipédia",
+   "titre": "Manifestations du 17 octobre 2026 en France",
+   "nature": "encyclopedie",
+   "url": "https://fr.wikipedia.org/wiki/Manifestations_du_17_octobre_2026_en_France",
+   "page": 1
+  }
+ ],
+ "passagesConsultes": [
+  "france24-renseignement-ultragauche#1",
+  "france24-renseignement-ultragauche#2",
+  "wikipedia-manifestations-17-octobre-2026#100",
+  "europe1-renseignement-journee-a-risques#4",
+  "france24-renseignement-ultragauche#3",
+  "wikipedia-manifestations-17-octobre-2026#176",
+  "wikipedia-manifestations-17-octobre-2026#101",
+  "wikipedia-manifestations-17-octobre-2026#34",
+  "wikipedia-manifestations-17-octobre-2026#40",
+  "wikipedia-manifestations-17-octobre-2026#43",
+  "wikipedia-manifestations-17-octobre-2026#102",
+  "wikipedia-manifestations-17-octobre-2026#33",
+  "cnews-mobilisation-17-octobre#1",
+  "wikipedia-manifestations-17-octobre-2026#51",
+  "wikipedia-manifestations-17-octobre-2026#63",
+  "wikipedia-manifestations-17-octobre-2026#57",
+  "cnews-mobilisation-17-octobre#4",
+  "wikipedia-manifestations-17-octobre-2026#125",
+  "wikipedia-manifestations-17-octobre-2026#126",
+  "wikipedia-manifestations-17-octobre-2026#153",
+  "wikipedia-manifestations-17-octobre-2026#26",
+  "wikipedia-manifestations-17-octobre-2026#80",
+  "wikipedia-manifestations-17-octobre-2026#132",
+  "wikipedia-manifestations-17-octobre-2026#106",
+  "senat-avis-plf2026-enseignement-scolaire#91"
+ ],
+ "documentsNonTelecharges": []
+}

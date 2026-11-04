@@ -1,0 +1,111 @@
+{
+ "statut": "brouillon généré par IA, non relu",
+ "phrase": "Vivement la dissolution de la police nationale.",
+ "ref": "p02",
+ "genereLe": "2026-11-04T16:34:55.570Z",
+ "modele": "claude-opus-5-5",
+ "cout": 0.0751,
+ "orientation": {
+  "carte": "aucune",
+  "dossier": "aucune",
+  "raison": "La phrase exprime un souhait de dissolution de la police nationale. Aucune carte ne traite de ce sujet : la carte « police-raciste » porte sur les contrôles discriminatoires, pas sur l'existence de la police. Aucun dossier ne couvre ce thème."
+ },
+ "analyse": [
+  {
+   "extrait": "Vivement la dissolution de la police nationale.",
+   "type": "valeur",
+   "question": "Faut-il dissoudre la police nationale ? Cette question relève d'un choix politique et d'un débat de valeurs, non d'une vérification factuelle.",
+   "requetes": [
+    "police nationale missions organisation",
+    "relations police-population confiance",
+    "sécurité publique forces de l'ordre réforme"
+   ]
+  },
+  {
+   "extrait": "la dissolution de la police nationale",
+   "type": "donnee",
+   "question": "Présupposé : qu'est-ce que la police nationale (statut, missions, effectifs) et une dissolution est-elle juridiquement possible, et par quelle voie ?",
+   "requetes": [
+    "police nationale statut direction générale effectifs",
+    "gendarmerie police nationale répartition compétences",
+    "organisation forces de sécurité intérieure loi"
+   ]
+  }
+ ],
+ "extraitsHorsPhrase": [],
+ "reponse": {
+  "titre": "Dissoudre la police nationale est un choix politique, et les documents ne disent pas comment ce serait juridiquement possible.",
+  "affirmations": [
+   {
+    "extrait": "Vivement la dissolution de la police nationale.",
+    "statut": "debat-de-valeurs",
+    "reponse": "Dissoudre ou non la police nationale relève d'un choix politique, que les faits ne tranchent pas. Selon l'enquête du Défenseur des droits, en présence d'un policier ou d'un gendarme, 50 % de la population se dit confiante ou rassurée, 28 % indifférente et 22 % méfiante ou inquiète. Le Conseil d'État a constaté que les contrôles d'identité discriminatoires existent et ne se limitent pas à des cas isolés, sans les juger « systémiques » ou « généralisés ».",
+    "citations": [
+     {
+      "passage": "ddd-enquete-acces-droits-2024-police#9",
+      "extrait": "En présence d’un policier ou d’un gendarme sur la voie publique, 50 % de la population se dit confiante ou rassurée, 28 % indifférente et 22 % déclare se sentir méfiante ou inquiète."
+     },
+     {
+      "passage": "conseil-etat-controles-identite-communique#1",
+      "extrait": "Il ressort de l’instruction que la pratique de ce type de contrôles existe et ne se limite pas à des cas isolés. Si elle ne peut être considérée comme « systémique » ou « généralisée »"
+     }
+    ]
+   },
+   {
+    "extrait": "la dissolution de la police nationale",
+    "statut": "on-ne-sait-pas",
+    "reponse": "Les documents fournis ne décrivent ni le statut, ni les missions, ni les effectifs de la police nationale. Ils ne disent pas non plus si une dissolution est juridiquement possible, ni par quelle voie (loi, décret, réforme constitutionnelle).",
+    "citations": []
+   }
+  ],
+  "inconnu": [
+   "Le statut juridique, les missions et les effectifs de la police nationale ne figurent pas dans les documents.",
+   "La procédure juridique qui permettrait de dissoudre la police nationale n'est pas décrite.",
+   "Ce qui assurerait ses missions en cas de dissolution n'est pas abordé.",
+   "L'enquête mesure la confiance envers les policiers et gendarmes, pas l'opinion sur une éventuelle dissolution."
+  ],
+  "pourLancerLeDebat": [
+   "Quelles missions de la police nationale devraient être maintenues, et par qui seraient-elles assurées en cas de dissolution ?",
+   "Les problèmes relevés, comme les contrôles d'identité discriminatoires, appellent-ils une réforme de l'institution ou sa suppression ?",
+   "Comment expliquer qu'une partie de la population se dise confiante face à un policier tandis qu'une autre se dit méfiante ?"
+  ]
+ },
+ "controles": [],
+ "sources": [
+  {
+   "passage": "ddd-enquete-acces-droits-2024-police#9",
+   "organisme": "Défenseur des droits",
+   "titre": "Enquête Accès aux droits 2024, volume 1 : relations police-population",
+   "nature": "officielle",
+   "url": "https://www.defenseurdesdroits.fr/sites/default/files/2025-06/ddd_EAD-2024_volume-1_relations-police-population.pdf",
+   "page": 5
+  },
+  {
+   "passage": "conseil-etat-controles-identite-communique#1",
+   "organisme": "Conseil d'État",
+   "titre": "Communiqué de presse : contrôles d'identité discriminatoires",
+   "nature": "officielle",
+   "url": "https://www.conseil-etat.fr/content/download/196845/file/cp_contr%C3%B4le_discriminatoire_web.pdf",
+   "page": 1
+  }
+ ],
+ "passagesConsultes": [
+  "ddd-enquete-acces-droits-2024-police#72",
+  "senat-avis-plf2026-enseignement-scolaire#59",
+  "ddd-enquete-acces-droits-2024-police#5",
+  "senat-avis-plf2026-enseignement-scolaire#178",
+  "ddd-enquete-acces-droits-2024-police#12",
+  "ddd-enquete-acces-droits-2024-police#9",
+  "conseil-etat-controles-identite-communique#1",
+  "senat-rapport-328-1998-1999#2",
+  "senat-avis-plf2026-enseignement-scolaire#88",
+  "senat-avis-plf2026-enseignement-scolaire#25",
+  "wikipedia-manifestations-17-octobre-2026#49",
+  "senat-avis-plf2026-enseignement-scolaire#22",
+  "senat-avis-plf2026-enseignement-scolaire#146",
+  "senat-avis-plf2026-enseignement-scolaire#4",
+  "senat-avis-plf2026-enseignement-scolaire#160",
+  "senat-avis-plf2026-enseignement-scolaire#69"
+ ],
+ "documentsNonTelecharges": []
+}

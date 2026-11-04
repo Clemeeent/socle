@@ -1,6 +1,6 @@
 # Avancement
 
-_Dernière mise à jour : 4 novembre 2026._
+_Dernière mise à jour : 4 novembre 2026 (session 2 : vérificateur IA en coulisses)._
 
 ## Fait
 - Import des votes de l'Assemblée (6 scrutins, 13 groupes) avec contrôle des décomptes.
@@ -106,9 +106,35 @@ d'un corpus de sources officielles, qui dit « on ne sait pas » plutôt que d'i
   Point de départ (mots-clés) : 5/6 bien orientées ; « Vivement la dissolution de la police
   nationale » part vers le mauvais endroit.
 - Fait : réponses rapides « Et toi ? » pour se situer sur les questions de débat.
-- À faire : collecter ~20 phrases réelles ; clé d'API Claude ; accès réseau aux sources ; chaîne
-  phrase → affirmations → recherche dans le corpus → récit cité ou « on ne sait pas » → contrôle
-  automatique des chiffres ; d'abord en coulisses (brouillons de cartes relus), puis en direct.
+- Fait (4 nov., session 2) : **chaîne IA en coulisses**, de bout en bout.
+  - Accès vérifié : clé `SOCLE_ANTHROPIC_API_KEY` OK. Sources : senat.fr, conseil-etat.fr,
+    defenseurdesdroits.fr, insee.fr, gov.uk, vie-publique.fr et les PDF d'education.gouv.fr répondent.
+    **budget.gouv.fr refuse (403, pare-feu anti-robots Incapsula du site, pas notre réseau)** ;
+    legifrance.gouv.fr et interieur.gouv.fr aussi (403). data.gouv.fr et data.education.gouv.fr
+    répondent par intermittence (connexion coupée), à réessayer.
+  - Corpus : 14 documents (`corpus/sources.json`, 7 officiels), tous téléchargés.
+  - `npm run corpus:controler` → `evaluation/controle-faits.md` : 13 faits sur 17 ont leurs chiffres
+    réunis dans un même passage de leur source. À relire : « 89,64 milliards avec pensions » absent de
+    l'avis du Sénat cité ; « 2021, cour d'appel » absent du communiqué du Conseil d'État cité ; dates
+    « 19 octobre » et « 22 octobre » absentes des articles cités.
+  - **Correction** : la carte « 10 milliards » disait « 6,8 % du PIB en 2024, max 7,7 à 7,8 % » ; la
+    source citée (DEPP, RERS 2025 ch. 10, p. 1) dit « 6,7 % » en 2023 et un maximum de « 7,8 % au
+    milieu des années 1990 ». Carte alignée sur sa source (statut toujours « à vérifier »). Le 6,8 %
+    pour 2024 vient d'une autre publication DEPP (citée par News Tank) : à télécharger si on veut
+    l'année la plus récente.
+  - `npm run verifier -- --evaluation` : brouillons des 6 phrases dans `brouillons/`, **tous passent
+    le contrôle automatique** (citations mot pour mot, chiffres présents dans les citations). Ils
+    disent « on ne sait pas » quand le corpus ne répond pas (ex. votes des partis, part des femmes
+    dans la police). À relire par un humain avant d'en faire des cartes.
+  - `npm run evaluer -- --ia` : orientation 5/6, comme les mots-clés. p02 (« Vivement la
+    dissolution… ») : l'IA refuse de la rattacher à « police raciste ». À trancher : est-ce
+    vraiment la réponse attendue ?
+  - Dépense API totale : 0,78 $ (journal `evaluation/depenses-api.json`, plafond 5 $).
+- À faire ensuite : collecter ~20 phrases réelles (seuls les porteurs du projet peuvent les
+  fournir) ; ajouter au corpus les votes (scrutins.json → passages) pour répondre à « quels partis
+  votent… » ; lois de finances (budget.gouv.fr bloqué : chercher le même document sur
+  data.economie.gouv.fr ou le site du Sénat/de l'Assemblée) ; relire les brouillons ; puis
+  passer en direct sur le site (nécessite un petit serveur : le site est 100 % statique).
 - Plus tard : débat à deux (lien partagé, socle commun de la discussion), bot WhatsApp/Telegram,
   vérification en direct des débats de campagne.
 

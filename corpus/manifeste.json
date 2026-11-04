@@ -1,0 +1,128 @@
+{
+ "senat-avis-plf2026-enseignement-scolaire": {
+  "url": "https://www.senat.fr/rap/a25-144-31/a25-144-31_mono.html",
+  "telechargeLe": "2026-11-04",
+  "sha256": "75d5ebd6be6fa50d8f625a90230f63dbcfb619ed1c27f4208cbd252999ace704",
+  "octets": 367655,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 179296
+ },
+ "senat-rapport-328-1998-1999": {
+  "url": "https://www.senat.fr/rap/r98-3281/r98-32811.html",
+  "telechargeLe": "2026-11-04",
+  "sha256": "a920d244850e7d188c9f3469ed53ea2558a7fe1bc09510ce9a04ec74aad38f64",
+  "octets": 125435,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 5555
+ },
+ "depp-rers2025-chapitre-10": {
+  "url": "https://www.education.gouv.fr/sites/default/files/2025-07/rers2025-chapitre-10-441741.pdf",
+  "telechargeLe": "2026-11-04",
+  "sha256": "d078238fc48f47170990cff73d0e64014c7a3ef2ca54ffa11796732dbb4faa10",
+  "octets": 1067353,
+  "format": "pdf",
+  "pages": 18,
+  "caracteres": 64351
+ },
+ "ddd-enquete-acces-droits-2024-police": {
+  "url": "https://www.defenseurdesdroits.fr/sites/default/files/2025-06/ddd_EAD-2024_volume-1_relations-police-population.pdf",
+  "telechargeLe": "2026-11-04",
+  "sha256": "2f8fe0ebcbc0127adae7189c86370eb59ed2584fe2e02cd9e346c7a588986a71",
+  "octets": 648006,
+  "format": "pdf",
+  "pages": 30,
+  "caracteres": 80069
+ },
+ "conseil-etat-controles-identite-actualite": {
+  "url": "https://www.conseil-etat.fr/actualites/controles-d-identite-discriminatoires-la-determination-d-une-politique-publique-ne-releve-pas-du-juge-administratif",
+  "telechargeLe": "2026-11-04",
+  "sha256": "6ec03d5c448a97eccd0ccfb27cbadcb86b0bcb3aaa22f1ce3b9218e4b6941290",
+  "octets": 116380,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 3546
+ },
+ "conseil-etat-controles-identite-communique": {
+  "url": "https://www.conseil-etat.fr/content/download/196845/file/cp_contr%C3%B4le_discriminatoire_web.pdf",
+  "telechargeLe": "2026-11-04",
+  "sha256": "0a8af65bffb28f91a551541d8456cd2cd61ea5a64d662ba599b4fb4c4ff8a126",
+  "octets": 562872,
+  "format": "pdf",
+  "pages": 2,
+  "caracteres": 3465
+ },
+ "uk-ethnicity-facts-stop-and-search": {
+  "url": "https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/stop-and-search/latest/",
+  "telechargeLe": "2026-11-04",
+  "sha256": "70679243b3613a4b79a6452922ab2da4eec72ce0c325aaf616310729125ee614",
+  "octets": 396027,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 18768
+ },
+ "surligneurs-fusils-17-octobre": {
+  "url": "https://lessurligneurs.eu/des-fusils-automatiques-ont-ils-ete-retrouves-entre-les-mains-de-manifestants-le-17-octobre/",
+  "telechargeLe": "2026-11-04",
+  "sha256": "ccd836feaaa267987020e6b8cc1dc08e943c4b6e0b3800c46bb9c5481f9d6423",
+  "octets": 162318,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 5378
+ },
+ "ozap-dgsi-dement-cnews": {
+  "url": "https://www.ozap.com/actu/cest-completement-faux-la-dgsi-dement-complement-des-informations-revelees-par-cnews-sur-les-evenements-du-17-octobre/657553",
+  "telechargeLe": "2026-11-04",
+  "sha256": "84e38c193d6bd309e13aad27b8ce569c24069bc3f2fc9ea5fc852669712cfa17",
+  "octets": 107981,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 4268
+ },
+ "cnews-mobilisation-17-octobre": {
+  "url": "https://www.cnews.fr/france/2026-10-17/mobilisation-du-17-octobre-ultragauche-forces-de-lordre-blessees-etat-durgence-ce",
+  "telechargeLe": "2026-11-04",
+  "sha256": "34fa6e76f3fae8e59721b1e4a6538195b84fc6a71db798665890eca0630709fa",
+  "octets": 51726,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 3498
+ },
+ "europe1-renseignement-journee-a-risques": {
+  "url": "https://europe1.fr/societe/manifestations-de-jeudi-le-renseignement-redoute-une-journee-a-tres-hauts-risques-1206047",
+  "telechargeLe": "2026-11-04",
+  "sha256": "6c7814ebd4a12af3a3a6ddbd6b1bf1701b5c6e6fd8ea1e0ca852bccc2b2c1da8",
+  "octets": 71983,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 3979
+ },
+ "france24-renseignement-ultragauche": {
+  "url": "https://www.france24.com/fr/info-en-continu/20261020-violences-en-france-le-renseignement-estime-que-l-ultragauche-et-l-extr%C3%AAme-gauche-radicale-%C3%A9taient-en-pointe-samedi",
+  "telechargeLe": "2026-11-04",
+  "sha256": "5a215823db0a4cc94a777e912a35cbdfee902e0da9a37d911cb7222748ddec4b",
+  "octets": 379744,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 3029
+ },
+ "franceinfo-enquete-ddd-facies": {
+  "url": "https://www.franceinfo.fr/faits-divers/police/cinq-questions-sur-l-enquete-du-defenseur-des-droits-sur-les-controles-au-facies_2027920.html",
+  "telechargeLe": "2026-11-04",
+  "sha256": "fb8c3955c33d58684ae8bd899fcc1a4ca58b8935f60e1f5b041a87bc45b7bc2f",
+  "octets": 432218,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 6994
+ },
+ "wikipedia-manifestations-17-octobre-2026": {
+  "url": "https://fr.wikipedia.org/wiki/Manifestations_du_17_octobre_2026_en_France",
+  "telechargeLe": "2026-11-04",
+  "sha256": "4f7d9f26e5420aaa072e06465784aa7ce414bf73795256cea97adb3ae2f7e3d4",
+  "octets": 1261924,
+  "format": "html",
+  "pages": 1,
+  "caracteres": 146367
+ }
+}

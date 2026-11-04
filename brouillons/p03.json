@@ -1,0 +1,236 @@
+{
+ "statut": "brouillon généré par IA, non relu",
+ "phrase": "La police nationale est masculiniste, raciste et xénophobe, il faut s'inspirer des Anglais et miser sur le municipalisme.",
+ "ref": "p03",
+ "genereLe": "2026-11-04T16:35:34.192Z",
+ "modele": "claude-opus-5-5",
+ "cout": 0.131,
+ "orientation": {
+  "carte": "police-raciste",
+  "dossier": "aucune",
+  "raison": "La phrase affirme que la police est raciste, sujet traité par la carte police-raciste ; les autres éléments (masculinisme, modèle anglais, municipalisme) ne relèvent d'aucun dossier existant."
+ },
+ "analyse": [
+  {
+   "extrait": "La police nationale est masculiniste",
+   "type": "definition",
+   "question": "Quelle est la part des femmes dans la police nationale, et existe-t-il des données sur des comportements sexistes ou une culture professionnelle masculine ?",
+   "requetes": [
+    "part des femmes police nationale effectifs",
+    "féminisation police nationale",
+    "sexisme police accueil victimes violences"
+   ]
+  },
+  {
+   "extrait": "raciste",
+   "type": "definition",
+   "question": "Des contrôles ou comportements discriminatoires liés à l'origine sont-ils mesurés dans la police, et que signifie qualifier l'institution de raciste ?",
+   "requetes": [
+    "contrôles d'identité discriminatoires origine",
+    "Défenseur des droits relations police-population jeunes hommes perçus arabes noirs",
+    "Conseil d'État contrôles au faciès"
+   ]
+  },
+  {
+   "extrait": "xénophobe",
+   "type": "definition",
+   "question": "Existe-t-il des données sur un traitement différencié des personnes étrangères par la police ?",
+   "requetes": [
+    "discrimination nationalité étrangers contrôles police",
+    "Défenseur des droits enquête accès aux droits discrimination"
+   ]
+  },
+  {
+   "extrait": "il faut s'inspirer des Anglais",
+   "type": "valeur",
+   "question": "Comment fonctionne le modèle policier britannique et que disent les données officielles sur ses contrôles (stop and search) selon l'origine ?",
+   "requetes": [
+    "stop and search ethnicity rates England Wales",
+    "Home Office stop and search disparités ethniques",
+    "comparaison contrôles d'identité France Royaume-Uni"
+   ]
+  },
+  {
+   "extrait": "miser sur le municipalisme",
+   "type": "valeur",
+   "question": "Quel est le rôle actuel des polices municipales et le modèle britannique repose-t-il effectivement sur une organisation locale de la police ?",
+   "requetes": [
+    "police municipale compétences maires",
+    "organisation locale police britannique forces territoriales",
+    "police de proximité relations police-population"
+   ]
+  }
+ ],
+ "extraitsHorsPhrase": [],
+ "reponse": {
+  "titre": "Les données sourcées montrent des contrôles plus fréquents selon l'origine perçue, en France comme en Angleterre, mais ne disent rien de la place des femmes dans la police ni du traitement des étrangers.",
+  "affirmations": [
+   {
+    "extrait": "La police nationale est masculiniste",
+    "statut": "on-ne-sait-pas",
+    "reponse": "Les passages ne donnent ni la part des femmes dans la police nationale ni de données sur une culture professionnelle masculine ou des comportements sexistes en interne. Seul indice disponible : l'enquête du Défenseur des droits ne trouve pas d'écart significatif entre hommes et femmes face au refus de dépôt de plainte.",
+    "citations": [
+     {
+      "passage": "ddd-enquete-acces-droits-2024-police#62",
+      "extrait": "l’enquête\nne montre pas d’écart significatif entre les\nhommes et les femmes en matière de risque\nd’exposition au refus de dépôt de plainte."
+     }
+    ]
+   },
+   {
+    "extrait": "raciste",
+    "statut": "depend-de-la-definition",
+    "reponse": "Selon l'enquête du Défenseur des droits, en 2024, les jeunes hommes perçus comme noirs, arabes ou maghrébins ont 4 fois plus de risque d'être contrôlés que les autres. Le Conseil d'État reconnaît que les contrôles discriminatoires existent et ne se limitent pas à des cas isolés, mais il ne les qualifie pas de « systémiques ». Dire que l'institution est « raciste » dépend donc de la définition retenue : des pratiques mesurées, ou une caractéristique de l'institution entière.",
+    "citations": [
+     {
+      "passage": "ddd-enquete-acces-droits-2024-police#52",
+      "extrait": "En 2024, les jeunes hommes perçus comme\nnoirs, arabes ou maghrébins présentent 4\nfois plus de risque d’être contrôlés que les\nautres."
+     },
+     {
+      "passage": "conseil-etat-controles-identite-communique#1",
+      "extrait": "Il ressort de l’instruction que la\npratique de ce type de contrôles existe et ne se limite pas à des cas isolés. Si elle ne peut être\nconsidérée comme « systémique » ou « généralisée »"
+     }
+    ]
+   },
+   {
+    "extrait": "xénophobe",
+    "statut": "on-ne-sait-pas",
+    "reponse": "Les résultats disponibles portent sur l'origine perçue (personnes perçues comme noires, arabes ou maghrébines), pas sur la nationalité. L'enquête du Défenseur des droits recueille bien la nationalité des parents, mais les passages ne donnent aucun résultat sur un traitement différencié des personnes étrangères.",
+    "citations": [
+     {
+      "passage": "ddd-enquete-acces-droits-2024-police#20",
+      "extrait": "nationalité des parents et l’origine perçue), la\nreligion (auto-déclarée et perçue), l’orientation\nsexuelle, la situation de santé ou de handicap,"
+     }
+    ]
+   },
+   {
+    "extrait": "il faut s'inspirer des Anglais",
+    "statut": "debat-de-valeurs",
+    "reponse": "C'est un choix politique. Les chiffres officiels britanniques montrent aussi des écarts selon l'origine : 24.5 fouilles pour 1,000 personnes noires contre 5.9 pour 1,000 personnes blanches en Angleterre et au pays de Galles. Le Home Office indique que ces écarts ont baissé mais existent toujours ; les passages ne décrivent pas l'organisation du modèle policier britannique.",
+    "citations": [
+     {
+      "passage": "uk-ethnicity-facts-stop-and-search#9",
+      "extrait": "there were 24.5 stop and searches for every 1,000 black people, and 5.9 for every 1,000 white people"
+     },
+     {
+      "passage": "uk-ethnicity-facts-stop-and-search#3",
+      "extrait": "But disparities still exist, and decreases are not consistent across different police force areas."
+     }
+    ]
+   },
+   {
+    "extrait": "miser sur le municipalisme",
+    "statut": "debat-de-valeurs",
+    "reponse": "C'est un choix politique. Les passages ne disent rien du rôle actuel des polices municipales en France. Côté britannique, les statistiques sont présentées par zones de forces de police (par exemple la Metropolitan Police à Londres), sans préciser si ces forces dépendent des communes.",
+    "citations": [
+     {
+      "passage": "uk-ethnicity-facts-stop-and-search#17",
+      "extrait": "the Metropolitan Police in London made 33% of all stop and searches in England and Wales"
+     }
+    ]
+   }
+  ],
+  "inconnu": [
+   "La part des femmes dans la police nationale et les données sur le sexisme en interne.",
+   "Le traitement des personnes étrangères selon leur nationalité, distinct de l'origine perçue.",
+   "Le fonctionnement et l'organisation du modèle policier britannique, et son degré de décentralisation.",
+   "Le rôle actuel et les effectifs des polices municipales en France."
+  ],
+  "pourLancerLeDebat": [
+   "Faut-il qualifier une institution entière à partir de pratiques mesurées chez une partie de ses agents, ou réserver ce terme à des règles et consignes officielles ?",
+   "Le modèle britannique, qui connaît aussi des écarts selon l'origine, offre-t-il des outils (comme la publication des données de contrôle) transposables en France ?",
+   "Une police plus locale serait-elle mieux contrôlée par les habitants, ou risquerait-elle de créer des inégalités entre territoires ?"
+  ]
+ },
+ "controles": [],
+ "sources": [
+  {
+   "passage": "ddd-enquete-acces-droits-2024-police#62",
+   "organisme": "Défenseur des droits",
+   "titre": "Enquête Accès aux droits 2024, volume 1 : relations police-population",
+   "nature": "officielle",
+   "url": "https://www.defenseurdesdroits.fr/sites/default/files/2025-06/ddd_EAD-2024_volume-1_relations-police-population.pdf",
+   "page": 18
+  },
+  {
+   "passage": "ddd-enquete-acces-droits-2024-police#52",
+   "organisme": "Défenseur des droits",
+   "titre": "Enquête Accès aux droits 2024, volume 1 : relations police-population",
+   "nature": "officielle",
+   "url": "https://www.defenseurdesdroits.fr/sites/default/files/2025-06/ddd_EAD-2024_volume-1_relations-police-population.pdf",
+   "page": 16
+  },
+  {
+   "passage": "conseil-etat-controles-identite-communique#1",
+   "organisme": "Conseil d'État",
+   "titre": "Communiqué de presse : contrôles d'identité discriminatoires",
+   "nature": "officielle",
+   "url": "https://www.conseil-etat.fr/content/download/196845/file/cp_contr%C3%B4le_discriminatoire_web.pdf",
+   "page": 1
+  },
+  {
+   "passage": "ddd-enquete-acces-droits-2024-police#20",
+   "organisme": "Défenseur des droits",
+   "titre": "Enquête Accès aux droits 2024, volume 1 : relations police-population",
+   "nature": "officielle",
+   "url": "https://www.defenseurdesdroits.fr/sites/default/files/2025-06/ddd_EAD-2024_volume-1_relations-police-population.pdf",
+   "page": 8
+  },
+  {
+   "passage": "uk-ethnicity-facts-stop-and-search#9",
+   "organisme": "Gouvernement britannique (Home Office)",
+   "titre": "Stop and search (Ethnicity facts and figures)",
+   "nature": "officielle",
+   "url": "https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/stop-and-search/latest/",
+   "page": 1
+  },
+  {
+   "passage": "uk-ethnicity-facts-stop-and-search#3",
+   "organisme": "Gouvernement britannique (Home Office)",
+   "titre": "Stop and search (Ethnicity facts and figures)",
+   "nature": "officielle",
+   "url": "https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/stop-and-search/latest/",
+   "page": 1
+  },
+  {
+   "passage": "uk-ethnicity-facts-stop-and-search#17",
+   "organisme": "Gouvernement britannique (Home Office)",
+   "titre": "Stop and search (Ethnicity facts and figures)",
+   "nature": "officielle",
+   "url": "https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/stop-and-search/latest/",
+   "page": 1
+  }
+ ],
+ "passagesConsultes": [
+  "ddd-enquete-acces-droits-2024-police#62",
+  "ddd-enquete-acces-droits-2024-police#94",
+  "ddd-enquete-acces-droits-2024-police#53",
+  "ddd-enquete-acces-droits-2024-police#102",
+  "ddd-enquete-acces-droits-2024-police#81",
+  "senat-avis-plf2026-enseignement-scolaire#160",
+  "senat-avis-plf2026-enseignement-scolaire#38",
+  "ddd-enquete-acces-droits-2024-police#40",
+  "conseil-etat-controles-identite-communique#1",
+  "ddd-enquete-acces-droits-2024-police#52",
+  "ddd-enquete-acces-droits-2024-police#47",
+  "ddd-enquete-acces-droits-2024-police#83",
+  "ddd-enquete-acces-droits-2024-police#12",
+  "franceinfo-enquete-ddd-facies#3",
+  "conseil-etat-controles-identite-communique#2",
+  "ddd-enquete-acces-droits-2024-police#96",
+  "ddd-enquete-acces-droits-2024-police#20",
+  "ddd-enquete-acces-droits-2024-police#15",
+  "ddd-enquete-acces-droits-2024-police#93",
+  "ddd-enquete-acces-droits-2024-police#10",
+  "ddd-enquete-acces-droits-2024-police#58",
+  "ddd-enquete-acces-droits-2024-police#66",
+  "uk-ethnicity-facts-stop-and-search#10",
+  "uk-ethnicity-facts-stop-and-search#9",
+  "uk-ethnicity-facts-stop-and-search#22",
+  "uk-ethnicity-facts-stop-and-search#3",
+  "uk-ethnicity-facts-stop-and-search#7",
+  "uk-ethnicity-facts-stop-and-search#17",
+  "uk-ethnicity-facts-stop-and-search#21",
+  "wikipedia-manifestations-17-octobre-2026#117"
+ ],
+ "documentsNonTelecharges": []
+}

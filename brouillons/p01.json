@@ -1,0 +1,98 @@
+{
+ "statut": "brouillon généré par IA, non relu",
+ "phrase": "Quels partis votent le plus de lois liberticides ?",
+ "ref": "p01",
+ "genereLe": "2026-11-04T16:34:33.904Z",
+ "modele": "claude-opus-5-5",
+ "cout": 0.0674,
+ "orientation": {
+  "carte": "lois-liberticides",
+  "dossier": "libertes",
+  "raison": "La question porte sur les votes des partis sur les textes qualifiés de liberticides, sujet traité par la carte « lois-liberticides » et le dossier Libertés publiques."
+ },
+ "analyse": [
+  {
+   "extrait": "lois liberticides",
+   "type": "definition",
+   "question": "Quels textes peut-on considérer comme restreignant une liberté publique, et selon quels critères le qualificatif « liberticide » s'applique-t-il ?",
+   "requetes": [
+    "restriction des libertés publiques projet de loi",
+    "atteinte aux libertés fondamentales texte législatif",
+    "censure Conseil constitutionnel liberté"
+   ]
+  },
+  {
+   "extrait": "Quels partis votent le plus",
+   "type": "donnee",
+   "question": "Comment les groupes parlementaires ont-ils voté sur les textes restreignant une liberté publique, et lesquels ont le plus souvent voté pour ?",
+   "requetes": [
+    "scrutin public analyse des votes par groupe",
+    "vote groupes parlementaires loi sécurité",
+    "adoption projet de loi Assemblée nationale Sénat scrutin"
+   ]
+  }
+ ],
+ "extraitsHorsPhrase": [],
+ "reponse": {
+  "titre": "Les passages fournis ne disent rien des votes des partis, et « liberticide » n'a pas de définition commune",
+  "affirmations": [
+   {
+    "extrait": "lois liberticides",
+    "statut": "depend-de-la-definition",
+    "reponse": "Les passages ne donnent aucune définition officielle de « loi liberticide » : le mot est un jugement politique, pas une catégorie juridique. On y trouve un seul critère, appliqué aux contrôles d'identité : selon le Conseil constitutionnel, cité par le Défenseur des droits, des contrôles généralisés et discrétionnaires seraient incompatibles avec la liberté individuelle. Classer une loi comme « liberticide » dépend donc du critère choisi, par exemple une censure du Conseil constitutionnel ou l'avis d'une autorité indépendante.",
+    "citations": [
+     {
+      "passage": "ddd-enquete-acces-droits-2024-police#28",
+      "extrait": "le Conseil constitutionnel a précisé que « la pratique de contrôles d’identité généralisés et discrétionnaires serait incompatible avec le respect de la liberté individuelle »"
+     }
+    ]
+   },
+   {
+    "extrait": "Quels partis votent le plus",
+    "statut": "on-ne-sait-pas",
+    "reponse": "Aucun passage ne présente de scrutin ni de vote par groupe parlementaire sur des textes touchant aux libertés publiques. Il faudrait les résultats des scrutins publics de l'Assemblée nationale et du Sénat, ainsi qu'une liste de textes choisie selon un critère explicite.",
+    "citations": []
+   }
+  ],
+  "inconnu": [
+   "Les votes des groupes parlementaires sur les textes touchant aux libertés publiques",
+   "La liste des textes à classer comme restreignant une liberté publique, et selon quel critère",
+   "Le nombre de lois censurées pour atteinte aux libertés, par majorité ou par groupe"
+  ],
+  "pourLancerLeDebat": [
+   "Quel critère retenir pour dire qu'une loi restreint une liberté : une censure du Conseil constitutionnel, l'avis du Défenseur des droits, ou un autre ?",
+   "Comment comparer des partis qui n'ont pas siégé dans les mêmes majorités ni voté sur les mêmes textes ?",
+   "Une loi qui restreint une liberté pour en protéger une autre, comme la sécurité, doit-elle être comptée comme « liberticide » ?"
+  ]
+ },
+ "controles": [],
+ "sources": [
+  {
+   "passage": "ddd-enquete-acces-droits-2024-police#28",
+   "organisme": "Défenseur des droits",
+   "titre": "Enquête Accès aux droits 2024, volume 1 : relations police-population",
+   "nature": "officielle",
+   "url": "https://www.defenseurdesdroits.fr/sites/default/files/2025-06/ddd_EAD-2024_volume-1_relations-police-population.pdf",
+   "page": 10
+  }
+ ],
+ "passagesConsultes": [
+  "ddd-enquete-acces-droits-2024-police#28",
+  "wikipedia-manifestations-17-octobre-2026#3",
+  "wikipedia-manifestations-17-octobre-2026#2",
+  "franceinfo-enquete-ddd-facies#6",
+  "senat-avis-plf2026-enseignement-scolaire#82",
+  "senat-avis-plf2026-enseignement-scolaire#129",
+  "senat-avis-plf2026-enseignement-scolaire#190",
+  "wikipedia-manifestations-17-octobre-2026#22",
+  "senat-avis-plf2026-enseignement-scolaire#169",
+  "senat-avis-plf2026-enseignement-scolaire#3",
+  "senat-avis-plf2026-enseignement-scolaire#167",
+  "ddd-enquete-acces-droits-2024-police#50",
+  "ddd-enquete-acces-droits-2024-police#85",
+  "senat-avis-plf2026-enseignement-scolaire#2",
+  "senat-avis-plf2026-enseignement-scolaire#93",
+  "depp-rers2025-chapitre-10#17"
+ ],
+ "documentsNonTelecharges": []
+}

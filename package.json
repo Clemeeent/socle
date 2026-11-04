@@ -12,9 +12,13 @@
     "programmes:extraire": "tsx scripts/programmes.ts extraire",
     "programmes:verifier": "tsx scripts/programmes.ts verifier",
     "programmes:telecharger": "tsx scripts/programmes.ts telecharger",
-    "evaluer": "tsx scripts/evaluer.ts"
+    "evaluer": "tsx scripts/evaluer.ts",
+    "corpus:telecharger": "tsx scripts/corpus.ts telecharger",
+    "corpus:controler": "tsx scripts/corpus.ts controler",
+    "verifier": "tsx scripts/verifier-ia.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.4.0",
     "@fontsource-variable/figtree": "^5.3.0",
     "@fontsource/figtree": "^5.3.0",
     "fflate": "^0.8.3",

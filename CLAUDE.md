@@ -60,6 +60,17 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
   `/carte/<id>/apercu.png` (1200×630, aperçu de lien) via `src/lib/image-carte.tsx`.
 - **Recherche** : `data/recherche.json` (questions types → dossier ou question de dossier) ;
   point d'entrée pour un futur moteur IA limité au contenu de Socle (`src/lib/question.ts`).
+- **Corpus** (ce que le vérificateur IA a le droit de citer) : `corpus/sources.json` (document exact,
+  organisme, nature : officielle / verification / presse / encyclopedie). `npm run corpus:telecharger`
+  écrit le texte dans `corpus/_texte/` (non versionné) et `corpus/manifeste.json` (date, empreinte).
+  `npm run corpus:controler` cherche les chiffres de chaque fait des cartes, ensemble, dans sa source
+  → `evaluation/controle-faits.md` (aide à la relecture, ne change jamais un statut).
+- **Vérificateur IA (en coulisses)** : `npm run verifier -- "phrase"` ou `-- --evaluation` →
+  `brouillons/<id>.json` (non relus). Analyse → recherche par mots-clés (BM25) → rédaction à partir des
+  seuls passages → contrôle automatique : citation mot pour mot, chaque chiffre (années comprises)
+  présent dans une citation, sinon « on ne sait pas ». Prompts et contrôles : `src/lib/verificateur-ia.ts`.
+  Clé : `SOCLE_ANTHROPIC_API_KEY` uniquement. Chaque appel est noté dans `evaluation/depenses-api.json` ;
+  plafond `SOCLE_BUDGET_USD` (5 $ par défaut) : demander avant de le relever.
 - **Partis** : `data/partis.json` (parti → groupe(s) parlementaire(s)). LIOT et non-inscrits : pas de parti.
 - **Programmes** : PDF officiels dans `programmes/`, déclarés dans `programmes/sources.json`.
   Priorité : programme 2027 > programme présidentiel 2022 > texte officiel du parti. Un parti
@@ -115,6 +126,7 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
 - `evaluation/phrases.json` : phrases réellement entendues en débat, avec la ou les réponses
   attendues ; `npm run evaluer` mesure combien sont bien orientées. Toute amélioration du
   vérificateur (dont la future IA) se mesure sur cette liste. Y ajouter chaque nouvelle phrase.
+  `npm run evaluer -- --ia` mesure l'orientation par l'IA (payant, journalisé).
 
 ## Stack et commandes
 - Next.js 16 (App Router) + TypeScript strict + Tailwind 4, données en JSON local, pas de backend.

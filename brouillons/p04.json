@@ -1,0 +1,155 @@
+{
+ "statut": "brouillon généré par IA, non relu",
+ "phrase": "Les 10 milliards pour l'éducation, c'est la plus grande part du budget jamais consacrée à l'éducation.",
+ "ref": "p04",
+ "genereLe": "2026-11-04T16:36:13.896Z",
+ "modele": "claude-opus-5-5",
+ "cout": 0.0982,
+ "orientation": {
+  "carte": "education-10-milliards",
+  "dossier": "budget-education",
+  "raison": "La phrase reprend presque mot pour mot l'affirmation de la carte sur les 10 milliards et la part record du budget consacrée à l'éducation."
+ },
+ "analyse": [
+  {
+   "extrait": "Les 10 milliards pour l'éducation",
+   "type": "donnee",
+   "question": "Le budget de l'éducation a-t-il augmenté d'environ 10 milliards d'euros, et sur quelle période ?",
+   "requetes": [
+    "crédits mission enseignement scolaire évolution depuis 2019",
+    "projet de loi de finances 2026 enseignement scolaire hausse crédits",
+    "budget Éducation nationale milliards d'euros augmentation"
+   ]
+  },
+  {
+   "extrait": "c'est la plus grande part du budget jamais consacrée à l'éducation",
+   "type": "definition",
+   "question": "La part consacrée à l'éducation est-elle la plus élevée jamais atteinte, selon qu'on la mesure en euros, en part du budget de l'État ou en part du PIB ?",
+   "requetes": [
+    "dépense intérieure d'éducation part du PIB évolution",
+    "coût de l'éducation DIE en pourcentage du PIB 1995",
+    "part de l'éducation dans le budget de l'État historique",
+    "dépense d'éducation euros constants évolution longue période"
+   ]
+  }
+ ],
+ "extraitsHorsPhrase": [],
+ "reponse": {
+  "titre": "Le budget scolaire a progressé de 12,13 milliards d'euros depuis 2019, mais ce n'est pas un record en part du PIB.",
+  "affirmations": [
+   {
+    "extrait": "Les 10 milliards pour l'éducation",
+    "statut": "nuance",
+    "reponse": "Aucun passage ne mentionne le montant avancé. Selon un avis du Sénat, les crédits des cinq programmes scolaires du ministère (hors pensions) ont augmenté de 12,13 milliards d'euros depuis 2019, soit 18,8 %. Pour 2026, ils sont quasi stables : hausse de 166 millions d'euros, soit 0,26 %.",
+    "citations": [
+     {
+      "passage": "senat-avis-plf2026-enseignement-scolaire#5",
+      "extrait": "hausse de 12,13 milliards d'euros depuis 2019, soit de 18,8 %."
+     },
+     {
+      "passage": "senat-avis-plf2026-enseignement-scolaire#5",
+      "extrait": "166 millions d'euros, soit de 0,26 %."
+     },
+     {
+      "passage": "senat-avis-plf2026-enseignement-scolaire#36",
+      "extrait": "Dans le projet de loi de finances (PLF) pour 2026,"
+     }
+    ]
+   },
+   {
+    "extrait": "c'est la plus grande part du budget jamais consacrée à l'éducation",
+    "statut": "depend-de-la-definition",
+    "reponse": "En part du PIB, selon le ministère (DEPP), le maximum est de 7,8 % au milieu des années 1990, contre 6,7 % en 2023. En euros constants, la dépense d'éducation est de 189,9 milliards d'euros en 2023, après 190,9 milliards en 2022. L'éducation nationale et l'enseignement supérieur pèsent 27,2 % du budget de l'État, mais les passages ne donnent pas de série historique comparable sur ce critère.",
+    "citations": [
+     {
+      "passage": "depp-rers2025-chapitre-10#1",
+      "extrait": "maximum de 7,8 % au milieu des années 1990 puis"
+     },
+     {
+      "passage": "depp-rers2025-chapitre-10#1",
+      "extrait": "dépenses d’éducation dans le PIB s’établit à 6,7 %."
+     },
+     {
+      "passage": "depp-rers2025-chapitre-10#5",
+      "extrait": "Lecture : en 2023, en prix constants, la DIE s’élève à 189,9 milliards d’euros, après 190,9 milliards en 2022."
+     },
+     {
+      "passage": "depp-rers2025-chapitre-10#16",
+      "extrait": "119,5 milliards d’euros, soit 27,2 % du budget de l’État (2)."
+     }
+    ]
+   }
+  ],
+  "inconnu": [
+   "D'où vient le montant avancé dans la phrase et sur quelle période il est calculé.",
+   "L'évolution sur longue période de la part de l'éducation dans le budget de l'État avec un périmètre constant.",
+   "La part des dépenses d'éducation dans le PIB pour les années les plus récentes, après 2023."
+  ],
+  "pourLancerLeDebat": [
+   "Quelle mesure est la plus pertinente pour juger l'effort en faveur de l'éducation : les euros courants, les euros corrigés de l'inflation, la part du budget de l'État ou la part du PIB ?",
+   "Comment tenir compte de la baisse du nombre d'élèves pour apprécier l'évolution du budget ?",
+   "Une hausse des crédits depuis plusieurs années suffit-elle à dire que l'éducation est davantage prioritaire ?"
+  ]
+ },
+ "controles": [],
+ "sources": [
+  {
+   "passage": "senat-avis-plf2026-enseignement-scolaire#5",
+   "organisme": "Sénat",
+   "titre": "Avis sur le projet de loi de finances pour 2026 : Enseignement scolaire",
+   "nature": "officielle",
+   "url": "https://www.senat.fr/rap/a25-144-31/a25-144-31_mono.html",
+   "page": 1
+  },
+  {
+   "passage": "senat-avis-plf2026-enseignement-scolaire#36",
+   "organisme": "Sénat",
+   "titre": "Avis sur le projet de loi de finances pour 2026 : Enseignement scolaire",
+   "nature": "officielle",
+   "url": "https://www.senat.fr/rap/a25-144-31/a25-144-31_mono.html",
+   "page": 1
+  },
+  {
+   "passage": "depp-rers2025-chapitre-10#1",
+   "organisme": "Ministère de l'Éducation nationale (DEPP)",
+   "titre": "Repères et références statistiques 2025, chapitre 10 : le coût de l'éducation",
+   "nature": "officielle",
+   "url": "https://www.education.gouv.fr/sites/default/files/2025-07/rers2025-chapitre-10-441741.pdf",
+   "page": 1
+  },
+  {
+   "passage": "depp-rers2025-chapitre-10#5",
+   "organisme": "Ministère de l'Éducation nationale (DEPP)",
+   "titre": "Repères et références statistiques 2025, chapitre 10 : le coût de l'éducation",
+   "nature": "officielle",
+   "url": "https://www.education.gouv.fr/sites/default/files/2025-07/rers2025-chapitre-10-441741.pdf",
+   "page": 2
+  },
+  {
+   "passage": "depp-rers2025-chapitre-10#16",
+   "organisme": "Ministère de l'Éducation nationale (DEPP)",
+   "titre": "Repères et références statistiques 2025, chapitre 10 : le coût de l'éducation",
+   "nature": "officielle",
+   "url": "https://www.education.gouv.fr/sites/default/files/2025-07/rers2025-chapitre-10-441741.pdf",
+   "page": 5
+  }
+ ],
+ "passagesConsultes": [
+  "senat-avis-plf2026-enseignement-scolaire#5",
+  "depp-rers2025-chapitre-10#16",
+  "senat-avis-plf2026-enseignement-scolaire#36",
+  "depp-rers2025-chapitre-10#21",
+  "depp-rers2025-chapitre-10#1",
+  "senat-avis-plf2026-enseignement-scolaire#70",
+  "senat-rapport-328-1998-1999#3",
+  "senat-avis-plf2026-enseignement-scolaire#92",
+  "depp-rers2025-chapitre-10#3",
+  "depp-rers2025-chapitre-10#5",
+  "depp-rers2025-chapitre-10#73",
+  "depp-rers2025-chapitre-10#36",
+  "depp-rers2025-chapitre-10#76",
+  "depp-rers2025-chapitre-10#8",
+  "senat-rapport-328-1998-1999#2"
+ ],
+ "documentsNonTelecharges": []
+}

@@ -281,7 +281,7 @@
      "statut": "à vérifier"
     },
     {
-     "texte": "Toutes dépenses d'éducation confondues (État, collectivités, familles, entreprises) : 6,8 % du PIB en 2024, contre un maximum d'environ 7,7 à 7,8 % au milieu des années 1990.",
+     "texte": "Toutes dépenses d'éducation confondues (État, collectivités, familles, entreprises) : 6,7 % du PIB en 2023, contre un maximum de 7,8 % au milieu des années 1990.",
      "source": {
       "label": "Ministère de l'Éducation nationale (DEPP), Repères et références statistiques 2025, chapitre 10",
       "url": "https://www.education.gouv.fr/sites/default/files/2025-07/rers2025-chapitre-10-441741.pdf"
@@ -393,7 +393,7 @@
       "le plus"
      ],
      "type": "donnee",
-     "note": "En part de la richesse nationale, non : 6,8 % du PIB en 2024, contre environ 7,7 % au milieu des années 1990. En euros, oui, le budget augmente.",
+     "note": "En part de la richesse nationale, non : 6,7 % du PIB en 2023, contre 7,8 % au milieu des années 1990. En euros, oui, le budget augmente.",
      "source": {
       "label": "DEPP, Repères et références statistiques 2025",
       "url": "https://www.education.gouv.fr/sites/default/files/2025-07/rers2025-chapitre-10-441741.pdf"
@@ -413,7 +413,7 @@
      },
      {
       "passage": 2,
-      "texte": "C'est là que l'affirmation coince. Rapportée à la richesse nationale, la dépense d'éducation représente 6,8 % du PIB en 2024, contre environ 7,7 à 7,8 % au milieu des années 1990 [4]. Dans le budget de l'État, la part de l'enseignement scolaire était passée de 15,8 % à 18,4 % entre 1989 et 1999 [5] ; on n'a pas trouvé de série récente comparable, et le périmètre des budgets a changé depuis."
+      "texte": "C'est là que l'affirmation coince. Rapportée à la richesse nationale, la dépense d'éducation représente 6,7 % du PIB en 2023, contre 7,8 % au milieu des années 1990 [4]. Dans le budget de l'État, la part de l'enseignement scolaire était passée de 15,8 % à 18,4 % entre 1989 et 1999 [5] ; on n'a pas trouvé de série récente comparable, et le périmètre des budgets a changé depuis."
      }
     ],
     "redaction": {

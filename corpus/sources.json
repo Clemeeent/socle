@@ -1,0 +1,103 @@
+{
+ "consigne": "Documents que le vérificateur IA a le droit de citer. nature : officielle (État, Parlement, juridictions, autorités indépendantes, statistiques publiques), verification (site de vérification des faits), presse, encyclopedie. Le texte extrait va dans corpus/_texte/ (non versionné) : npm run corpus:telecharger. Ajouter un document = ajouter une entrée ici, avec l'URL du document exact (pas la page d'accueil).",
+ "documents": [
+  {
+   "id": "senat-avis-plf2026-enseignement-scolaire",
+   "titre": "Avis sur le projet de loi de finances pour 2026 : Enseignement scolaire",
+   "organisme": "Sénat",
+   "nature": "officielle",
+   "url": "https://www.senat.fr/rap/a25-144-31/a25-144-31_mono.html"
+  },
+  {
+   "id": "senat-rapport-328-1998-1999",
+   "titre": "Rapport d'information n° 328 (1998-1999)",
+   "organisme": "Sénat",
+   "nature": "officielle",
+   "url": "https://www.senat.fr/rap/r98-3281/r98-32811.html"
+  },
+  {
+   "id": "depp-rers2025-chapitre-10",
+   "titre": "Repères et références statistiques 2025, chapitre 10 : le coût de l'éducation",
+   "organisme": "Ministère de l'Éducation nationale (DEPP)",
+   "nature": "officielle",
+   "url": "https://www.education.gouv.fr/sites/default/files/2025-07/rers2025-chapitre-10-441741.pdf"
+  },
+  {
+   "id": "ddd-enquete-acces-droits-2024-police",
+   "titre": "Enquête Accès aux droits 2024, volume 1 : relations police-population",
+   "organisme": "Défenseur des droits",
+   "nature": "officielle",
+   "url": "https://www.defenseurdesdroits.fr/sites/default/files/2025-06/ddd_EAD-2024_volume-1_relations-police-population.pdf"
+  },
+  {
+   "id": "conseil-etat-controles-identite-actualite",
+   "titre": "Contrôles d'identité discriminatoires : la détermination d'une politique publique ne relève pas du juge administratif",
+   "organisme": "Conseil d'État",
+   "nature": "officielle",
+   "url": "https://www.conseil-etat.fr/actualites/controles-d-identite-discriminatoires-la-determination-d-une-politique-publique-ne-releve-pas-du-juge-administratif"
+  },
+  {
+   "id": "conseil-etat-controles-identite-communique",
+   "titre": "Communiqué de presse : contrôles d'identité discriminatoires",
+   "organisme": "Conseil d'État",
+   "nature": "officielle",
+   "url": "https://www.conseil-etat.fr/content/download/196845/file/cp_contr%C3%B4le_discriminatoire_web.pdf"
+  },
+  {
+   "id": "uk-ethnicity-facts-stop-and-search",
+   "titre": "Stop and search (Ethnicity facts and figures)",
+   "organisme": "Gouvernement britannique (Home Office)",
+   "nature": "officielle",
+   "url": "https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/stop-and-search/latest/"
+  },
+  {
+   "id": "surligneurs-fusils-17-octobre",
+   "titre": "Des fusils automatiques ont-ils été retrouvés entre les mains de manifestants le 17 octobre ?",
+   "organisme": "Les Surligneurs",
+   "nature": "verification",
+   "url": "https://lessurligneurs.eu/des-fusils-automatiques-ont-ils-ete-retrouves-entre-les-mains-de-manifestants-le-17-octobre/"
+  },
+  {
+   "id": "ozap-dgsi-dement-cnews",
+   "titre": "« C'est complètement faux » : la DGSI dément des informations révélées par CNews sur les événements du 17 octobre",
+   "organisme": "Ozap",
+   "nature": "presse",
+   "url": "https://www.ozap.com/actu/cest-completement-faux-la-dgsi-dement-complement-des-informations-revelees-par-cnews-sur-les-evenements-du-17-octobre/657553"
+  },
+  {
+   "id": "cnews-mobilisation-17-octobre",
+   "titre": "Mobilisation du 17 octobre : ultragauche, forces de l'ordre blessées, état d'urgence",
+   "organisme": "CNews",
+   "nature": "presse",
+   "url": "https://www.cnews.fr/france/2026-10-17/mobilisation-du-17-octobre-ultragauche-forces-de-lordre-blessees-etat-durgence-ce"
+  },
+  {
+   "id": "europe1-renseignement-journee-a-risques",
+   "titre": "Manifestations de jeudi : le renseignement redoute une journée à très hauts risques",
+   "organisme": "Europe 1",
+   "nature": "presse",
+   "url": "https://europe1.fr/societe/manifestations-de-jeudi-le-renseignement-redoute-une-journee-a-tres-hauts-risques-1206047"
+  },
+  {
+   "id": "france24-renseignement-ultragauche",
+   "titre": "Violences en France : le renseignement estime que l'ultragauche et l'extrême gauche radicale étaient en pointe samedi",
+   "organisme": "France 24 (AFP)",
+   "nature": "presse",
+   "url": "https://www.france24.com/fr/info-en-continu/20261020-violences-en-france-le-renseignement-estime-que-l-ultragauche-et-l-extr%C3%AAme-gauche-radicale-%C3%A9taient-en-pointe-samedi"
+  },
+  {
+   "id": "franceinfo-enquete-ddd-facies",
+   "titre": "Cinq questions sur l'enquête du Défenseur des droits sur les contrôles au faciès",
+   "organisme": "franceinfo",
+   "nature": "presse",
+   "url": "https://www.franceinfo.fr/faits-divers/police/cinq-questions-sur-l-enquete-du-defenseur-des-droits-sur-les-controles-au-facies_2027920.html"
+  },
+  {
+   "id": "wikipedia-manifestations-17-octobre-2026",
+   "titre": "Manifestations du 17 octobre 2026 en France",
+   "organisme": "Wikipédia",
+   "nature": "encyclopedie",
+   "url": "https://fr.wikipedia.org/wiki/Manifestations_du_17_octobre_2026_en_France"
+  }
+ ]
+}

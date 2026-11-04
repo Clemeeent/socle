@@ -1,0 +1,181 @@
+{
+ "statut": "brouillon généré par IA, non relu",
+ "phrase": "La DGSI a trouvé des armes de guerre chez les émeutiers.",
+ "ref": "p06",
+ "genereLe": "2026-11-04T16:37:25.237Z",
+ "modele": "claude-opus-5-5",
+ "cout": 0.0958,
+ "orientation": {
+  "carte": "armes-de-guerre-17-octobre",
+  "dossier": "aucune",
+  "raison": "La phrase attribue à la DGSI la découverte d'armes de guerre chez des émeutiers, ce qui correspond au sujet de la carte sur les armes de guerre du 17 octobre, que la DGSI a démenti."
+ },
+ "analyse": [
+  {
+   "extrait": "La DGSI a trouvé",
+   "type": "source",
+   "question": "La DGSI a-t-elle elle-même communiqué ou confirmé une découverte d'armes chez des émeutiers ?",
+   "requetes": [
+    "DGSI démenti armes de guerre",
+    "DGSI complètement faux 17 octobre",
+    "source information DGSI journaliste"
+   ]
+  },
+  {
+   "extrait": "des armes de guerre chez les émeutiers",
+   "type": "donnee",
+   "question": "Des armes de guerre ont-elles été retrouvées en possession de manifestants ou d'émeutiers lors des événements du 17 octobre ?",
+   "requetes": [
+    "fusils automatiques manifestants 17 octobre",
+    "armes de guerre saisies émeutiers",
+    "manifestations 17 octobre interpellations armes"
+   ]
+  },
+  {
+   "extrait": "émeutiers",
+   "type": "definition",
+   "question": "De quelles personnes et de quels événements parle-t-on précisément sous le terme « émeutiers » ?",
+   "requetes": [
+    "manifestations 17 octobre 2026 violences",
+    "émeutiers interpellés mobilisation 17 octobre"
+   ]
+  }
+ ],
+ "extraitsHorsPhrase": [],
+ "reponse": {
+  "titre": "La DGSI a démenti cette information, et la journaliste qui l'avait diffusée s'est excusée.",
+  "affirmations": [
+   {
+    "extrait": "La DGSI a trouvé",
+    "statut": "contredit",
+    "reponse": "Selon le site Ozap (presse) et le site de vérification Les Surligneurs, la DGSI a démenti à plusieurs reprises s'être exprimée sur le sujet. L'information venait d'une journaliste du JDD qui citait la DGSI sur le plateau de CNews ; elle a depuis présenté ses excuses.",
+    "citations": [
+     {
+      "passage": "ozap-dgsi-dement-cnews#3",
+      "extrait": "C’est complètement faux. Le fond est faux et la source, la DGSI, ne s’est pas du tout prononcée sur le sujet."
+     },
+     {
+      "passage": "surligneurs-fusils-17-octobre#4",
+      "extrait": "la DGSI a formellement réfuté, à plusieurs reprises, les dires de la journaliste – qui a, depuis, présenté ses excuses."
+     }
+    ]
+   },
+   {
+    "extrait": "des armes de guerre chez les émeutiers",
+    "statut": "contredit",
+    "reponse": "Aucun passage ne confirme une découverte de kalachnikovs ou de pistolets-mitrailleurs chez des émeutiers. Selon Les Surligneurs et Ozap, la DGSI, d'autres sources policières jointes par BFMTV et la rédaction de CNews ont démenti cette affirmation.",
+    "citations": [
+     {
+      "passage": "surligneurs-fusils-17-octobre#2",
+      "extrait": "Les services de renseignements ont immédiatement démenti cette rumeur, poussant la journaliste à l’origine de cette infox à s’excuser."
+     },
+     {
+      "passage": "ozap-dgsi-dement-cnews#3",
+      "extrait": "D'autres sources policières jointes par BFMTV démentent aussi catégoriquement ces informations"
+     },
+     {
+      "passage": "surligneurs-fusils-17-octobre#5",
+      "extrait": "La rédaction de CNews n’a jamais été informée de ce genre de choses et la DGSI a d’ailleurs démenti les choses."
+     }
+    ]
+   },
+   {
+    "extrait": "émeutiers",
+    "statut": "depend-de-la-definition",
+    "reponse": "Il s'agit des violences survenues en marge des manifestations contre la vie chère, et la journaliste visait plus précisément des émeutiers « présentés comme proches de la mouvance islamiste ». Selon un article d'Ouest-France cité par Wikipédia, ces violences ont donné lieu à 2 397 interpellations, ce qui ne dit rien sur la présence d'armes de guerre.",
+    "citations": [
+     {
+      "passage": "surligneurs-fusils-17-octobre#3",
+      "extrait": "Au cours des violences survenues lors des importantes manifestations contre la vie chère, des « kalachnikovs et des pistolets-mitrailleurs Scorpion ont été retrouvés parmi les mains d’émeutiers présentés comme proches de la mouvance islamiste »"
+     },
+     {
+      "passage": "wikipedia-manifestations-17-octobre-2026#126",
+      "extrait": "Violences du 17 octobre : 2 397 interpellations et 997 forces de sécurité blessées samedi"
+     }
+    ]
+   }
+  ],
+  "inconnu": [
+   "Les passages ne détaillent pas les armes effectivement saisies lors des interpellations.",
+   "Les preuves photos que la journaliste disait détenir n'ont pas été rendues publiques, d'après les passages.",
+   "Un titre de France Info cité par Wikipédia évoque des fonctionnaires touchés par balles en Guadeloupe, sans préciser le type d'arme utilisé."
+  ],
+  "pourLancerLeDebat": [
+   "Comment vérifier une information attribuée à un service de renseignement qui ne communique pas publiquement ?",
+   "Quelle responsabilité ont les plateaux télévisés face à des affirmations non vérifiées en direct ?",
+   "Qui désigne-t-on exactement par « émeutiers » : manifestants, casseurs, pilleurs ?"
+  ]
+ },
+ "controles": [],
+ "sources": [
+  {
+   "passage": "ozap-dgsi-dement-cnews#3",
+   "organisme": "Ozap",
+   "titre": "« C'est complètement faux » : la DGSI dément des informations révélées par CNews sur les événements du 17 octobre",
+   "nature": "presse",
+   "url": "https://www.ozap.com/actu/cest-completement-faux-la-dgsi-dement-complement-des-informations-revelees-par-cnews-sur-les-evenements-du-17-octobre/657553",
+   "page": 1
+  },
+  {
+   "passage": "surligneurs-fusils-17-octobre#4",
+   "organisme": "Les Surligneurs",
+   "titre": "Des fusils automatiques ont-ils été retrouvés entre les mains de manifestants le 17 octobre ?",
+   "nature": "verification",
+   "url": "https://lessurligneurs.eu/des-fusils-automatiques-ont-ils-ete-retrouves-entre-les-mains-de-manifestants-le-17-octobre/",
+   "page": 1
+  },
+  {
+   "passage": "surligneurs-fusils-17-octobre#2",
+   "organisme": "Les Surligneurs",
+   "titre": "Des fusils automatiques ont-ils été retrouvés entre les mains de manifestants le 17 octobre ?",
+   "nature": "verification",
+   "url": "https://lessurligneurs.eu/des-fusils-automatiques-ont-ils-ete-retrouves-entre-les-mains-de-manifestants-le-17-octobre/",
+   "page": 1
+  },
+  {
+   "passage": "surligneurs-fusils-17-octobre#5",
+   "organisme": "Les Surligneurs",
+   "titre": "Des fusils automatiques ont-ils été retrouvés entre les mains de manifestants le 17 octobre ?",
+   "nature": "verification",
+   "url": "https://lessurligneurs.eu/des-fusils-automatiques-ont-ils-ete-retrouves-entre-les-mains-de-manifestants-le-17-octobre/",
+   "page": 1
+  },
+  {
+   "passage": "surligneurs-fusils-17-octobre#3",
+   "organisme": "Les Surligneurs",
+   "titre": "Des fusils automatiques ont-ils été retrouvés entre les mains de manifestants le 17 octobre ?",
+   "nature": "verification",
+   "url": "https://lessurligneurs.eu/des-fusils-automatiques-ont-ils-ete-retrouves-entre-les-mains-de-manifestants-le-17-octobre/",
+   "page": 1
+  },
+  {
+   "passage": "wikipedia-manifestations-17-octobre-2026#126",
+   "organisme": "Wikipédia",
+   "titre": "Manifestations du 17 octobre 2026 en France",
+   "nature": "encyclopedie",
+   "url": "https://fr.wikipedia.org/wiki/Manifestations_du_17_octobre_2026_en_France",
+   "page": 1
+  }
+ ],
+ "passagesConsultes": [
+  "ozap-dgsi-dement-cnews#3",
+  "ozap-dgsi-dement-cnews#2",
+  "ozap-dgsi-dement-cnews#1",
+  "surligneurs-fusils-17-octobre#4",
+  "surligneurs-fusils-17-octobre#2",
+  "surligneurs-fusils-17-octobre#3",
+  "surligneurs-fusils-17-octobre#5",
+  "wikipedia-manifestations-17-octobre-2026#168",
+  "surligneurs-fusils-17-octobre#1",
+  "wikipedia-manifestations-17-octobre-2026#152",
+  "wikipedia-manifestations-17-octobre-2026#146",
+  "wikipedia-manifestations-17-octobre-2026#127",
+  "wikipedia-manifestations-17-octobre-2026#148",
+  "wikipedia-manifestations-17-octobre-2026#130",
+  "wikipedia-manifestations-17-octobre-2026#126",
+  "wikipedia-manifestations-17-octobre-2026#140",
+  "wikipedia-manifestations-17-octobre-2026#135",
+  "wikipedia-manifestations-17-octobre-2026#123"
+ ],
+ "documentsNonTelecharges": []
+}

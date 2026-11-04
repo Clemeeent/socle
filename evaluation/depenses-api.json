@@ -1,0 +1,226 @@
+{
+ "plafond": "SOCLE_BUDGET_USD (5 $ par défaut). Au-delà, demander l'accord des porteurs du projet.",
+ "total": 0.7827,
+ "appels": [
+  {
+   "date": "2026-11-04T16:30:43.673Z",
+   "etape": "analyse",
+   "ref": "p01",
+   "modele": "claude-opus-5-5",
+   "entree": 32,
+   "sortie": 341,
+   "cacheEcrit": 2423,
+   "cacheLu": 0,
+   "cout": 0.0191
+  },
+  {
+   "date": "2026-11-04T16:30:48.503Z",
+   "etape": "analyse",
+   "ref": "p02",
+   "modele": "claude-opus-5-5",
+   "entree": 29,
+   "sortie": 405,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0087
+  },
+  {
+   "date": "2026-11-04T16:30:59.237Z",
+   "etape": "analyse",
+   "ref": "p03",
+   "modele": "claude-opus-5-5",
+   "entree": 61,
+   "sortie": 801,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0167
+  },
+  {
+   "date": "2026-11-04T16:31:06.361Z",
+   "etape": "analyse",
+   "ref": "p04",
+   "modele": "claude-opus-5-5",
+   "entree": 55,
+   "sortie": 442,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0095
+  },
+  {
+   "date": "2026-11-04T16:31:13.857Z",
+   "etape": "analyse",
+   "ref": "p05",
+   "modele": "claude-opus-5-5",
+   "entree": 41,
+   "sortie": 529,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0112
+  },
+  {
+   "date": "2026-11-04T16:31:20.752Z",
+   "etape": "analyse",
+   "ref": "p06",
+   "modele": "claude-opus-5-5",
+   "entree": 39,
+   "sortie": 508,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0108
+  },
+  {
+   "date": "2026-11-04T16:31:34.168Z",
+   "etape": "analyse",
+   "ref": "p04",
+   "modele": "claude-opus-5-5",
+   "entree": 55,
+   "sortie": 454,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0098
+  },
+  {
+   "date": "2026-11-04T16:32:10.590Z",
+   "etape": "redaction",
+   "ref": "p04",
+   "modele": "claude-opus-5-5",
+   "entree": 7297,
+   "sortie": 3021,
+   "cacheEcrit": 1413,
+   "cacheLu": 0,
+   "cout": 0.0967
+  },
+  {
+   "date": "2026-11-04T16:34:17.968Z",
+   "etape": "analyse",
+   "ref": "p01",
+   "modele": "claude-opus-5-5",
+   "entree": 32,
+   "sortie": 389,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0084
+  },
+  {
+   "date": "2026-11-04T16:34:33.901Z",
+   "etape": "redaction",
+   "ref": "p01",
+   "modele": "claude-opus-5-5",
+   "entree": 7470,
+   "sortie": 1091,
+   "cacheEcrit": 1470,
+   "cacheLu": 0,
+   "cout": 0.0591
+  },
+  {
+   "date": "2026-11-04T16:34:38.702Z",
+   "etape": "analyse",
+   "ref": "p02",
+   "modele": "claude-opus-5-5",
+   "entree": 29,
+   "sortie": 413,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0089
+  },
+  {
+   "date": "2026-11-04T16:34:55.568Z",
+   "etape": "redaction",
+   "ref": "p02",
+   "modele": "claude-opus-5-5",
+   "entree": 7311,
+   "sortie": 1836,
+   "cacheEcrit": 0,
+   "cacheLu": 1470,
+   "cout": 0.0663
+  },
+  {
+   "date": "2026-11-04T16:35:05.775Z",
+   "etape": "analyse",
+   "ref": "p03",
+   "modele": "claude-opus-5-5",
+   "entree": 61,
+   "sortie": 755,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0158
+  },
+  {
+   "date": "2026-11-04T16:35:34.190Z",
+   "etape": "redaction",
+   "ref": "p03",
+   "modele": "claude-opus-5-5",
+   "entree": 12698,
+   "sortie": 3203,
+   "cacheEcrit": 0,
+   "cacheLu": 1470,
+   "cout": 0.1151
+  },
+  {
+   "date": "2026-11-04T16:35:38.970Z",
+   "etape": "analyse",
+   "ref": "p04",
+   "modele": "claude-opus-5-5",
+   "entree": 55,
+   "sortie": 450,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0097
+  },
+  {
+   "date": "2026-11-04T16:36:13.894Z",
+   "etape": "redaction",
+   "ref": "p04",
+   "modele": "claude-opus-5-5",
+   "entree": 7373,
+   "sortie": 2933,
+   "cacheEcrit": 0,
+   "cacheLu": 1470,
+   "cout": 0.0884
+  },
+  {
+   "date": "2026-11-04T16:36:22.561Z",
+   "etape": "analyse",
+   "ref": "p05",
+   "modele": "claude-opus-5-5",
+   "entree": 41,
+   "sortie": 594,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0125
+  },
+  {
+   "date": "2026-11-04T16:36:54.007Z",
+   "etape": "redaction",
+   "ref": "p05",
+   "modele": "claude-opus-5-5",
+   "entree": 10383,
+   "sortie": 3920,
+   "cacheEcrit": 0,
+   "cacheLu": 1470,
+   "cout": 0.1202
+  },
+  {
+   "date": "2026-11-04T16:37:00.526Z",
+   "etape": "analyse",
+   "ref": "p06",
+   "modele": "claude-opus-5-5",
+   "entree": 39,
+   "sortie": 492,
+   "cacheEcrit": 0,
+   "cacheLu": 2423,
+   "cout": 0.0105
+  },
+  {
+   "date": "2026-11-04T16:37:25.235Z",
+   "etape": "redaction",
+   "ref": "p06",
+   "modele": "claude-opus-5-5",
+   "entree": 7944,
+   "sortie": 2661,
+   "cacheEcrit": 0,
+   "cacheLu": 1470,
+   "cout": 0.0853
+  }
+ ]
+}
