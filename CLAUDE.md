@@ -80,7 +80,7 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
   (`IllustrationDossier`). Les **thèmes** restent sobres (tuiles blanches + icône).
 - Navigation : logo + bouton « Menu » (`Menu.tsx`, modèle disclosure : aria-expanded, Échap, clic
   extérieur, retour du focus).
-- Accueil « recherche d'abord » (façon assistant) : une question, un grand champ dont le texte
+- Accueil « recherche d'abord » (façon assistant) : la tagline « Poser le socle d'un débat public », un grand champ dont le texte
   indicatif fait défiler des phrases d'exemple (pause au focus, aucune rotation si mouvement réduit ;
   champ vide + Entrée = vérifier l'exemple affiché), sur un fond génératif très discret (`FondDebat` :
   clusters de points placés librement, deux couleurs comme deux voix, qui se remplissent puis

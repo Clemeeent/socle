@@ -8,7 +8,7 @@ import { Menu } from "@/components/Menu";
 export const metadata: Metadata = {
   // Absolute URLs for link previews (set by the GitHub Pages workflow).
   metadataBase: new URL(process.env.SITE_URL ?? "http://localhost:3000"),
-  title: { default: "Socle — les faits avant le débat", template: "%s · Socle" },
+  title: { default: "Socle — poser le socle d’un débat public", template: "%s · Socle" },
   description:
     "Un socle de faits sourcés sur la politique française : votes de l'Assemblée nationale, méthode visible.",
 };

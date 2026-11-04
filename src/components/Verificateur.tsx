@@ -72,7 +72,7 @@ export function Verificateur() {
     const exemple = cartes[exempleIndex % cartes.length].affirmation;
     return (
       <div ref={haut}>
-        <h1 className="text-center text-[2rem] leading-[1.1]">Qu&apos;est-ce qu&apos;on t&apos;a affirmé ?</h1>
+        <h1 className="text-center text-[2rem] leading-[1.1]">Poser le socle{" "}<br /><span className="text-accent">d&apos;un débat public</span></h1>
         <form
           className="mt-6"
           role="search"
