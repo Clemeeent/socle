@@ -27,6 +27,14 @@ Socle sert **au moment du débat** : on y vérifie une affirmation entendue et o
 définition, ce qu'on ne sait pas, ce qui reste un débat de valeurs. Pas un média : un outil.
 Les dossiers sont la version approfondie des sujets les plus demandés.
 
+## Coûts (règle permanente)
+- Toujours choisir l'option la moins chère qui tient la qualité : réutiliser l'existant (cartes,
+  analyses, faits déjà vérifiés, jeux de données téléchargés) avant tout appel payant ; mettre en
+  cache ; ne jamais payer deux fois la même vérification ; modèle le moins cher qui suffit à l'étape.
+- Annoncer le coût estimé avant toute dépense d'API, et le coût réel après (journal
+  `evaluation/depenses-api.json`). Rester sous `SOCLE_BUDGET_USD` sans accord explicite.
+- Préférer les solutions sans serveur ni abonnement tant qu'elles suffisent.
+
 ## Principes non négociables
 - **Neutralité totale** : mêmes critères pour tous les partis, méthode visible (page `/methode`).
 - Toujours séparer le **fait** (sourcé, daté), ses **lectures** possibles et les **valeurs**.
