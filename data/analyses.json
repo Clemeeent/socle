@@ -1,0 +1,222 @@
+{
+ "analyses": [
+  {
+   "id": "reddit-ecole-universite",
+   "titre": "Des chiffres souvent justes, des conclusions qui vont plus loin",
+   "source": "Commentaire Reddit, en anglais",
+   "langue": "en",
+   "verifieLe": "2026-11-05",
+   "themes": [
+    "education"
+   ],
+   "texte": [
+    "They also ask for no selection at all for universitoies and 250 000 more places in a system where we already have a very high pourcentage of the young people that have high degrees, 20 points higher than Germany or Italy. In the same time, there is 60%+ of students that are not graduated 4 years after first year of university. Since students are paying less than 500€/year at universities when they cost 10 000€+ at the country, I let you do the maths about how much money is wasted each year.",
+    "Same for the teachers in high schools, there is enough of them. The issue is too much sick days and quite from them, the money isn't the main issue. The main issue is nobody wants to work at places where pupils are horribles and parents even worst. Teachers get points over the years they can use to pickup up where they want to work so all the places except in shitty places are taken and newly teacher have to go at the worst places but try to change it and teachers are going to explode. The gov can't adress it even if this should be gone.",
+    "Also, before someone tell this is because of lack of money. Difficult high schools get more money for decades and it doesn't change anything, they stopped it to focus on the worst middle school where teachers are paid up to 450€/m more and well, it doesn't change the fact it's still a nightmare.",
+    "To finish, teachers aren't the enemies anymore because they don't have any power over kids. Before they could make a kid retake a year or sanctions was normals, they was respected. Now parents are yelling at them, kids boss them and directors can't do anything. They changed exam of end of high school because it was too stressful for pupils and now more than 85% have it. The results are overall worst and worst each years compared to other countries. Young people are totaly delulu and asking things that would destroy them even more."
+   ],
+   "enBref": "Ce texte est bien informé sur plusieurs chiffres : la part de jeunes diplômés, l'échec en licence, le coût d'un étudiant, la prime en REP+ et le taux de réussite au bac sont globalement justes. Mais plusieurs conclusions vont plus loin que les données : l'écart avec l'Allemagne est plutôt de 14 points, les démissions d'enseignants restent rares, les résultats baissent mais dans une moyenne internationale qui baisse aussi, et l'argent « gaspillé » ou les jeunes « délulu » relèvent du jugement.",
+   "points": [
+    {
+     "extrait": "no selection at all for universitoies and 250 000 more places",
+     "label": "Pas de sélection, 250 000 places",
+     "verdict": "vrai",
+     "explication": "C'est bien ce que demandent La France insoumise et plusieurs syndicats étudiants et lycéens, dans le débat sur la suppression de Parcoursup. Le gouvernement propose de remplacer Parcoursup en 2028 et de créer 15 000 places ; une partie de la droite veut au contraire une sélection plus nette sur les notes.",
+     "sources": [
+      {
+       "label": "Orange Actu, « la gauche veut plus de places, la droite assume la sélection »",
+       "url": "https://actu.orange.fr/politique/remplacement-de-parcoursup-la-gauche-veut-plus-de-places-dans-le-superieur-la-droite-assume-la-selection-CNT000002tr8xL.html",
+       "statut": "à vérifier"
+      },
+      {
+       "label": "franceinfo, les pistes du gouvernement pour Parcoursup",
+       "url": "https://www.franceinfo.fr/societe/education/parcoursup/parcoursup/quelles-sont-les-pistes-etudiees-par-le-gouvernement-pour-ameliorer-parcoursup-dont-le-mouvement-lyceen-demande-la-suppression_8252857.html",
+       "statut": "à vérifier"
+      }
+     ]
+    },
+    {
+     "extrait": "20 points higher than Germany or Italy",
+     "label": "20 points de plus que l'Allemagne et l'Italie",
+     "verdict": "nuance",
+     "explication": "La France a bien beaucoup de jeunes diplômés du supérieur : 52 % des 25-34 ans en 2023, 53 % en 2024 selon l'OCDE. L'écart est d'environ 21 points avec l'Italie (31 %), mais plutôt 14 points avec l'Allemagne (38 %).",
+     "sources": [
+      {
+       "label": "Insee, Éducation : comparaisons européennes (2023)",
+       "url": "https://www.insee.fr/fr/statistiques/8305510?sommaire=8306008",
+       "statut": "à vérifier"
+      },
+      {
+       "label": "OCDE, Regards sur l'éducation 2025, note France",
+       "url": "https://www.oecd.org/content/dam/oecd/fr/publications/reports/2025/09/education-at-a-glance-2025-country-notes_9749f4ff/france_0639c7fb/aca6dceb-fr.pdf",
+       "statut": "à vérifier"
+      }
+     ]
+    },
+    {
+     "extrait": "60%+ of students that are not graduated 4 years after first year of university",
+     "label": "60 % sans licence après 4 ans",
+     "verdict": "vrai",
+     "explication": "Pour les bacheliers entrés en licence en 2020, 40,3 % ont obtenu leur licence en 3 ou 4 ans : environ 60 % ne l'ont donc pas. Mais l'écart est énorme selon le bac : 46 % pour un bac général, 14 % pour un bac technologique, 6,5 % pour un bac professionnel. Et ce chiffre ne dit pas combien se sont réorientés ailleurs.",
+     "sources": [
+      {
+       "label": "Ministère de l'Enseignement supérieur (SIES), Note Flash n° 29, novembre 2025",
+       "url": "https://www.enseignementsup-recherche.gouv.fr/sites/default/files/2025-11/nf-sies-2025-29-38293.pdf",
+       "statut": "à vérifier"
+      }
+     ]
+    },
+    {
+     "extrait": "students are paying less than 500€/year at universities when they cost 10 000€+ at the country",
+     "label": "Moins de 500 € payés, plus de 10 000 € de coût",
+     "verdict": "vrai",
+     "explication": "En licence, les droits d'inscription sont de 178 € par an, plus 105 € de contribution vie étudiante, soit environ 280 €. Le pays dépense environ 12 460 € par an pour un étudiant à l'université (2024, chiffre provisoire).",
+     "sources": [
+      {
+       "label": "Université de Lille, droits d'inscription",
+       "url": "https://www.univ-lille.fr/formation/droits-dinscription/",
+       "statut": "à vérifier"
+      },
+      {
+       "label": "Ministère de l'Éducation nationale (DEPP), Note d'information 25.52",
+       "url": "https://www.education.gouv.fr/sites/default/files/2025-09/depp-ni-2025-52-442155.pdf",
+       "statut": "à vérifier"
+      }
+     ]
+    },
+    {
+     "extrait": "I let you do the maths about how much money is wasted each year",
+     "label": "De l'argent « gaspillé »",
+     "verdict": "jugement",
+     "explication": "Le calcul n'est fait par aucune des sources. Parler de « gaspillage » suppose qu'une année d'études sans diplôme ne sert à rien, ce qui est une appréciation, pas une donnée : c'est là que le débat commence.",
+     "sources": []
+    },
+    {
+     "extrait": "there is enough of them",
+     "label": "Assez d'enseignants",
+     "verdict": "depend",
+     "explication": "Le gouvernement a supprimé 3 256 postes pour la rentrée 2026 en invoquant la baisse du nombre d'élèves ; les syndicats contestent ces prévisions. Mais dans les collèges publics, 9 % des heures de cours n'ont pas été assurées en 2023-2024, faute de remplaçants. « Assez » dépend donc de ce qu'on compte : les postes, ou les heures réellement faites devant les élèves.",
+     "sources": [
+      {
+       "label": "Café pédagogique, rentrée 2026 et postes supprimés",
+       "url": "https://www.cafepedagogique.net/2026/01/28/rentree-2026-4-032-postes-supprimes-dans-les-ecoles-colleges-et-lycees/",
+       "statut": "à vérifier"
+      },
+      {
+       "label": "Café pédagogique, rapport de la Cour des comptes de décembre 2025",
+       "url": "https://www.cafepedagogique.net/2025/12/15/cour-des-comptes-10-des-heures-de-cours-non-remplaces-et-des-inegalites-territoriales-sociales-disciplinaires/",
+       "statut": "à vérifier"
+      }
+     ]
+    },
+    {
+     "extrait": "too much sick days and quite from them",
+     "label": "Trop d'arrêts maladie et de démissions",
+     "verdict": "nuance",
+     "explication": "Les absences pour raison de santé augmentent : la part d'enseignants absents au moins un jour dans une semaine donnée est passée de 2,6 % en 2018 à 4,1 % en 2023, selon la Cour des comptes. Les démissions, elles, restent rares : environ 2 enseignants fonctionnaires sur 1 000 en 2024-2025, un taux en légère baisse par rapport à l'année précédente.",
+     "sources": [
+      {
+       "label": "Café pédagogique, rapport de la Cour des comptes de décembre 2025",
+       "url": "https://www.cafepedagogique.net/2025/12/15/cour-des-comptes-10-des-heures-de-cours-non-remplaces-et-des-inegalites-territoriales-sociales-disciplinaires/",
+       "statut": "à vérifier"
+      },
+      {
+       "label": "DEPP, Panorama des personnels, chapitre « départs volontaires »",
+       "url": "https://www.education.gouv.fr/sites/default/files/document/panoramachapitre-11-521101.pdf",
+       "statut": "à vérifier"
+      }
+     ]
+    },
+    {
+     "extrait": "Teachers get points over the years they can use to pickup up where they want to work",
+     "label": "Le système de points pour les mutations",
+     "verdict": "nuance",
+     "explication": "Le principe est exact : les mutations se font avec un barème de points qui augmente avec l'ancienneté, plus des bonus, par exemple après cinq ans en éducation prioritaire. Mais certaines règles protègent les débutants : dans l'académie de Versailles, les néo-titulaires ne sont affectés en REP+ que s'ils sont volontaires.",
+     "sources": [
+      {
+       "label": "Académie de Versailles, lignes directrices de gestion 2025",
+       "url": "https://www.ac-versailles.fr/media/55845/download",
+       "statut": "à vérifier"
+      }
+     ]
+    },
+    {
+     "extrait": "teachers are paid up to 450€/m more",
+     "label": "Jusqu'à 450 € de plus par mois",
+     "verdict": "vrai",
+     "explication": "La prime en REP+ est de 5 114 € brut par an, soit environ 426 € par mois, plus une part variable de 234 à 702 € par an selon l'engagement de l'équipe. L'ordre de grandeur est juste. L'effet de ces moyens sur les résultats des élèves n'est pas mesuré par les sources consultées ici.",
+     "sources": [
+      {
+       "label": "SNES-FSU, indemnités et primes depuis 2024",
+       "url": "https://www.snes.edu/ma-carriere/carriere/remuneration/indemnites-et-primes/",
+       "statut": "à vérifier"
+      }
+     ]
+    },
+    {
+     "extrait": "now more than 85% have it",
+     "label": "Plus de 85 % ont le bac",
+     "verdict": "vrai",
+     "explication": "Le taux de réussite au baccalauréat 2025 est de 91,6 %, et 96,2 % dans la voie générale. La réforme de 2021 a introduit le contrôle continu, qui compte pour 40 % de la note. Que le bac ait été changé parce qu'il était « trop stressant » n'est en revanche pas vérifié ici.",
+     "sources": [
+      {
+       "label": "DEPP, résultats définitifs du baccalauréat 2025",
+       "url": "https://www.education.gouv.fr/sites/default/files/document/Education%20nationale_DEPP_NI%2026-05-Bac.pdf-479534.pdf",
+       "statut": "à vérifier"
+      }
+     ]
+    },
+    {
+     "extrait": "The results are overall worst and worst each years compared to other countries",
+     "label": "Des résultats toujours plus mauvais",
+     "verdict": "nuance",
+     "explication": "La baisse est réelle : dans PISA 2022, la France perd 19 points en compréhension de l'écrit par rapport à 2018 et recule fortement en mathématiques. Mais la moyenne de l'OCDE baisse aussi, et la France reste au niveau de cette moyenne : 474 points en mathématiques contre 472, 474 en lecture contre 476.",
+     "sources": [
+      {
+       "label": "OCDE, Résultats du PISA 2022 (volume I)",
+       "url": "https://www.oecd.org/fr/publications/2023/12/pisa-2022-results-volume-i_76772a36.html",
+       "statut": "à vérifier"
+      },
+      {
+       "label": "IH2EF, PISA 2022 : les résultats des élèves français",
+       "url": "https://www.ih2ef.gouv.fr/pisa-2022-les-resultats-des-eleves-francais",
+       "statut": "à vérifier"
+      }
+     ]
+    },
+    {
+     "extrait": "Young people are totaly delulu",
+     "label": "Des jeunes « à côté de la plaque »",
+     "verdict": "jugement",
+     "explication": "C'est une opinion sur une génération, pas un fait vérifiable.",
+     "sources": []
+    }
+   ],
+   "debat": [
+    {
+     "question": "Faut-il une sélection à l'entrée de l'université ?"
+    },
+    {
+     "question": "Une année d'études sans diplôme, est-ce de l'argent perdu ?"
+    },
+    {
+     "question": "Faut-il payer davantage les enseignants qui choisissent les établissements difficiles ?"
+    }
+   ],
+   "redaction": {
+    "par": "ia",
+    "relu": false,
+    "date": "2026-11-05"
+   },
+   "motsCles": [
+    "universit",
+    "teachers",
+    "high school",
+    "germany",
+    "italy",
+    "pupils",
+    "selection"
+   ]
+  }
+ ]
+}

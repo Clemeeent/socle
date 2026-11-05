@@ -6,7 +6,8 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { cartes, getCarte, lienCarte, type Carte } from "@/lib/data";
+import { cartes, getAnalyse, getCarte, lienCarte, type Analyse, type Carte } from "@/lib/data";
+import { AnalyseTexte } from "./AnalyseTexte";
 import { sourcesCarte } from "@/lib/stats";
 import { PastilleVerdict } from "./Carte";
 import { COULEURS_PASSAGE, Recit, SuiteRecit } from "./Recit";
@@ -16,11 +17,16 @@ import { interpreterQuestion, lienRecherche } from "@/lib/question";
 const TYPES = COULEURS_PASSAGE;
 
 const ETAPES = ["Je découpe la phrase…", "Je cherche les sources officielles…", "Je sépare les faits des jugements…"];
+const ETAPES_TEXTE = ["Je repère chaque affirmation du texte…", "Je cherche les sources officielles…", "Je sépare les faits des jugements…"];
 
+// A short sentence leads to a card; a long pasted text (post, comment) to an analysis.
 type Etat =
   | { nom: "saisie"; inconnue: boolean }
-  | { nom: "reflexion"; phrase: string; carte: Carte }
-  | { nom: "resultat"; phrase: string; carte: Carte };
+  | { nom: "reflexion" | "resultat"; phrase: string; carte: Carte; analyse?: undefined }
+  | { nom: "reflexion" | "resultat"; phrase: string; analyse: Analyse; carte?: undefined };
+
+// Long texts are shown truncated while "thinking".
+const tronquer = (t: string, n = 180) => (t.length > n ? t.slice(0, n).replace(/\s+\S*$/, "") + "…" : t);
 
 const mouvementReduit = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -44,7 +50,7 @@ export function Verificateur() {
   useEffect(() => {
     if (etat.nom !== "reflexion") return;
     const t1 = setInterval(() => setEtape((e) => Math.min(e + 1, ETAPES.length - 1)), 650);
-    const t2 = setTimeout(() => setEtat({ nom: "resultat", phrase: etat.phrase, carte: etat.carte }), 2000);
+    const t2 = setTimeout(() => setEtat({ ...etat, nom: "resultat" }), etat.analyse ? 2600 : 2000);
     return () => {
       clearInterval(t1);
       clearTimeout(t2);
@@ -55,11 +61,13 @@ export function Verificateur() {
     if (!phrase.trim()) return;
     const r = await interpreterQuestion(phrase);
     if (!r) return setEtat({ nom: "saisie", inconnue: true });
-    // Dossier questions have their own pages.
-    if (!r.carte) return router.push(lienRecherche(r));
-    setEtape(0);
     // With reduced motion, skip the thinking animation.
-    setEtat({ nom: mouvementReduit() ? "resultat" : "reflexion", phrase: phrase.trim(), carte: getCarte(r.carte)! });
+    const nom = mouvementReduit() ? "resultat" : "reflexion";
+    setEtape(0);
+    if (r.analyse) setEtat({ nom, phrase: phrase.trim(), analyse: getAnalyse(r.analyse)! });
+    // Dossier questions have their own pages.
+    else if (!r.carte) return router.push(lienRecherche(r));
+    else setEtat({ nom, phrase: phrase.trim(), carte: getCarte(r.carte)! });
     haut.current?.scrollIntoView({ behavior: mouvementReduit() ? "auto" : "smooth", block: "start" });
   }
 
@@ -128,6 +136,30 @@ export function Verificateur() {
           <p className="mt-3 rounded-2xl bg-warn-bg p-3 text-sm text-warn-ink" role="status">
             Cette phrase n&apos;a pas encore été vérifiée. Essaie un des exemples qui défilent dans le champ.
           </p>
+        )}
+      </div>
+    );
+  }
+
+  if (etat.analyse) {
+    return (
+      <div ref={haut} className="scroll-mt-4" aria-live="polite" data-etat={etat.nom}>
+        {etat.nom === "reflexion" ? (
+          <>
+            <p className="text-center text-xl font-bold leading-snug">
+              <span className="reflexion">« {tronquer(etat.phrase)} »</span>
+            </p>
+            <p className="mt-6 text-center text-sm text-ink-3" role="status">
+              {ETAPES_TEXTE[etape]}
+            </p>
+          </>
+        ) : (
+          <>
+            <AnalyseTexte a={etat.analyse} />
+            <button onClick={recommencer} className="mt-8 w-full rounded-xl border-2 border-ink px-4 py-3 font-semibold">
+              Vérifier autre chose
+            </button>
+          </>
         )}
       </div>
     );

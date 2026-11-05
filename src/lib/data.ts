@@ -9,6 +9,7 @@ import deputesJson from "../../data/deputes.json";
 import metaJson from "../../data/meta.json";
 import rechercheJson from "../../data/recherche.json";
 import cartesJson from "../../data/cartes.json";
+import analysesJson from "../../data/analyses.json";
 import partisJson from "../../data/partis.json";
 import positionsJson from "../../data/positions.json";
 import sourcesJson from "../../programmes/sources.json";
@@ -125,7 +126,7 @@ export type DossierLegislatif = {
 };
 
 // Search entries: a sample question and where it leads (a card, a dossier, or one of its questions).
-export type Recherche = { question: string; motsCles: string[]; carte?: string; dossier?: string; critere?: string };
+export type Recherche = { question: string; motsCles: string[]; carte?: string; analyse?: string; dossier?: string; critere?: string };
 
 export const themes = (themesJson as { themes: Theme[] }).themes;
 export const dossiers = (dossiersJson as { dossiers: Dossier[] }).dossiers;
@@ -234,6 +235,33 @@ export const VERDICTS: Record<Verdict, { label: string; court: string }> = {
   vrai: { label: "Vrai", court: "Vrai" },
   faux: { label: "Faux", court: "Faux" },
 };
+
+// ── Analyses of long texts (a post, a comment): every claim of the text, checked one by one ──
+
+export type PointAnalyse = {
+  extrait: string; // exact passage of the original text
+  label: string;
+  verdict: Verdict;
+  explication: string;
+  sources: (SourceRef & { statut: string })[];
+};
+export type Analyse = {
+  id: string;
+  titre: string;
+  source: string;
+  langue: string;
+  verifieLe: string;
+  themes: string[];
+  texte: string[]; // paragraphs, as written by the author (typos kept)
+  enBref: string;
+  points: PointAnalyse[];
+  debat: { question: string }[];
+  redaction: { par: "ia" | "humain"; relu: boolean; date: string };
+  motsCles: string[];
+};
+export const analyses = (analysesJson as { analyses: Analyse[] }).analyses;
+export const getAnalyse = (id: string) => analyses.find((a) => a.id === id);
+export const lienAnalyse = (id: string) => `/analyse/${id}`;
 
 // ── Parties and their programmes ──────────────────────────────────────────────
 

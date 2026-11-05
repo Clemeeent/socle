@@ -109,6 +109,12 @@ Les dossiers sont la version approfondie des sujets les plus demandés.
   surligné, des renvois numérotés `[n]` vers les sources (`sourcesCarte`), la mention « générée par
   IA · non relue / relue par un humain » (`recit.redaction`), puis « Pour lancer le débat » (questions
   ouvertes, jamais des faits), « Pour aller plus loin » et la liste des sources.
+- **Analyse d'un texte long** (`AnalyseTexte.tsx`, `data/analyses.json`, page `/analyse/<id>`) : un
+  post ou commentaire collé (> 280 caractères) est rapproché d'une analyse par ses mots-clés. Pendant la
+  réflexion, le début du texte tronqué ; puis une barre d'aperçu (un segment par affirmation, couleur
+  du verdict, cliquable), une réponse d'ensemble, et le texte original intact (langue d'origine,
+  fautes comprises) avec ses passages surlignés : toucher un passage ouvre son détail juste sous le
+  paragraphe (verdict, explication en français, sources), avec précédent / suivant.
 - **Se situer** (`Positionnement.tsx`) : sous une question de débat, des réponses rapides (positions
   sur un spectre) ; choisir montre, parmi les faits sourcés de la carte, « ce qui va dans ton sens »
   et « ce qui pourrait te faire douter » (`debat[].positions[].appuis/doutes` = numéros de sources).
